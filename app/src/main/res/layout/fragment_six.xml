@@ -1,0 +1,58 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_us_miles_per_gallon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_us_miles_per_gallon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="US Miles per gallon" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_miles_per_gallon_imperial"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_miles_per_gallon_imperial"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Miles per gallon (Imperial)" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_kilometer_per_litre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_kilometer_per_litre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Kilometre per litre" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_litre_per_100_kilometres"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_litre_per_100_kilometres"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Litre per 100 kilometres" />
+
+    </android.support.design.widget.TextInputLayout>
+
+</LinearLayout>

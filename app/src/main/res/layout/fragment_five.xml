@@ -1,0 +1,58 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_hertz"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_hertz"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Hertz" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_kilohertz"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_kilohertz"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Kilohertz" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_megahertz"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_megahertz"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Megahertz" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_gigahertz"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_gigahertz"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Gigahertz" />
+
+    </android.support.design.widget.TextInputLayout>
+
+</LinearLayout>

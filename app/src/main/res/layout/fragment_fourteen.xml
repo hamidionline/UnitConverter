@@ -1,0 +1,253 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_us_liquid_gallon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_us_liquid_gallon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="US liquid gallon" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_us_liquid_quart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_us_liquid_quart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="US liquid quart" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_us_liquid_pint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_us_liquid_pint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="US liquid pint" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_us_legal_cup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_us_legal_cup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="US legal cup" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_us_fluid_ounce"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_us_fluid_ounce"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="US fluid ounce" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_us_tablespoon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_us_tablespoon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="US tablespoon" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_us_teaspoon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_us_teaspoon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="US teaspoon" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_cubic_metre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_cubic_metre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Cubic metre" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_litre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_litre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Litre" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_millilitre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_millilitre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Millilitre" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_imperial_gallon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_imperial_gallon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Imperial gallon" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_imperial_quart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_imperial_quart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Imperial quart" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_imperial_pint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_imperial_pint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Imperial pint" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_imperial_cup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_imperial_cup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Imperial cup" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_imperial_fluid_ounce"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_imperial_fluid_ounce"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Imperial fluid ounce" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_imperial_tablespoon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_imperial_tablespoon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Imperial tablespoon" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_imperial_teaspoon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_imperial_teaspoon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Imperial teaspoon" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_cubic_foot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_cubic_foot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Cubic foot" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_cubic_inch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_cubic_inch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Cubic inch" />
+
+    </android.support.design.widget.TextInputLayout>
+
+</LinearLayout>

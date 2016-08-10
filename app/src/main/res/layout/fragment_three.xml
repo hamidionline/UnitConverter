@@ -1,0 +1,292 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_bit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_bit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Bit" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_kilobit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_kilobit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Kilobit" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_kibibit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_kibibit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Kibibit" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_megabit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_megabit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Megabit" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_mebibit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_mebibit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Mebibit" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_gigabit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_gigabit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Gigabit" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_gibibit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_gibibit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Gibibit" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_terabit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_terabit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Terabit" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_tebibit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_tebibit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tebibit" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_petabit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_petabit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Petabit" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_pebibit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_pebibit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Pebibit" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_byte"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_byte"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Byte" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_kilobyte"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_kilobyte"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Kilobyte" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_kibibyte"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_kibibyte"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Kibibyte" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_megabyte"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_megabyte"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Megabyte" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_mebibyte"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_mebibyte"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Mebibyte" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_gigabyte"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_gigabyte"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Gigabyte" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_gibibyte"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_gibibyte"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Gibibyte" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_terabyte"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_terabyte"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Terabyte" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_tebibyte"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_tebibyte"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tebibyte" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_petabyte"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_petabyte"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Petabyte" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_pebibyte"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_pebibyte"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Pebibyte" />
+
+    </android.support.design.widget.TextInputLayout>
+
+</LinearLayout>

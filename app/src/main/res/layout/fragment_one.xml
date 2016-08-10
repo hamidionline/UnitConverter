@@ -1,0 +1,110 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_square_kilometer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_square_kilometer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Square kilometre" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_square_meter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_square_meter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Square metre" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_square_mile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_square_mile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Square mile" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_square_yard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_square_yard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Square yard" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_square_foot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_square_foot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Square foot" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_square_inch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_square_inch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Square inch" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_hectare"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_hectare"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Hectare" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_acre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_acre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Acre" />
+
+    </android.support.design.widget.TextInputLayout>
+
+</LinearLayout>
