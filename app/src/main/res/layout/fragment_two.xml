@@ -3,173 +3,186 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_layout_bit_per_second"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:isScrollContainer="false">
 
-        <EditText
-            android:id="@+id/input_bit_per_second"
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Bit per second" />
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-    </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_bit_per_second"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_layout_kilobit_per_second"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/input_bit_per_second"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Bit per second" />
 
-        <EditText
-            android:id="@+id/input_kilobit_per_second"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Kilobit per second" />
+            </android.support.design.widget.TextInputLayout>
 
-    </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_kilobit_per_second"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_layout_kilobyte_per_second"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/input_kilobit_per_second"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Kilobit per second" />
 
-        <EditText
-            android:id="@+id/input_kilobyte_per_second"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Kilobyte per second" />
+            </android.support.design.widget.TextInputLayout>
 
-    </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_kilobyte_per_second"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_layout_kibibit_per_second"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/input_kilobyte_per_second"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Kilobyte per second" />
 
-        <EditText
-            android:id="@+id/input_kibibit_per_second"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Kibibit per second" />
+            </android.support.design.widget.TextInputLayout>
 
-    </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_kibibit_per_second"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_layout_megabit_per_second"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/input_kibibit_per_second"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Kibibit per second" />
 
-        <EditText
-            android:id="@+id/input_megabit_per_second"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Megabit per second" />
+            </android.support.design.widget.TextInputLayout>
 
-    </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_megabit_per_second"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_layout_megabyte_per_second"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/input_megabit_per_second"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Megabit per second" />
 
-        <EditText
-            android:id="@+id/input_megabyte_per_second"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Megabyte per second" />
+            </android.support.design.widget.TextInputLayout>
 
-    </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_megabyte_per_second"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_layout_mebibit_per_second"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/input_megabyte_per_second"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Megabyte per second" />
 
-        <EditText
-            android:id="@+id/input_mebibit_per_second"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Mebibit per second" />
+            </android.support.design.widget.TextInputLayout>
 
-    </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_mebibit_per_second"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_layout_gigabit_per_second"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/input_mebibit_per_second"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Mebibit per second" />
 
-        <EditText
-            android:id="@+id/input_gigabit_per_second"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Gigabit per second" />
+            </android.support.design.widget.TextInputLayout>
 
-    </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_gigabit_per_second"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_layout_gigabyte_per_second"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/input_gigabit_per_second"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Gigabit per second" />
 
-        <EditText
-            android:id="@+id/input_gigabyte_per_second"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Gigabyte per second" />
+            </android.support.design.widget.TextInputLayout>
 
-    </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_gigabyte_per_second"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_layout_gibibit_per_second"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/input_gigabyte_per_second"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Gigabyte per second" />
 
-        <EditText
-            android:id="@+id/input_gibibit_per_second"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Gibibit per second" />
+            </android.support.design.widget.TextInputLayout>
 
-    </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_gibibit_per_second"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_layout_terabit_per_second"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/input_gibibit_per_second"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Gibibit per second" />
 
-        <EditText
-            android:id="@+id/input_terabit_per_second"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Terabit per second" />
+            </android.support.design.widget.TextInputLayout>
 
-    </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_terabit_per_second"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_layout_terabyte_per_second"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/input_terabit_per_second"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Terabit per second" />
 
-        <EditText
-            android:id="@+id/input_terabyte_per_second"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Terabyte per second" />
+            </android.support.design.widget.TextInputLayout>
 
-    </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_terabyte_per_second"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_layout_tebibit_per_second"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/input_terabyte_per_second"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Terabyte per second" />
 
-        <EditText
-            android:id="@+id/input_tebibit_per_second"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Tebibit per second" />
+            </android.support.design.widget.TextInputLayout>
 
-    </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_tebibit_per_second"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
+                <EditText
+                    android:id="@+id/input_tebibit_per_second"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Tebibit per second" />
+
+            </android.support.design.widget.TextInputLayout>
+
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

@@ -2,6 +2,8 @@ package learners.com.unitconverter;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,16 +27,99 @@ public class OneFragment extends Fragment{
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_one, container, false);
 
-        EditText squareKilometre = (EditText) view.findViewById(R.id.input_square_kilometer);
-        EditText squareMetre = (EditText) view.findViewById(R.id.input_square_metre);
-        EditText squareMile = (EditText) view.findViewById(R.id.input_square_mile);
-        EditText squareYard = (EditText) view.findViewById(R.id.input_square_yard);
-        EditText squareFoot = (EditText) view.findViewById(R.id.input_square_foot);
-        EditText squareInch = (EditText) view.findViewById(R.id.input_square_inch);
-        EditText hectare = (EditText) view.findViewById(R.id.input_hectare);
-        EditText acre = (EditText) view.findViewById(R.id.input_acre);
+        final EditText squarekilometre = (EditText) view.findViewById(R.id.input_square_kilometer);
+        final EditText squaremetre = (EditText) view.findViewById(R.id.input_square_metre);
+        final EditText squaremile = (EditText) view.findViewById(R.id.input_square_mile);
+        final EditText squareyard = (EditText) view.findViewById(R.id.input_square_yard);
+        final EditText squarefoot = (EditText) view.findViewById(R.id.input_square_foot);
+        final EditText squareinch = (EditText) view.findViewById(R.id.input_square_inch);
+        final EditText hectare = (EditText) view.findViewById(R.id.input_hectare);
+        final EditText acre = (EditText) view.findViewById(R.id.input_acre);
+
+        squarekilometre.addTextChangedListener(new TextWatcher() {
+            int charCount = 0;
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                charCount = count;
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (squarekilometre.isFocused()) {
+                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                        squaremetre.setText(String.valueOf((Double.parseDouble(s.toString()) * 1000000)));
+                        squaremile.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.38610));
+                        squareyard.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.00000083612736));
+                        squarefoot.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.00000009290304));
+                        squareinch.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.00000000064516));
+                        hectare.setText(String.valueOf(Double.parseDouble(s.toString()) * 100));
+                        acre.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.00404685642));
+                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
+                    } else {
+                        squaremetre.getText().clear();
+                        squaremile.getText().clear();
+                        squareyard.getText().clear();
+                        squarefoot.getText().clear();
+                        squareinch.getText().clear();
+                        hectare.getText().clear();
+                        acre.getText().clear();
+                    }
+                }
+            }
+        });
+
+        squaremetre.addTextChangedListener(new TextWatcher() {
+            int charCount = 0;
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                charCount = count;
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (squaremetre.isFocused()) {
+                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                        squarekilometre.setText(String.valueOf((Double.parseDouble(s.toString()) / 1000000)));
+                        squaremile.setText(String.valueOf(Double.parseDouble(s.toString()) / 2589988.11));
+                        squareyard.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.83612736));
+                        squarefoot.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.09290304));
+                        squareinch.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.00064516));
+                        hectare.setText(String.valueOf(Double.parseDouble(s.toString()) / 10000));
+                        acre.setText(String.valueOf(Double.parseDouble(s.toString()) / 4046.85642));
+                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
+                    } else {
+                        squarekilometre.getText().clear();
+                        squaremile.getText().clear();
+                        squareyard.getText().clear();
+                        squarefoot.getText().clear();
+                        squareinch.getText().clear();
+                        hectare.getText().clear();
+                        acre.getText().clear();
+                    }
+                }
+            }
+        });
 
         return view;
+    }
+
+    private boolean tryParseDouble(String value) {
+        try {
+            Double.parseDouble(value);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
     }
 
 }
