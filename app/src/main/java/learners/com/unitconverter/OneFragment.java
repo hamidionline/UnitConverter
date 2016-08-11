@@ -147,6 +147,43 @@ public class OneFragment extends Fragment{
             }
         });
 
+        squareyard.addTextChangedListener(new TextWatcher() {
+            int charCount = 0;
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                charCount = count;
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (squareyard.isFocused()) {
+                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                        squarekilometre.setText(String.valueOf((Double.parseDouble(s.toString()) * 2.58998811)));
+                        squaremetre.setText(String.valueOf(Double.parseDouble(s.toString()) * 2589988.11));
+                        squaremile.setText(String.valueOf(Double.parseDouble(s.toString()) * 3097600));
+                        squarefoot.setText(String.valueOf(Double.parseDouble(s.toString()) * 27878400));
+                        squareinch.setText(String.valueOf(Double.parseDouble(s.toString()) * 4014489600L));
+                        hectare.setText(String.valueOf(Double.parseDouble(s.toString()) * 258.998811));
+                        acre.setText(String.valueOf(Double.parseDouble(s.toString()) * 640));
+                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
+                    } else {
+                        squarekilometre.getText().clear();
+                        squaremetre.getText().clear();
+                        squaremile.getText().clear();
+                        squarefoot.getText().clear();
+                        squareinch.getText().clear();
+                        hectare.getText().clear();
+                        acre.getText().clear();
+                    }
+                }
+            }
+        });
+
         return view;
     }
 
