@@ -52,20 +52,20 @@ public class ScrollableTabsActivity extends AppCompatActivity
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFrag(new OneFragment(), "Area");
-        adapter.addFrag(new TwoFragment(), "Data Transfer Rate");
-        adapter.addFrag(new ThreeFragment(), "Digital Storage");
-        adapter.addFrag(new FourFragment(), "Energy");
-        adapter.addFrag(new FiveFragment(), "Frequency");
-        adapter.addFrag(new SixFragment(), "Fuel Economy");
-        adapter.addFrag(new SevenFragment(), "Length");
-        adapter.addFrag(new EightFragment(), "Mass");
-        adapter.addFrag(new NineFragment(), "Plane Angle");
-        adapter.addFrag(new TenFragment(), "Pressure");
-        adapter.addFrag(new ElevenFragment(), "Speed");
-        adapter.addFrag(new TwelveFragment(), "Temperature");
-        adapter.addFrag(new ThirteenFragment(), "Time");
-        adapter.addFrag(new FourteenFragment(), "Volume");
+        adapter.addFrag(new OneFragment(), getString(R.string.area));
+        adapter.addFrag(new TwoFragment(), getString(R.string.data_transfer_rate));
+        adapter.addFrag(new ThreeFragment(), getString(R.string.digital_storage));
+        adapter.addFrag(new FourFragment(), getString(R.string.energy));
+        adapter.addFrag(new FiveFragment(), getString(R.string.frequency));
+        adapter.addFrag(new SixFragment(), getString(R.string.fuel_economy));
+        adapter.addFrag(new SevenFragment(), getString(R.string.length));
+        adapter.addFrag(new EightFragment(), getString(R.string.mass));
+        adapter.addFrag(new NineFragment(), getString(R.string.plane_angel));
+        adapter.addFrag(new TenFragment(), getString(R.string.pressure));
+        adapter.addFrag(new ElevenFragment(), getString(R.string.speed));
+        adapter.addFrag(new TwelveFragment(), getString(R.string.temperature));
+        adapter.addFrag(new ThirteenFragment(), getString(R.string.time));
+        adapter.addFrag(new FourteenFragment(), getString(R.string.volume));
         viewPager.setAdapter(adapter);
     }
 
@@ -136,14 +136,35 @@ public class ScrollableTabsActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_area) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
+            ((ViewPager)findViewById(R.id.viewpager)).setCurrentItem(0);
+        } else if (id == R.id.nav_data_transfer_rate) {
+            ((ViewPager)findViewById(R.id.viewpager)).setCurrentItem(1);
+        } else if (id == R.id.nav_digital_storage) {
+            ((ViewPager)findViewById(R.id.viewpager)).setCurrentItem(2);
+        } else if (id == R.id.nav_energy) {
+            ((ViewPager)findViewById(R.id.viewpager)).setCurrentItem(3);
+        } else if (id == R.id.nav_frequency) {
+            ((ViewPager)findViewById(R.id.viewpager)).setCurrentItem(4);
+        } else if (id == R.id.nav_fuel_economy) {
+            ((ViewPager)findViewById(R.id.viewpager)).setCurrentItem(5);
+        } else if (id == R.id.nav_length) {
+            ((ViewPager)findViewById(R.id.viewpager)).setCurrentItem(6);
+        }else if (id == R.id.nav_mass) {
+            ((ViewPager)findViewById(R.id.viewpager)).setCurrentItem(7);
+        } else if (id == R.id.nav_plane_angel) {
+            ((ViewPager)findViewById(R.id.viewpager)).setCurrentItem(8);
+        } else if (id == R.id.nav_pressure) {
+            ((ViewPager)findViewById(R.id.viewpager)).setCurrentItem(9);
+        }else if (id == R.id.nav_speed) {
+            ((ViewPager)findViewById(R.id.viewpager)).setCurrentItem(10);
+        } else if (id == R.id.nav_temperature) {
+            ((ViewPager)findViewById(R.id.viewpager)).setCurrentItem(11);
+        } else if (id == R.id.nav_time) {
+            ((ViewPager)findViewById(R.id.viewpager)).setCurrentItem(12);
+        } else if (id == R.id.nav_volume) {
+            ((ViewPager)findViewById(R.id.viewpager)).setCurrentItem(13);
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {

@@ -3,21 +3,47 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
+            android:id="@+id/nav_area"
+            android:title="@string/area"  />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
+            android:id="@+id/nav_data_transfer_rate"
+            android:title="@string/data_transfer_rate" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
+            android:id="@+id/nav_digital_storage"
+            android:title="@string/digital_storage" />
         <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:id="@+id/nav_energy"
+            android:title="@string/energy" />
+        <item
+            android:id="@+id/nav_frequency"
+            android:title="@string/frequency"  />
+        <item
+            android:id="@+id/nav_fuel_economy"
+            android:title="@string/fuel_economy" />
+        <item
+            android:id="@+id/nav_length"
+            android:title="@string/length" />
+        <item
+            android:id="@+id/nav_mass"
+            android:title="@string/mass" />
+        <item
+            android:id="@+id/nav_plane_angel"
+            android:title="@string/plane_angel"  />
+        <item
+            android:id="@+id/nav_pressure"
+            android:title="@string/pressure" />
+        <item
+            android:id="@+id/nav_speed"
+            android:title="@string/speed" />
+        <item
+            android:id="@+id/nav_temperature"
+            android:title="@string/temperature" />
+        <item
+            android:id="@+id/nav_time"
+            android:title="@string/time"  />
+        <item
+            android:id="@+id/nav_volume"
+            android:title="@string/volume" />
     </group>
 
     <item android:title="Communicate">
