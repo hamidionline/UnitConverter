@@ -12,7 +12,8 @@
             android:id="@+id/input_kilometre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Kilometre" />
+            android:hint="Kilometre"
+            android:inputType="numberDecimal"/>
 
     </android.support.design.widget.TextInputLayout>
 
@@ -25,7 +26,8 @@
             android:id="@+id/input_metre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Metre" />
+            android:hint="Metre"
+            android:inputType="numberDecimal"/>
 
     </android.support.design.widget.TextInputLayout>
 
@@ -38,7 +40,8 @@
             android:id="@+id/input_centimetre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Centimetre" />
+            android:hint="Centimetre"
+            android:inputType="numberDecimal" />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -51,7 +54,8 @@
             android:id="@+id/input_millimetre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Millimetre" />
+            android:hint="Millimetre"
+            android:inputType="numberDecimal" />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -64,7 +68,8 @@
             android:id="@+id/input_micrometre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Micrometre" />
+            android:hint="Micrometre"
+            android:inputType="numberDecimal" />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -77,7 +82,8 @@
             android:id="@+id/input_nanometre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nanometre" />
+            android:hint="Nanometre"
+            android:inputType="numberDecimal"/>
 
     </android.support.design.widget.TextInputLayout>
 
@@ -90,7 +96,8 @@
             android:id="@+id/input_mile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Mile" />
+            android:hint="Mile"
+            android:inputType="numberDecimal" />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -103,7 +110,8 @@
             android:id="@+id/input_yard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Yard" />
+            android:hint="Yard"
+            android:inputType="numberDecimal" />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -116,7 +124,8 @@
             android:id="@+id/input_foot"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Foot" />
+            android:hint="Foot"
+            android:inputType="numberDecimal" />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -129,7 +138,8 @@
             android:id="@+id/input_inch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Inch" />
+            android:hint="Inch"
+            android:inputType="numberDecimal" />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -142,7 +152,8 @@
             android:id="@+id/input_nautical_mile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nautical mile" />
+            android:hint="Nautical mile"
+            android:inputType="numberDecimal" />
 
     </android.support.design.widget.TextInputLayout>
 

@@ -12,7 +12,8 @@
             android:id="@+id/input_us_liquid_gallon"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="US liquid gallon" />
+            android:hint="US liquid gallon"
+            android:inputType="numberDecimal" />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -25,7 +26,8 @@
             android:id="@+id/input_us_liquid_quart"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="US liquid quart" />
+            android:hint="US liquid quart"
+            android:inputType="numberDecimal" />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -38,7 +40,8 @@
             android:id="@+id/input_us_liquid_pint"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="US liquid pint" />
+            android:hint="US liquid pint"
+            android:inputType="numberDecimal" />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -51,7 +54,8 @@
             android:id="@+id/input_us_legal_cup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="US legal cup" />
+            android:hint="US legal cup"
+            android:inputType="numberDecimal" />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -64,7 +68,8 @@
             android:id="@+id/input_us_fluid_ounce"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="US fluid ounce" />
+            android:hint="US fluid ounce"
+            android:inputType="numberDecimal" />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -77,7 +82,8 @@
             android:id="@+id/input_us_tablespoon"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="US tablespoon" />
+            android:hint="US tablespoon"
+            android:inputType="numberDecimal" />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -90,7 +96,8 @@
             android:id="@+id/input_us_teaspoon"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="US teaspoon" />
+            android:hint="US teaspoon"
+            android:inputType="numberDecimal" />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -103,7 +110,8 @@
             android:id="@+id/input_cubic_metre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Cubic metre" />
+            android:hint="Cubic metre"
+            android:inputType="numberDecimal" />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -116,7 +124,8 @@
             android:id="@+id/input_litre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Litre" />
+            android:hint="Litre"
+            android:inputType="numberDecimal" />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -129,7 +138,8 @@
             android:id="@+id/input_millilitre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Millilitre" />
+            android:hint="Millilitre"
+            android:inputType="numberDecimal" />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -142,7 +152,8 @@
             android:id="@+id/input_imperial_gallon"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Imperial gallon" />
+            android:hint="Imperial gallon"
+            android:inputType="numberDecimal" />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -155,7 +166,8 @@
             android:id="@+id/input_imperial_quart"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Imperial quart" />
+            android:hint="Imperial quart"
+            android:inputType="numberDecimal" />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -168,7 +180,8 @@
             android:id="@+id/input_imperial_pint"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Imperial pint" />
+            android:hint="Imperial pint"
+            android:inputType="numberDecimal" />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -181,7 +194,8 @@
             android:id="@+id/input_imperial_cup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Imperial cup" />
+            android:hint="Imperial cup"
+            android:inputType="numberDecimal" />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -194,7 +208,8 @@
             android:id="@+id/input_imperial_fluid_ounce"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Imperial fluid ounce" />
+            android:hint="Imperial fluid ounce"
+            android:inputType="numberDecimal" />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -207,7 +222,8 @@
             android:id="@+id/input_imperial_tablespoon"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Imperial tablespoon" />
+            android:hint="Imperial tablespoon"
+            android:inputType="numberDecimal" />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -220,7 +236,8 @@
             android:id="@+id/input_imperial_teaspoon"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Imperial teaspoon" />
+            android:hint="Imperial teaspoon"
+            android:inputType="numberDecimal" />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -233,7 +250,8 @@
             android:id="@+id/input_cubic_foot"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Cubic foot" />
+            android:hint="Cubic foot"
+            android:inputType="numberDecimal" />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -246,7 +264,8 @@
             android:id="@+id/input_cubic_inch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Cubic inch" />
+            android:hint="Cubic inch"
+            android:inputType="numberDecimal" />
 
     </android.support.design.widget.TextInputLayout>
 

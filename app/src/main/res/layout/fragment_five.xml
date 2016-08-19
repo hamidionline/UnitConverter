@@ -12,7 +12,8 @@
             android:id="@+id/input_hertz"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Hertz" />
+            android:hint="Hertz"
+            android:inputType="numberDecimal" />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -25,7 +26,8 @@
             android:id="@+id/input_kilohertz"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Kilohertz" />
+            android:hint="Kilohertz"
+            android:inputType="numberDecimal" />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -38,7 +40,8 @@
             android:id="@+id/input_megahertz"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Megahertz" />
+            android:hint="Megahertz"
+            android:inputType="numberDecimal" />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -51,7 +54,8 @@
             android:id="@+id/input_gigahertz"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Gigahertz" />
+            android:hint="Gigahertz"
+            android:inputType="numberDecimal" />
 
     </android.support.design.widget.TextInputLayout>
 

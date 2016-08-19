@@ -12,7 +12,8 @@
             android:id="@+id/input_tonne"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Tonne" />
+            android:hint="Tonne"
+            android:inputType="numberDecimal" />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -25,7 +26,8 @@
             android:id="@+id/input_kilogram"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Kilogram" />
+            android:hint="Kilogram"
+            android:inputType="numberDecimal" />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -38,7 +40,8 @@
             android:id="@+id/input_gram"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Gram" />
+            android:hint="Gram"
+            android:inputType="numberDecimal" />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -51,7 +54,8 @@
             android:id="@+id/input_milligram"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Milligram" />
+            android:hint="Milligram"
+            android:inputType="numberDecimal" />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -64,7 +68,8 @@
             android:id="@+id/input_microgram"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Microgram" />
+            android:hint="Microgram"
+            android:inputType="numberDecimal" />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -77,7 +82,8 @@
             android:id="@+id/input_imperial_ton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Imperial ton" />
+            android:hint="Imperial ton"
+            android:inputType="numberDecimal" />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -90,7 +96,8 @@
             android:id="@+id/input_us_ton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="US ton" />
+            android:hint="US ton"
+            android:inputType="numberDecimal" />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -103,7 +110,8 @@
             android:id="@+id/input_stone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Stone" />
+            android:hint="Stone"
+            android:inputType="numberDecimal" />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -116,7 +124,8 @@
             android:id="@+id/input_pound"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Pound" />
+            android:hint="Pound"
+            android:inputType="numberDecimal" />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -129,7 +138,8 @@
             android:id="@+id/input_ounce"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Ounce" />
+            android:hint="Ounce"
+            android:inputType="numberDecimal" />
 
     </android.support.design.widget.TextInputLayout>
 

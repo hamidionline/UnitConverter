@@ -15,7 +15,8 @@
             android:id="@+id/input_square_kilometer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Square kilometre" />
+            android:hint="Square kilometre"
+            android:inputType="numberDecimal" />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -28,7 +29,8 @@
             android:id="@+id/input_square_metre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Square metre" />
+            android:hint="Square metre"
+            android:inputType="numberDecimal" />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -41,7 +43,8 @@
             android:id="@+id/input_square_mile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Square mile" />
+            android:hint="Square mile"
+            android:inputType="numberDecimal" />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -54,7 +57,8 @@
             android:id="@+id/input_square_yard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Square yard" />
+            android:hint="Square yard"
+            android:inputType="numberDecimal" />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -67,7 +71,8 @@
             android:id="@+id/input_square_foot"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Square foot" />
+            android:hint="Square foot"
+            android:inputType="numberDecimal" />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -80,7 +85,8 @@
             android:id="@+id/input_square_inch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Square inch" />
+            android:hint="Square inch"
+            android:inputType="numberDecimal" />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -93,7 +99,8 @@
             android:id="@+id/input_hectare"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Hectare" />
+            android:hint="Hectare"
+            android:inputType="numberDecimal" />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -106,7 +113,8 @@
             android:id="@+id/input_acre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Acre" />
+            android:hint="Acre"
+            android:inputType="numberDecimal" />
 
     </android.support.design.widget.TextInputLayout>
 
