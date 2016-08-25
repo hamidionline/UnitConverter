@@ -138,33 +138,33 @@ public class ScrollableTabsActivity extends AppCompatActivity
 
         if (id == R.id.nav_area) {
             // Handle the camera action
-            ((ViewPager)findViewById(R.id.viewpager)).setCurrentItem(0);
+            ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(0);
         } else if (id == R.id.nav_data_transfer_rate) {
-            ((ViewPager)findViewById(R.id.viewpager)).setCurrentItem(1);
+            ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(1);
         } else if (id == R.id.nav_digital_storage) {
-            ((ViewPager)findViewById(R.id.viewpager)).setCurrentItem(2);
+            ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(2);
         } else if (id == R.id.nav_energy) {
-            ((ViewPager)findViewById(R.id.viewpager)).setCurrentItem(3);
+            ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(3);
         } else if (id == R.id.nav_frequency) {
-            ((ViewPager)findViewById(R.id.viewpager)).setCurrentItem(4);
+            ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(4);
         } else if (id == R.id.nav_fuel_economy) {
-            ((ViewPager)findViewById(R.id.viewpager)).setCurrentItem(5);
+            ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(5);
         } else if (id == R.id.nav_length) {
-            ((ViewPager)findViewById(R.id.viewpager)).setCurrentItem(6);
-        }else if (id == R.id.nav_mass) {
-            ((ViewPager)findViewById(R.id.viewpager)).setCurrentItem(7);
+            ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(6);
+        } else if (id == R.id.nav_mass) {
+            ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(7);
         } else if (id == R.id.nav_plane_angel) {
-            ((ViewPager)findViewById(R.id.viewpager)).setCurrentItem(8);
+            ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(8);
         } else if (id == R.id.nav_pressure) {
-            ((ViewPager)findViewById(R.id.viewpager)).setCurrentItem(9);
-        }else if (id == R.id.nav_speed) {
-            ((ViewPager)findViewById(R.id.viewpager)).setCurrentItem(10);
+            ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(9);
+        } else if (id == R.id.nav_speed) {
+            ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(10);
         } else if (id == R.id.nav_temperature) {
-            ((ViewPager)findViewById(R.id.viewpager)).setCurrentItem(11);
+            ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(11);
         } else if (id == R.id.nav_time) {
-            ((ViewPager)findViewById(R.id.viewpager)).setCurrentItem(12);
+            ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(12);
         } else if (id == R.id.nav_volume) {
-            ((ViewPager)findViewById(R.id.viewpager)).setCurrentItem(13);
+            ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(13);
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {

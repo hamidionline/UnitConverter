@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 
 
-public class ThreeFragment extends Fragment{
+public class ThreeFragment extends Fragment {
 
     public ThreeFragment() {
         // Required empty public constructor
@@ -48,7 +48,7 @@ public class ThreeFragment extends Fragment{
         EditText petabyte = (EditText) view.findViewById(R.id.input_petabyte);
         EditText pebibyte = (EditText) view.findViewById(R.id.input_pebibyte);
 
-        return  view;
+        return view;
     }
 
 }

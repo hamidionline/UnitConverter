@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
-public class TenFragment extends Fragment{
+public class TenFragment extends Fragment {
 
     public TenFragment() {
         // Required empty public constructor

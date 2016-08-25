@@ -32,61 +32,61 @@ public class TwelveFragment extends Fragment {
         final EditText fahrenheit = (EditText) view.findViewById(R.id.input_fahrenheit);
         final EditText kelvin = (EditText) view.findViewById(R.id.input_kelvin);
 
-            celcious.addTextChangedListener(new TextWatcher() {
-                int charCount = 0;
+        celcious.addTextChangedListener(new TextWatcher() {
+            int charCount = 0;
 
-                @Override
-                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                    charCount = count;
-                }
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                charCount = count;
+            }
 
-                @Override
-                public void onTextChanged(CharSequence s, int start, int before, int count) {
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
 
-                }
+            }
 
-                @Override
-                public void afterTextChanged(Editable s) {
-                    if (celcious.isFocused()) {
-                        if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
-                            fahrenheit.setText(String.valueOf(((9.0 / 5.0) * Double.parseDouble(s.toString())) + 32));
-                            kelvin.setText(String.valueOf((5.0/9 * (Double.parseDouble(s.toString()) - 32) + 273.15)));
-                        } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                        } else {
-                            fahrenheit.getText().clear();
-                            kelvin.getText().clear();
-                        }
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (celcious.isFocused()) {
+                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                        fahrenheit.setText(String.valueOf(((9.0 / 5.0) * Double.parseDouble(s.toString())) + 32));
+                        kelvin.setText(String.valueOf((5.0 / 9 * (Double.parseDouble(s.toString()) - 32) + 273.15)));
+                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
+                    } else {
+                        fahrenheit.getText().clear();
+                        kelvin.getText().clear();
                     }
                 }
-            });
+            }
+        });
 
-            fahrenheit.addTextChangedListener(new TextWatcher() {
-                int charCount = 0;
+        fahrenheit.addTextChangedListener(new TextWatcher() {
+            int charCount = 0;
 
-                @Override
-                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                    charCount = count;
-                }
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                charCount = count;
+            }
 
-                @Override
-                public void onTextChanged(CharSequence s, int start, int before, int count) {
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
 
-                }
+            }
 
-                @Override
-                public void afterTextChanged(Editable s) {
-                    if (fahrenheit.isFocused()) {
-                        if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
-                            celcious.setText(String.valueOf((((Double.parseDouble(s.toString()) - 32) * 5) / 9)));
-                            kelvin.setText(String.valueOf((5.0/9 * (Double.parseDouble(s.toString()) - 32) + 273.15)));
-                        } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                        } else {
-                            celcious.getText().clear();
-                            kelvin.getText().clear();
-                        }
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (fahrenheit.isFocused()) {
+                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                        celcious.setText(String.valueOf((((Double.parseDouble(s.toString()) - 32) * 5) / 9)));
+                        kelvin.setText(String.valueOf((5.0 / 9 * (Double.parseDouble(s.toString()) - 32) + 273.15)));
+                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
+                    } else {
+                        celcious.getText().clear();
+                        kelvin.getText().clear();
                     }
                 }
-            });
+            }
+        });
 
         kelvin.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
@@ -106,7 +106,7 @@ public class TwelveFragment extends Fragment {
                 if (kelvin.isFocused()) {
                     if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         celcious.setText(String.valueOf((((Double.parseDouble(s.toString()) - 32) * 5) / 9)));
-                        fahrenheit.setText(String.valueOf((5.0/9 * (Double.parseDouble(s.toString()) - 32) + 273.15)));
+                        fahrenheit.setText(String.valueOf((5.0 / 9 * (Double.parseDouble(s.toString()) - 32) + 273.15)));
                     } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
                     } else {
                         celcious.getText().clear();

@@ -13,7 +13,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Kilometre"
-            android:inputType="numberDecimal"/>
+            android:inputType="numberDecimal" />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -27,7 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Metre"
-            android:inputType="numberDecimal"/>
+            android:inputType="numberDecimal" />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -83,7 +83,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Nanometre"
-            android:inputType="numberDecimal"/>
+            android:inputType="numberDecimal" />
 
     </android.support.design.widget.TextInputLayout>
 

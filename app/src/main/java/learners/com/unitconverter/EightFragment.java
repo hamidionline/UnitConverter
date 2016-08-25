@@ -6,7 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class EightFragment extends Fragment{
+public class EightFragment extends Fragment {
 
     public EightFragment() {
         // Required empty public constructor

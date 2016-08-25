@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 
 
-public class OneFragment extends Fragment{
+public class OneFragment extends Fragment {
 
     public OneFragment() {
         // Required empty public constructor
@@ -38,6 +38,7 @@ public class OneFragment extends Fragment{
 
         squarekilometre.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
+
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
                 charCount = count;
@@ -75,6 +76,7 @@ public class OneFragment extends Fragment{
 
         squaremetre.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
+
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
                 charCount = count;
@@ -112,6 +114,7 @@ public class OneFragment extends Fragment{
 
         squaremile.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
+
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
                 charCount = count;
@@ -149,6 +152,7 @@ public class OneFragment extends Fragment{
 
         squareyard.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
+
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
                 charCount = count;
@@ -186,6 +190,7 @@ public class OneFragment extends Fragment{
 
         squarefoot.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
+
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
                 charCount = count;
@@ -223,6 +228,7 @@ public class OneFragment extends Fragment{
 
         squareinch.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
+
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
                 charCount = count;
@@ -260,6 +266,7 @@ public class OneFragment extends Fragment{
 
         hectare.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
+
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
                 charCount = count;
@@ -297,6 +304,7 @@ public class OneFragment extends Fragment{
 
         acre.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
+
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
                 charCount = count;
