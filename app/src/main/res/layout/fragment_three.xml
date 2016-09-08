@@ -31,6 +31,20 @@
 
     </android.support.design.widget.TextInputLayout>
 
+    <!--<android.support.design.widget.TextInputLayout-->
+        <!--android:id="@+id/input_layout_kibibit"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
+
+        <!--<EditText-->
+            <!--android:id="@+id/input_kibibit"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:hint="Kibibit"-->
+            <!--android:inputType="numberDecimal" />-->
+
+    <!--</android.support.design.widget.TextInputLayout>-->
+
     <android.support.design.widget.TextInputLayout
         android:id="@+id/input_layout_megabit"
         android:layout_width="match_parent"
@@ -44,6 +58,20 @@
             android:inputType="numberDecimal" />
 
     </android.support.design.widget.TextInputLayout>
+
+    <!--<android.support.design.widget.TextInputLayout-->
+        <!--android:id="@+id/input_layout_mebibit"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
+
+        <!--<EditText-->
+            <!--android:id="@+id/input_mebibit"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:hint="Mebibit"-->
+            <!--android:inputType="numberDecimal" />-->
+
+    <!--</android.support.design.widget.TextInputLayout>-->
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/input_layout_gigabit"
@@ -59,6 +87,20 @@
 
     </android.support.design.widget.TextInputLayout>
 
+    <!--<android.support.design.widget.TextInputLayout-->
+        <!--android:id="@+id/input_layout_gibibit"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
+
+        <!--<EditText-->
+            <!--android:id="@+id/input_gibibit"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:hint="Gibibit"-->
+            <!--android:inputType="numberDecimal" />-->
+
+    <!--</android.support.design.widget.TextInputLayout>-->
+
     <android.support.design.widget.TextInputLayout
         android:id="@+id/input_layout_terabit"
         android:layout_width="match_parent"
@@ -73,6 +115,20 @@
 
     </android.support.design.widget.TextInputLayout>
 
+    <!--<android.support.design.widget.TextInputLayout-->
+        <!--android:id="@+id/input_layout_tebibit"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
+
+        <!--<EditText-->
+            <!--android:id="@+id/input_tebibit"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:hint="Tebibit"-->
+            <!--android:inputType="numberDecimal" />-->
+
+    <!--</android.support.design.widget.TextInputLayout>-->
+
     <android.support.design.widget.TextInputLayout
         android:id="@+id/input_layout_petabit"
         android:layout_width="match_parent"
@@ -86,6 +142,20 @@
             android:inputType="numberDecimal" />
 
     </android.support.design.widget.TextInputLayout>
+
+    <!--<android.support.design.widget.TextInputLayout-->
+        <!--android:id="@+id/input_layout_pebibit"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
+
+        <!--<EditText-->
+            <!--android:id="@+id/input_pebibit"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:hint="Pebibit"-->
+            <!--android:inputType="numberDecimal" />-->
+
+    <!--</android.support.design.widget.TextInputLayout>-->
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/input_layout_byte"
@@ -115,6 +185,20 @@
 
     </android.support.design.widget.TextInputLayout>
 
+    <!--<android.support.design.widget.TextInputLayout-->
+        <!--android:id="@+id/input_layout_kibibyte"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
+
+        <!--<EditText-->
+            <!--android:id="@+id/input_kibibyte"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:hint="Kibibyte"-->
+            <!--android:inputType="numberDecimal" />-->
+
+    <!--</android.support.design.widget.TextInputLayout>-->
+
     <android.support.design.widget.TextInputLayout
         android:id="@+id/input_layout_megabyte"
         android:layout_width="match_parent"
@@ -128,6 +212,20 @@
             android:inputType="numberDecimal" />
 
     </android.support.design.widget.TextInputLayout>
+
+    <!--<android.support.design.widget.TextInputLayout-->
+        <!--android:id="@+id/input_layout_mebibyte"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
+
+        <!--<EditText-->
+            <!--android:id="@+id/input_mebibyte"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:hint="Mebibyte"-->
+            <!--android:inputType="numberDecimal" />-->
+
+    <!--</android.support.design.widget.TextInputLayout>-->
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/input_layout_gigabyte"
@@ -143,6 +241,20 @@
 
     </android.support.design.widget.TextInputLayout>
 
+    <!--<android.support.design.widget.TextInputLayout-->
+        <!--android:id="@+id/input_layout_gibibyte"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
+
+        <!--<EditText-->
+            <!--android:id="@+id/input_gibibyte"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:hint="Gibibyte"-->
+            <!--android:inputType="numberDecimal" />-->
+
+    <!--</android.support.design.widget.TextInputLayout>-->
+
     <android.support.design.widget.TextInputLayout
         android:id="@+id/input_layout_terabyte"
         android:layout_width="match_parent"
@@ -157,6 +269,20 @@
 
     </android.support.design.widget.TextInputLayout>
 
+    <!--<android.support.design.widget.TextInputLayout-->
+        <!--android:id="@+id/input_layout_tebibyte"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
+
+        <!--<EditText-->
+            <!--android:id="@+id/input_tebibyte"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:hint="Tebibyte"-->
+            <!--android:inputType="numberDecimal" />-->
+
+    <!--</android.support.design.widget.TextInputLayout>-->
+
     <android.support.design.widget.TextInputLayout
         android:id="@+id/input_layout_petabyte"
         android:layout_width="match_parent"
@@ -170,5 +296,19 @@
             android:inputType="numberDecimal" />
 
     </android.support.design.widget.TextInputLayout>
+
+    <!--<android.support.design.widget.TextInputLayout-->
+        <!--android:id="@+id/input_layout_pebibyte"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
+
+        <!--<EditText-->
+            <!--android:id="@+id/input_pebibyte"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:hint="Pebibyte"-->
+            <!--android:inputType="numberDecimal" />-->
+
+    <!--</android.support.design.widget.TextInputLayout>-->
 
 </LinearLayout>
