@@ -9,7 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
-import android.widget.Toast;
 
 
 /**
@@ -27,7 +26,7 @@ public class TemperatureFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        final View view = inflater.inflate(R.layout.fragment_twelve, container, false);
+        final View view = inflater.inflate(R.layout.fragment_temperature, container, false);
         final EditText celcious = (EditText) view.findViewById(R.id.input_celsius);
         final EditText fahrenheit = (EditText) view.findViewById(R.id.input_fahrenheit);
         final EditText kelvin = (EditText) view.findViewById(R.id.input_kelvin);

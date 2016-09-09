@@ -25,7 +25,7 @@ public class DataTransferRateFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_two, container, false);
+        View view = inflater.inflate(R.layout.fragment_data_transfer_rate, container, false);
 
         final EditText bitpersecond = (EditText) view.findViewById(R.id.input_bit_per_second);
         final EditText kilobitpersecond = (EditText) view.findViewById(R.id.input_kilobit_per_second);

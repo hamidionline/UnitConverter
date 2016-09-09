@@ -25,7 +25,7 @@ public class DigitalStorageFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_three, container, false);
+        View view = inflater.inflate(R.layout.fragment_digital_storage, container, false);
 
         final EditText bit = (EditText) view.findViewById(R.id.input_bit);
         final EditText kilobit = (EditText) view.findViewById(R.id.input_kilobit);
