@@ -10,9 +10,9 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 
 
-public class TwoFragment extends Fragment {
+public class DataTransferRateFragment extends Fragment {
 
-    public TwoFragment() {
+    public DataTransferRateFragment() {
         // Required empty public constructor
     }
 

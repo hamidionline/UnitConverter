@@ -7,9 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
-public class NineFragment extends Fragment {
+public class FuelEconomyFragment extends Fragment {
 
-    public NineFragment() {
+    public FuelEconomyFragment() {
         // Required empty public constructor
     }
 
@@ -22,7 +22,7 @@ public class NineFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_nine, container, false);
+        return inflater.inflate(R.layout.fragment_six, container, false);
     }
 
 }

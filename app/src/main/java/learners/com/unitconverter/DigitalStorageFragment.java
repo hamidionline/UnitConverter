@@ -10,9 +10,9 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 
 
-public class ThreeFragment extends Fragment {
+public class DigitalStorageFragment extends Fragment {
 
-    public ThreeFragment() {
+    public DigitalStorageFragment() {
         // Required empty public constructor
     }
 

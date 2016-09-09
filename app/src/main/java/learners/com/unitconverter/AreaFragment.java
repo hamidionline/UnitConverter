@@ -10,9 +10,9 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 
 
-public class OneFragment extends Fragment {
+public class AreaFragment extends Fragment {
 
-    public OneFragment() {
+    public AreaFragment() {
         // Required empty public constructor
     }
 

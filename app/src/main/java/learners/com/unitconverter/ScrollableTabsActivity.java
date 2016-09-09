@@ -1,14 +1,11 @@
 package learners.com.unitconverter;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -52,20 +49,20 @@ public class ScrollableTabsActivity extends AppCompatActivity
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFrag(new OneFragment(), getString(R.string.area));
-        adapter.addFrag(new TwoFragment(), getString(R.string.data_transfer_rate));
-        adapter.addFrag(new ThreeFragment(), getString(R.string.digital_storage));
-        adapter.addFrag(new FourFragment(), getString(R.string.energy));
-        adapter.addFrag(new FiveFragment(), getString(R.string.frequency));
-        adapter.addFrag(new SixFragment(), getString(R.string.fuel_economy));
-        adapter.addFrag(new SevenFragment(), getString(R.string.length));
-        adapter.addFrag(new EightFragment(), getString(R.string.mass));
-        adapter.addFrag(new NineFragment(), getString(R.string.plane_angel));
-        adapter.addFrag(new TenFragment(), getString(R.string.pressure));
-        adapter.addFrag(new ElevenFragment(), getString(R.string.speed));
-        adapter.addFrag(new TwelveFragment(), getString(R.string.temperature));
-        adapter.addFrag(new ThirteenFragment(), getString(R.string.time));
-        adapter.addFrag(new FourteenFragment(), getString(R.string.volume));
+        adapter.addFrag(new AreaFragment(), getString(R.string.area));
+        adapter.addFrag(new DataTransferRateFragment(), getString(R.string.data_transfer_rate));
+        adapter.addFrag(new DigitalStorageFragment(), getString(R.string.digital_storage));
+        adapter.addFrag(new EnergyFragment(), getString(R.string.energy));
+        adapter.addFrag(new FrequencyFragment(), getString(R.string.frequency));
+        adapter.addFrag(new FuelEconomyFragment(), getString(R.string.fuel_economy));
+        adapter.addFrag(new LengthFragment(), getString(R.string.length));
+        adapter.addFrag(new MassFragment(), getString(R.string.mass));
+        adapter.addFrag(new PlaneAngleFragment(), getString(R.string.plane_angel));
+        adapter.addFrag(new PressureFragment(), getString(R.string.pressure));
+        adapter.addFrag(new SpeedFragment(), getString(R.string.speed));
+        adapter.addFrag(new TemperatureFragment(), getString(R.string.temperature));
+        adapter.addFrag(new TimeFragment(), getString(R.string.time));
+        adapter.addFrag(new VolumeFragment(), getString(R.string.volume));
         viewPager.setAdapter(adapter);
     }
 
