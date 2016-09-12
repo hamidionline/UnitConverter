@@ -412,6 +412,422 @@ public class VolumeFragment extends Fragment {
             }
         });
 
+        litre.addTextChangedListener(new TextWatcher() {
+            int charCount = 0;
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                charCount = count;
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (litre.isFocused()) {
+                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                        usliquidgallon.setText(String.valueOf((Double.parseDouble(s.toString()) / 3.785411784)));
+                        usliquidquart.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.94635294599999995904));
+                        usliquidpint.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.47317647299999997952));
+                        uslegalcup.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.23658823649999998976));
+                        usfluidounce.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.029573529562499997696));
+                        ustablespoon.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.014786764781249998848));
+                        usteaspoon.setText(String.valueOf((Double.parseDouble(s.toString()) / 0.004928921593749999616)));
+                        millilitre.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000));
+                        imperialgallon.setText(String.valueOf(Double.parseDouble(s.toString()) / 4.546091879));
+                        imperialquant.setText(String.valueOf(Double.parseDouble(s.toString()) / 1.13652296975));
+                        imperialpint.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.56826148487499988992));
+                        imperialfluidounce.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.028413074243749994496));
+                        imperialtablespoon.setText(String.valueOf((Double.parseDouble(s.toString()) / 0.017758171402343747584)));
+                        imperialteaspoon.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.005919390467447916134));
+                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
+                    } else {
+                        usliquidgallon.getText().clear();
+                        usliquidquart.getText().clear();
+                        usliquidpint.getText().clear();
+                        uslegalcup.getText().clear();
+                        usfluidounce.getText().clear();
+                        ustablespoon.getText().clear();
+                        usteaspoon.getText().clear();
+                        millilitre.getText().clear();
+                        imperialgallon.getText().clear();
+                        imperialquant.getText().clear();
+                        imperialpint.getText().clear();
+                        imperialfluidounce.getText().clear();
+                        imperialtablespoon.getText().clear();
+                        imperialteaspoon.getText().clear();
+                    }
+                }
+            }
+        });
+
+        millilitre.addTextChangedListener(new TextWatcher() {
+            int charCount = 0;
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                charCount = count;
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (millilitre.isFocused()) {
+                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                        usliquidgallon.setText(String.valueOf((Double.parseDouble(s.toString()) / 3785.411784)));
+                        usliquidquart.setText(String.valueOf(Double.parseDouble(s.toString()) / 946.35294599999995904));
+                        usliquidpint.setText(String.valueOf(Double.parseDouble(s.toString()) / 473.17647299999997952));
+                        uslegalcup.setText(String.valueOf(Double.parseDouble(s.toString()) / 236.58823649999998976));
+                        usfluidounce.setText(String.valueOf(Double.parseDouble(s.toString()) / 29.573529562499997696));
+                        ustablespoon.setText(String.valueOf(Double.parseDouble(s.toString()) / 14.786764781249998848));
+                        usteaspoon.setText(String.valueOf((Double.parseDouble(s.toString()) / 4.928921593749999616)));
+                        litre.setText(String.valueOf(Double.parseDouble(s.toString()) / 1000));
+                        imperialgallon.setText(String.valueOf(Double.parseDouble(s.toString()) / 4546.091879));
+                        imperialquant.setText(String.valueOf(Double.parseDouble(s.toString()) / 1136.52296975));
+                        imperialpint.setText(String.valueOf(Double.parseDouble(s.toString()) / 568.26148487499988992));
+                        imperialfluidounce.setText(String.valueOf(Double.parseDouble(s.toString()) / 28.413074243749994496));
+                        imperialtablespoon.setText(String.valueOf((Double.parseDouble(s.toString()) / 17.758171402343747584)));
+                        imperialteaspoon.setText(String.valueOf(Double.parseDouble(s.toString()) / 5.9193904674479161344));
+                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
+                    } else {
+                        usliquidgallon.getText().clear();
+                        usliquidquart.getText().clear();
+                        usliquidpint.getText().clear();
+                        uslegalcup.getText().clear();
+                        usfluidounce.getText().clear();
+                        ustablespoon.getText().clear();
+                        usteaspoon.getText().clear();
+                        litre.getText().clear();
+                        imperialgallon.getText().clear();
+                        imperialquant.getText().clear();
+                        imperialpint.getText().clear();
+                        imperialfluidounce.getText().clear();
+                        imperialtablespoon.getText().clear();
+                        imperialteaspoon.getText().clear();
+                    }
+                }
+            }
+        });
+
+        imperialgallon.addTextChangedListener(new TextWatcher() {
+            int charCount = 0;
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                charCount = count;
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (imperialgallon.isFocused()) {
+                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                        usliquidgallon.setText(String.valueOf((Double.parseDouble(s.toString()) / 0.83267384046639071232)));
+                        usliquidquart.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.20816846011659767808));
+                        usliquidpint.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.10408423005829883904));
+                        uslegalcup.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.052042115029149417472));
+                        usfluidounce.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.006505264378643677184));
+                        ustablespoon.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.003252632189321838592));
+                        usteaspoon.setText(String.valueOf((Double.parseDouble(s.toString()) / 0.00108421072977394606)));
+                        litre.setText(String.valueOf(Double.parseDouble(s.toString()) * 4.546091879));
+                        millilitre.setText(String.valueOf(Double.parseDouble(s.toString()) * 4546.091879));
+                        imperialquant.setText(String.valueOf(Double.parseDouble(s.toString()) * 4));
+                        imperialpint.setText(String.valueOf(Double.parseDouble(s.toString()) * 8));
+                        imperialfluidounce.setText(String.valueOf(Double.parseDouble(s.toString()) * 160));
+                        imperialtablespoon.setText(String.valueOf((Double.parseDouble(s.toString()) * 256)));
+                        imperialteaspoon.setText(String.valueOf(Double.parseDouble(s.toString()) * 768));
+                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
+                    } else {
+                        usliquidgallon.getText().clear();
+                        usliquidquart.getText().clear();
+                        usliquidpint.getText().clear();
+                        uslegalcup.getText().clear();
+                        usfluidounce.getText().clear();
+                        ustablespoon.getText().clear();
+                        usteaspoon.getText().clear();
+                        litre.getText().clear();
+                        millilitre.getText().clear();
+                        imperialquant.getText().clear();
+                        imperialpint.getText().clear();
+                        imperialfluidounce.getText().clear();
+                        imperialtablespoon.getText().clear();
+                        imperialteaspoon.getText().clear();
+                    }
+                }
+            }
+        });
+
+        imperialquant.addTextChangedListener(new TextWatcher() {
+            int charCount = 0;
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                charCount = count;
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (imperialquant.isFocused()) {
+                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                        usliquidgallon.setText(String.valueOf((Double.parseDouble(s.toString()) / 3.3306953618655629312)));
+                        usliquidquart.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.83267384046639071232));
+                        usliquidpint.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.41633692023319535616));
+                        uslegalcup.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.20816846011659767808));
+                        usfluidounce.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.026021057514574708736));
+                        ustablespoon.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.013010528757287354368));
+                        usteaspoon.setText(String.valueOf((Double.parseDouble(s.toString()) / 0.004336842919095784243)));
+                        litre.setText(String.valueOf(Double.parseDouble(s.toString()) * 1.13652296975));
+                        millilitre.setText(String.valueOf(Double.parseDouble(s.toString()) * 1136.52296975));
+                        imperialgallon.setText(String.valueOf(Double.parseDouble(s.toString()) / 4));
+                        imperialpint.setText(String.valueOf(Double.parseDouble(s.toString()) * 2));
+                        imperialfluidounce.setText(String.valueOf(Double.parseDouble(s.toString()) * 40));
+                        imperialtablespoon.setText(String.valueOf((Double.parseDouble(s.toString()) * 64)));
+                        imperialteaspoon.setText(String.valueOf(Double.parseDouble(s.toString()) * 192));
+                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
+                    } else {
+                        usliquidgallon.getText().clear();
+                        usliquidquart.getText().clear();
+                        usliquidpint.getText().clear();
+                        uslegalcup.getText().clear();
+                        usfluidounce.getText().clear();
+                        ustablespoon.getText().clear();
+                        usteaspoon.getText().clear();
+                        litre.getText().clear();
+                        millilitre.getText().clear();
+                        imperialgallon.getText().clear();
+                        imperialpint.getText().clear();
+                        imperialfluidounce.getText().clear();
+                        imperialtablespoon.getText().clear();
+                        imperialteaspoon.getText().clear();
+                    }
+                }
+            }
+        });
+
+        imperialpint.addTextChangedListener(new TextWatcher() {
+            int charCount = 0;
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                charCount = count;
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (imperialpint.isFocused()) {
+                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                        usliquidgallon.setText(String.valueOf((Double.parseDouble(s.toString()) / 6.6613907237311258624)));
+                        usliquidquart.setText(String.valueOf(Double.parseDouble(s.toString()) / 1.6653476809327814656));
+                        usliquidpint.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.83267384046639071232));
+                        uslegalcup.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.41633692023319535616));
+                        usfluidounce.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.052042115029149417472));
+                        ustablespoon.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.026021057514574708736));
+                        usteaspoon.setText(String.valueOf((Double.parseDouble(s.toString()) / 0.008673685838191568486)));
+                        litre.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.56826148487499988992));
+                        millilitre.setText(String.valueOf(Double.parseDouble(s.toString()) * 568.26148487499988992));
+                        imperialgallon.setText(String.valueOf(Double.parseDouble(s.toString()) / 8));
+                        imperialquant.setText(String.valueOf(Double.parseDouble(s.toString()) / 2));
+                        imperialfluidounce.setText(String.valueOf(Double.parseDouble(s.toString()) * 20));
+                        imperialtablespoon.setText(String.valueOf((Double.parseDouble(s.toString()) * 32)));
+                        imperialteaspoon.setText(String.valueOf(Double.parseDouble(s.toString()) * 96));
+                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
+                    } else {
+                        usliquidgallon.getText().clear();
+                        usliquidquart.getText().clear();
+                        usliquidpint.getText().clear();
+                        uslegalcup.getText().clear();
+                        usfluidounce.getText().clear();
+                        ustablespoon.getText().clear();
+                        usteaspoon.getText().clear();
+                        litre.getText().clear();
+                        millilitre.getText().clear();
+                        imperialgallon.getText().clear();
+                        imperialquant.getText().clear();
+                        imperialfluidounce.getText().clear();
+                        imperialtablespoon.getText().clear();
+                        imperialteaspoon.getText().clear();
+                    }
+                }
+            }
+        });
+
+        imperialfluidounce.addTextChangedListener(new TextWatcher() {
+            int charCount = 0;
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                charCount = count;
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (imperialfluidounce.isFocused()) {
+                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                        usliquidgallon.setText(String.valueOf((Double.parseDouble(s.toString()) / 133.22781447462252544)));
+                        usliquidquart.setText(String.valueOf(Double.parseDouble(s.toString()) / 33.306953618655629312));
+                        usliquidpint.setText(String.valueOf(Double.parseDouble(s.toString()) / 16.653476809327814656));
+                        uslegalcup.setText(String.valueOf(Double.parseDouble(s.toString()) / 8.3267384046639071232));
+                        usfluidounce.setText(String.valueOf(Double.parseDouble(s.toString()) / 1.0408423005829883904));
+                        ustablespoon.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.52042115029149417472));
+                        usteaspoon.setText(String.valueOf((Double.parseDouble(s.toString()) / 0.1734737167638313984)));
+                        litre.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.028413074243749994496));
+                        millilitre.setText(String.valueOf(Double.parseDouble(s.toString()) * 28.413074243749994496));
+                        imperialgallon.setText(String.valueOf(Double.parseDouble(s.toString()) / 160));
+                        imperialquant.setText(String.valueOf(Double.parseDouble(s.toString()) / 40));
+                        imperialpint.setText(String.valueOf(Double.parseDouble(s.toString()) / 20));
+                        imperialtablespoon.setText(String.valueOf((Double.parseDouble(s.toString()) * 1.6)));
+                        imperialteaspoon.setText(String.valueOf(Double.parseDouble(s.toString()) * 4.8));
+                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
+                    } else {
+                        usliquidgallon.getText().clear();
+                        usliquidquart.getText().clear();
+                        usliquidpint.getText().clear();
+                        uslegalcup.getText().clear();
+                        usfluidounce.getText().clear();
+                        ustablespoon.getText().clear();
+                        usteaspoon.getText().clear();
+                        litre.getText().clear();
+                        millilitre.getText().clear();
+                        imperialgallon.getText().clear();
+                        imperialquant.getText().clear();
+                        imperialpint.getText().clear();
+                        imperialtablespoon.getText().clear();
+                        imperialteaspoon.getText().clear();
+                    }
+                }
+            }
+        });
+
+        imperialtablespoon.addTextChangedListener(new TextWatcher() {
+            int charCount = 0;
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                charCount = count;
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (imperialtablespoon.isFocused()) {
+                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                        usliquidgallon.setText(String.valueOf((Double.parseDouble(s.toString()) / 213.16450315939602432)));
+                        usliquidquart.setText(String.valueOf(Double.parseDouble(s.toString()) / 53.291125789849001984));
+                        usliquidpint.setText(String.valueOf(Double.parseDouble(s.toString()) / 26.645562894924500992));
+                        uslegalcup.setText(String.valueOf(Double.parseDouble(s.toString()) / 13.322781447462250496));
+                        usfluidounce.setText(String.valueOf(Double.parseDouble(s.toString()) / 1.6653476809327814656));
+                        ustablespoon.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.83267384046639071232));
+                        usteaspoon.setText(String.valueOf((Double.parseDouble(s.toString()) / 0.27755794682213023744)));
+                        litre.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.017758171402343747584));
+                        millilitre.setText(String.valueOf(Double.parseDouble(s.toString()) * 17.758171402343747584));
+                        imperialgallon.setText(String.valueOf(Double.parseDouble(s.toString()) / 256));
+                        imperialquant.setText(String.valueOf(Double.parseDouble(s.toString()) / 64));
+                        imperialpint.setText(String.valueOf(Double.parseDouble(s.toString()) / 32));
+                        imperialfluidounce.setText(String.valueOf((Double.parseDouble(s.toString()) / 1.6)));
+                        imperialteaspoon.setText(String.valueOf(Double.parseDouble(s.toString()) * 3));
+                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
+                    } else {
+                        usliquidgallon.getText().clear();
+                        usliquidquart.getText().clear();
+                        usliquidpint.getText().clear();
+                        uslegalcup.getText().clear();
+                        usfluidounce.getText().clear();
+                        ustablespoon.getText().clear();
+                        usteaspoon.getText().clear();
+                        litre.getText().clear();
+                        millilitre.getText().clear();
+                        imperialgallon.getText().clear();
+                        imperialquant.getText().clear();
+                        imperialpint.getText().clear();
+                        imperialfluidounce.getText().clear();
+                        imperialteaspoon.getText().clear();
+                    }
+                }
+            }
+        });
+
+        imperialteaspoon.addTextChangedListener(new TextWatcher() {
+            int charCount = 0;
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                charCount = count;
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (imperialteaspoon.isFocused()) {
+                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                        usliquidgallon.setText(String.valueOf((Double.parseDouble(s.toString()) / 639.49350947818807296)));
+                        usliquidquart.setText(String.valueOf(Double.parseDouble(s.toString()) / 159.87337736954701824));
+                        usliquidpint.setText(String.valueOf(Double.parseDouble(s.toString()) / 79.936688684773507072));
+                        uslegalcup.setText(String.valueOf(Double.parseDouble(s.toString()) / 39.968344342386753536));
+                        usfluidounce.setText(String.valueOf(Double.parseDouble(s.toString()) / 4.9960430427983437824));
+                        ustablespoon.setText(String.valueOf(Double.parseDouble(s.toString()) / 2.4980215213991718912));
+                        usteaspoon.setText(String.valueOf((Double.parseDouble(s.toString()) / 0.83267384046639071232)));
+                        litre.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.005919390467447916134));
+                        millilitre.setText(String.valueOf(Double.parseDouble(s.toString()) * 5.9193904674479161344));
+                        imperialgallon.setText(String.valueOf(Double.parseDouble(s.toString()) / 768));
+                        imperialquant.setText(String.valueOf(Double.parseDouble(s.toString()) / 192));
+                        imperialpint.setText(String.valueOf(Double.parseDouble(s.toString()) / 96));
+                        imperialfluidounce.setText(String.valueOf((Double.parseDouble(s.toString()) / 4.8)));
+                        imperialtablespoon.setText(String.valueOf(Double.parseDouble(s.toString()) / 3));
+                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
+                    } else {
+                        usliquidgallon.getText().clear();
+                        usliquidquart.getText().clear();
+                        usliquidpint.getText().clear();
+                        uslegalcup.getText().clear();
+                        usfluidounce.getText().clear();
+                        ustablespoon.getText().clear();
+                        usteaspoon.getText().clear();
+                        litre.getText().clear();
+                        millilitre.getText().clear();
+                        imperialgallon.getText().clear();
+                        imperialquant.getText().clear();
+                        imperialpint.getText().clear();
+                        imperialfluidounce.getText().clear();
+                        imperialtablespoon.getText().clear();
+                    }
+                }
+            }
+        });
+
         return view;
     }
 
