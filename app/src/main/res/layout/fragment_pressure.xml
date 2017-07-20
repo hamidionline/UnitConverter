@@ -17,7 +17,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Atmosphere"
-                android:inputType="numberDecimal" />
+                android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>
 
@@ -31,7 +31,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Bar"
-                android:inputType="numberDecimal" />
+                android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>
 
@@ -45,7 +45,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Pascal"
-                android:inputType="numberDecimal" />
+                android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>
 
@@ -59,7 +59,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Pound-force per square inch"
-                android:inputType="numberDecimal" />
+                android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>
 
@@ -73,7 +73,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Torr"
-                android:inputType="numberDecimal" />
+                android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>
 

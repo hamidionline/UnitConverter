@@ -17,7 +17,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Miles per hour"
-                android:inputType="numberDecimal" />
+                android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>
 
@@ -31,7 +31,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Foot per second"
-                android:inputType="numberDecimal" />
+                android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>
 
@@ -45,7 +45,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Metre per second"
-                android:inputType="numberDecimal" />
+                android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>
 
@@ -59,7 +59,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Kilometre per second"
-                android:inputType="numberDecimal" />
+                android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>
 
@@ -73,7 +73,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Knot"
-                android:inputType="numberDecimal" />
+                android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>
 
