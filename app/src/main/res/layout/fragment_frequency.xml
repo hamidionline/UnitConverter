@@ -1,62 +1,67 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_layout_hertz"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/input_hertz"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_hertz"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Hertz"
-            android:inputType="numberDecimal" />
+            android:layout_height="wrap_content">
 
-    </android.support.design.widget.TextInputLayout>
+            <EditText
+                android:id="@+id/input_hertz"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Hertz"
+                android:inputType="numberDecimal" />
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_layout_kilohertz"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/input_kilohertz"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_kilohertz"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Kilohertz"
-            android:inputType="numberDecimal" />
+            android:layout_height="wrap_content">
 
-    </android.support.design.widget.TextInputLayout>
+            <EditText
+                android:id="@+id/input_kilohertz"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Kilohertz"
+                android:inputType="numberDecimal" />
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_layout_megahertz"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/input_megahertz"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_megahertz"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Megahertz"
-            android:inputType="numberDecimal" />
+            android:layout_height="wrap_content">
 
-    </android.support.design.widget.TextInputLayout>
+            <EditText
+                android:id="@+id/input_megahertz"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Megahertz"
+                android:inputType="numberDecimal" />
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_layout_gigahertz"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/input_gigahertz"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_gigahertz"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Gigahertz"
-            android:inputType="numberDecimal" />
+            android:layout_height="wrap_content">
 
-    </android.support.design.widget.TextInputLayout>
+            <EditText
+                android:id="@+id/input_gigahertz"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Gigahertz"
+                android:inputType="numberDecimal" />
 
-</LinearLayout>
+        </android.support.design.widget.TextInputLayout>
+
+    </LinearLayout>
+</ScrollView>

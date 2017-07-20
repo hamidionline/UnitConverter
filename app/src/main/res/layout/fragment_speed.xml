@@ -1,76 +1,81 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_layout_miles_per_hour"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/input_miles_per_hour"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_miles_per_hour"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Miles per hour"
-            android:inputType="numberDecimal" />
+            android:layout_height="wrap_content">
 
-    </android.support.design.widget.TextInputLayout>
+            <EditText
+                android:id="@+id/input_miles_per_hour"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Miles per hour"
+                android:inputType="numberDecimal" />
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_layout_foot_per_second"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/input_foot_per_second"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_foot_per_second"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Foot per second"
-            android:inputType="numberDecimal" />
+            android:layout_height="wrap_content">
 
-    </android.support.design.widget.TextInputLayout>
+            <EditText
+                android:id="@+id/input_foot_per_second"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Foot per second"
+                android:inputType="numberDecimal" />
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_layout_metre_per_second"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/input_metre_per_second"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_metre_per_second"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Metre per second"
-            android:inputType="numberDecimal" />
+            android:layout_height="wrap_content">
 
-    </android.support.design.widget.TextInputLayout>
+            <EditText
+                android:id="@+id/input_metre_per_second"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Metre per second"
+                android:inputType="numberDecimal" />
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_layout_kilometre_per_second"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/input_kilometre_per_second"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_kilometre_per_second"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Kilometre per second"
-            android:inputType="numberDecimal" />
+            android:layout_height="wrap_content">
 
-    </android.support.design.widget.TextInputLayout>
+            <EditText
+                android:id="@+id/input_kilometre_per_second"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Kilometre per second"
+                android:inputType="numberDecimal" />
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_layout_knot"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/input_knot"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_knot"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Knot"
-            android:inputType="numberDecimal" />
+            android:layout_height="wrap_content">
 
-    </android.support.design.widget.TextInputLayout>
+            <EditText
+                android:id="@+id/input_knot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Knot"
+                android:inputType="numberDecimal" />
 
-</LinearLayout>
+        </android.support.design.widget.TextInputLayout>
+
+    </LinearLayout>
+</ScrollView>

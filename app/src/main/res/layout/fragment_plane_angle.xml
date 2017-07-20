@@ -1,90 +1,95 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_layout_angular_mill"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/input_angular_mill"
+        <!--<android.support.design.widget.TextInputLayout-->
+        <!--android:id="@+id/input_layout_angular_mill"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
+
+        <!--<EditText-->
+        <!--android:id="@+id/input_angular_mill"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:hint="Angular mil"-->
+        <!--android:inputType="numberDecimal" />-->
+
+        <!--</android.support.design.widget.TextInputLayout>-->
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_degree"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Angular mil"
-            android:inputType="numberDecimal" />
+            android:layout_height="wrap_content">
 
-    </android.support.design.widget.TextInputLayout>
+            <EditText
+                android:id="@+id/input_degree"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Degree"
+                android:inputType="numberDecimal" />
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_layout_degree"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/input_degree"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_gradian"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Degree"
-            android:inputType="numberDecimal" />
+            android:layout_height="wrap_content">
 
-    </android.support.design.widget.TextInputLayout>
+            <EditText
+                android:id="@+id/input_gradian"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Gradian"
+                android:inputType="numberDecimal" />
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_layout_gradian"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/input_gradian"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_minute_of_arc"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Gradian"
-            android:inputType="numberDecimal" />
+            android:layout_height="wrap_content">
 
-    </android.support.design.widget.TextInputLayout>
+            <EditText
+                android:id="@+id/input_minute_of_arc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Minute of arc"
+                android:inputType="numberDecimal" />
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_layout_minute_of_arc"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/input_minute_of_arc"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_radian"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Minute of arc"
-            android:inputType="numberDecimal" />
+            android:layout_height="wrap_content">
 
-    </android.support.design.widget.TextInputLayout>
+            <EditText
+                android:id="@+id/input_radian"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Radian"
+                android:inputType="numberDecimal" />
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_layout_radian"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/input_radian"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_second_of_arc"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Radian"
-            android:inputType="numberDecimal" />
+            android:layout_height="wrap_content">
 
-    </android.support.design.widget.TextInputLayout>
+            <EditText
+                android:id="@+id/input_second_of_arc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Second of arc"
+                android:inputType="numberDecimal" />
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_layout_second_of_arc"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/input_second_of_arc"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Second of arc"
-            android:inputType="numberDecimal" />
-
-    </android.support.design.widget.TextInputLayout>
-
-</LinearLayout>
+    </LinearLayout>
+</ScrollView>

@@ -1,272 +1,277 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_layout_us_liquid_gallon"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/input_us_liquid_gallon"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_us_liquid_gallon"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="US liquid gallon"
-            android:inputType="numberDecimal" />
+            android:layout_height="wrap_content">
 
-    </android.support.design.widget.TextInputLayout>
+            <EditText
+                android:id="@+id/input_us_liquid_gallon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="US liquid gallon"
+                android:inputType="numberDecimal" />
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_layout_us_liquid_quart"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/input_us_liquid_quart"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_us_liquid_quart"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="US liquid quart"
-            android:inputType="numberDecimal" />
+            android:layout_height="wrap_content">
 
-    </android.support.design.widget.TextInputLayout>
+            <EditText
+                android:id="@+id/input_us_liquid_quart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="US liquid quart"
+                android:inputType="numberDecimal" />
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_layout_us_liquid_pint"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/input_us_liquid_pint"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_us_liquid_pint"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="US liquid pint"
-            android:inputType="numberDecimal" />
+            android:layout_height="wrap_content">
 
-    </android.support.design.widget.TextInputLayout>
+            <EditText
+                android:id="@+id/input_us_liquid_pint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="US liquid pint"
+                android:inputType="numberDecimal" />
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_layout_us_legal_cup"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/input_us_legal_cup"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_us_legal_cup"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="US legal cup"
-            android:inputType="numberDecimal" />
+            android:layout_height="wrap_content">
 
-    </android.support.design.widget.TextInputLayout>
+            <EditText
+                android:id="@+id/input_us_legal_cup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="US legal cup"
+                android:inputType="numberDecimal" />
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_layout_us_fluid_ounce"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/input_us_fluid_ounce"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_us_fluid_ounce"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="US fluid ounce"
-            android:inputType="numberDecimal" />
+            android:layout_height="wrap_content">
 
-    </android.support.design.widget.TextInputLayout>
+            <EditText
+                android:id="@+id/input_us_fluid_ounce"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="US fluid ounce"
+                android:inputType="numberDecimal" />
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_layout_us_tablespoon"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/input_us_tablespoon"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_us_tablespoon"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="US tablespoon"
-            android:inputType="numberDecimal" />
+            android:layout_height="wrap_content">
 
-    </android.support.design.widget.TextInputLayout>
+            <EditText
+                android:id="@+id/input_us_tablespoon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="US tablespoon"
+                android:inputType="numberDecimal" />
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_layout_us_teaspoon"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/input_us_teaspoon"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_us_teaspoon"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="US teaspoon"
-            android:inputType="numberDecimal" />
+            android:layout_height="wrap_content">
 
-    </android.support.design.widget.TextInputLayout>
+            <EditText
+                android:id="@+id/input_us_teaspoon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="US teaspoon"
+                android:inputType="numberDecimal" />
 
-    <!--<android.support.design.widget.TextInputLayout-->
+        </android.support.design.widget.TextInputLayout>
+
+        <!--<android.support.design.widget.TextInputLayout-->
         <!--android:id="@+id/input_layout_cubic_metre"-->
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="wrap_content">-->
 
         <!--<EditText-->
-            <!--android:id="@+id/input_cubic_metre"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:hint="Cubic metre"-->
-            <!--android:inputType="numberDecimal" />-->
+        <!--android:id="@+id/input_cubic_metre"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:hint="Cubic metre"-->
+        <!--android:inputType="numberDecimal" />-->
 
-    <!--</android.support.design.widget.TextInputLayout>-->
+        <!--</android.support.design.widget.TextInputLayout>-->
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_layout_litre"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <EditText
-            android:id="@+id/input_litre"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_litre"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Litre"
-            android:inputType="numberDecimal" />
+            android:layout_height="wrap_content">
 
-    </android.support.design.widget.TextInputLayout>
+            <EditText
+                android:id="@+id/input_litre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Litre"
+                android:inputType="numberDecimal" />
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_layout_millilitre"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/input_millilitre"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_millilitre"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Millilitre"
-            android:inputType="numberDecimal" />
+            android:layout_height="wrap_content">
 
-    </android.support.design.widget.TextInputLayout>
+            <EditText
+                android:id="@+id/input_millilitre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Millilitre"
+                android:inputType="numberDecimal" />
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_layout_imperial_gallon"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/input_imperial_gallon"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_imperial_gallon"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Imperial gallon"
-            android:inputType="numberDecimal" />
+            android:layout_height="wrap_content">
 
-    </android.support.design.widget.TextInputLayout>
+            <EditText
+                android:id="@+id/input_imperial_gallon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Imperial gallon"
+                android:inputType="numberDecimal" />
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_layout_imperial_quart"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/input_imperial_quart"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_imperial_quart"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Imperial quart"
-            android:inputType="numberDecimal" />
+            android:layout_height="wrap_content">
 
-    </android.support.design.widget.TextInputLayout>
+            <EditText
+                android:id="@+id/input_imperial_quart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Imperial quart"
+                android:inputType="numberDecimal" />
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_layout_imperial_pint"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/input_imperial_pint"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_imperial_pint"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Imperial pint"
-            android:inputType="numberDecimal" />
+            android:layout_height="wrap_content">
 
-    </android.support.design.widget.TextInputLayout>
+            <EditText
+                android:id="@+id/input_imperial_pint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Imperial pint"
+                android:inputType="numberDecimal" />
 
-    <!--<android.support.design.widget.TextInputLayout-->
+        </android.support.design.widget.TextInputLayout>
+
+        <!--<android.support.design.widget.TextInputLayout-->
         <!--android:id="@+id/input_layout_imperial_cup"-->
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="wrap_content">-->
 
         <!--<EditText-->
-            <!--android:id="@+id/input_imperial_cup"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:hint="Imperial cup"-->
-            <!--android:inputType="numberDecimal" />-->
+        <!--android:id="@+id/input_imperial_cup"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:hint="Imperial cup"-->
+        <!--android:inputType="numberDecimal" />-->
 
-    <!--</android.support.design.widget.TextInputLayout>-->
+        <!--</android.support.design.widget.TextInputLayout>-->
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_layout_imperial_fluid_ounce"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <EditText
-            android:id="@+id/input_imperial_fluid_ounce"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_imperial_fluid_ounce"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Imperial fluid ounce"
-            android:inputType="numberDecimal" />
+            android:layout_height="wrap_content">
 
-    </android.support.design.widget.TextInputLayout>
+            <EditText
+                android:id="@+id/input_imperial_fluid_ounce"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Imperial fluid ounce"
+                android:inputType="numberDecimal" />
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_layout_imperial_tablespoon"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/input_imperial_tablespoon"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_imperial_tablespoon"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Imperial tablespoon"
-            android:inputType="numberDecimal" />
+            android:layout_height="wrap_content">
 
-    </android.support.design.widget.TextInputLayout>
+            <EditText
+                android:id="@+id/input_imperial_tablespoon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Imperial tablespoon"
+                android:inputType="numberDecimal" />
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_layout_imperial_teaspoon"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/input_imperial_teaspoon"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_imperial_teaspoon"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Imperial teaspoon"
-            android:inputType="numberDecimal" />
+            android:layout_height="wrap_content">
 
-    </android.support.design.widget.TextInputLayout>
+            <EditText
+                android:id="@+id/input_imperial_teaspoon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Imperial teaspoon"
+                android:inputType="numberDecimal" />
 
-    <!--<android.support.design.widget.TextInputLayout-->
+        </android.support.design.widget.TextInputLayout>
+
+        <!--<android.support.design.widget.TextInputLayout-->
         <!--android:id="@+id/input_layout_cubic_foot"-->
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="wrap_content">-->
 
         <!--<EditText-->
-            <!--android:id="@+id/input_cubic_foot"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:hint="Cubic foot"-->
-            <!--android:inputType="numberDecimal" />-->
+        <!--android:id="@+id/input_cubic_foot"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:hint="Cubic foot"-->
+        <!--android:inputType="numberDecimal" />-->
 
-    <!--</android.support.design.widget.TextInputLayout>-->
+        <!--</android.support.design.widget.TextInputLayout>-->
 
-    <!--<android.support.design.widget.TextInputLayout-->
+        <!--<android.support.design.widget.TextInputLayout-->
         <!--android:id="@+id/input_layout_cubic_inch"-->
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="wrap_content">-->
 
         <!--<EditText-->
-            <!--android:id="@+id/input_cubic_inch"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:hint="Cubic inch"-->
-            <!--android:inputType="numberDecimal" />-->
+        <!--android:id="@+id/input_cubic_inch"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:hint="Cubic inch"-->
+        <!--android:inputType="numberDecimal" />-->
 
-    <!--</android.support.design.widget.TextInputLayout>-->
+        <!--</android.support.design.widget.TextInputLayout>-->
 
-</LinearLayout>
+    </LinearLayout>
+</ScrollView>

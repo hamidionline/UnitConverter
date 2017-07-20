@@ -1,146 +1,151 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_layout_tonne"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/input_tonne"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_tonne"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Tonne"
-            android:inputType="numberDecimal" />
+            android:layout_height="wrap_content">
 
-    </android.support.design.widget.TextInputLayout>
+            <EditText
+                android:id="@+id/input_tonne"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Tonne"
+                android:inputType="numberDecimal" />
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_layout_kilogram"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/input_kilogram"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_kilogram"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Kilogram"
-            android:inputType="numberDecimal" />
+            android:layout_height="wrap_content">
 
-    </android.support.design.widget.TextInputLayout>
+            <EditText
+                android:id="@+id/input_kilogram"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Kilogram"
+                android:inputType="numberDecimal" />
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_layout_gram"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/input_gram"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_gram"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Gram"
-            android:inputType="numberDecimal" />
+            android:layout_height="wrap_content">
 
-    </android.support.design.widget.TextInputLayout>
+            <EditText
+                android:id="@+id/input_gram"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Gram"
+                android:inputType="numberDecimal" />
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_layout_milligram"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/input_milligram"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_milligram"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Milligram"
-            android:inputType="numberDecimal" />
+            android:layout_height="wrap_content">
 
-    </android.support.design.widget.TextInputLayout>
+            <EditText
+                android:id="@+id/input_milligram"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Milligram"
+                android:inputType="numberDecimal" />
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_layout_microgram"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/input_microgram"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_microgram"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Microgram"
-            android:inputType="numberDecimal" />
+            android:layout_height="wrap_content">
 
-    </android.support.design.widget.TextInputLayout>
+            <EditText
+                android:id="@+id/input_microgram"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Microgram"
+                android:inputType="numberDecimal" />
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_layout_imperial_ton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/input_imperial_ton"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_imperial_ton"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Imperial ton"
-            android:inputType="numberDecimal" />
+            android:layout_height="wrap_content">
 
-    </android.support.design.widget.TextInputLayout>
+            <EditText
+                android:id="@+id/input_imperial_ton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Imperial ton"
+                android:inputType="numberDecimal" />
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_layout_us_ton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/input_us_ton"
+        <!--<android.support.design.widget.TextInputLayout-->
+        <!--android:id="@+id/input_layout_us_ton"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
+
+        <!--<EditText-->
+        <!--android:id="@+id/input_us_ton"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:hint="US ton"-->
+        <!--android:inputType="numberDecimal" />-->
+
+        <!--</android.support.design.widget.TextInputLayout>-->
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_stone"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="US ton"
-            android:inputType="numberDecimal" />
+            android:layout_height="wrap_content">
 
-    </android.support.design.widget.TextInputLayout>
+            <EditText
+                android:id="@+id/input_stone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Stone"
+                android:inputType="numberDecimal" />
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_layout_stone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/input_stone"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_pound"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Stone"
-            android:inputType="numberDecimal" />
+            android:layout_height="wrap_content">
 
-    </android.support.design.widget.TextInputLayout>
+            <EditText
+                android:id="@+id/input_pound"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Pound"
+                android:inputType="numberDecimal" />
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_layout_pound"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/input_pound"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_ounce"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Pound"
-            android:inputType="numberDecimal" />
+            android:layout_height="wrap_content">
 
-    </android.support.design.widget.TextInputLayout>
+            <EditText
+                android:id="@+id/input_ounce"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ounce"
+                android:inputType="numberDecimal" />
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_layout_ounce"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/input_ounce"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Ounce"
-            android:inputType="numberDecimal" />
-
-    </android.support.design.widget.TextInputLayout>
-
-</LinearLayout>
+    </LinearLayout>
+</ScrollView>
