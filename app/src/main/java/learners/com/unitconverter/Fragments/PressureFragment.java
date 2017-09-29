@@ -1,4 +1,4 @@
-package learners.com.unitconverter;
+package learners.com.unitconverter.Fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,10 +9,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 
+import learners.com.unitconverter.R;
 
-public class PlaneAngleFragment extends Fragment {
 
-    public PlaneAngleFragment() {
+public class PressureFragment extends Fragment {
+
+    public PressureFragment() {
         // Required empty public constructor
     }
 
@@ -25,16 +27,15 @@ public class PlaneAngleFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_plane_angle, container, false);
+        View view = inflater.inflate(R.layout.fragment_pressure, container, false);
 
-//        final EditText angularmill = (EditText) view.findViewById(R.id.input_angular_mill);
-        final EditText degree = (EditText) view.findViewById(R.id.input_degree);
-        final EditText gradian = (EditText) view.findViewById(R.id.input_gradian);
-        final EditText minuteofarc = (EditText) view.findViewById(R.id.input_minute_of_arc);
-        final EditText radian = (EditText) view.findViewById(R.id.input_radian);
-        final EditText secondofarc = (EditText) view.findViewById(R.id.input_second_of_arc);
+        final EditText atmosphere = (EditText) view.findViewById(R.id.input_atmosphere);
+        final EditText bar = (EditText) view.findViewById(R.id.input_bar);
+        final EditText pascal = (EditText) view.findViewById(R.id.input_pascal);
+        final EditText poundforcepersquareinch = (EditText) view.findViewById(R.id.input_pound_force_per_square_inch);
+        final EditText torr = (EditText) view.findViewById(R.id.input_torr);
 
-        degree.addTextChangedListener(new TextWatcher() {
+        atmosphere.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
 
             @Override
@@ -49,24 +50,24 @@ public class PlaneAngleFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (degree.isFocused()) {
+                if (atmosphere.isFocused()) {
                     if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
-                        gradian.setText(String.valueOf(Double.parseDouble(s.toString()) * 1.11111));
-                        minuteofarc.setText(String.valueOf(Double.parseDouble(s.toString()) * 60));
-                        radian.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.0174533));
-                        secondofarc.setText(String.valueOf(Double.parseDouble(s.toString()) * 3600));
+                        bar.setText(String.valueOf((Double.parseDouble(s.toString()) * 1.01325)));
+                        pascal.setText(String.valueOf(Double.parseDouble(s.toString()) * 101325));
+                        poundforcepersquareinch.setText(String.valueOf(Double.parseDouble(s.toString()) * 14.6959));
+                        torr.setText(String.valueOf(Double.parseDouble(s.toString()) * 760));
                     } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
                     } else {
-                        gradian.getText().clear();
-                        minuteofarc.getText().clear();
-                        radian.getText().clear();
-                        secondofarc.getText().clear();
+                        bar.getText().clear();
+                        pascal.getText().clear();
+                        poundforcepersquareinch.getText().clear();
+                        torr.getText().clear();
                     }
                 }
             }
         });
 
-        gradian.addTextChangedListener(new TextWatcher() {
+        bar.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
 
             @Override
@@ -81,24 +82,24 @@ public class PlaneAngleFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (gradian.isFocused()) {
+                if (bar.isFocused()) {
                     if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
-                        degree.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.9));
-                        minuteofarc.setText(String.valueOf(Double.parseDouble(s.toString()) * 54));
-                        radian.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.015708));
-                        secondofarc.setText(String.valueOf(Double.parseDouble(s.toString()) * 3240));
+                        atmosphere.setText(String.valueOf((Double.parseDouble(s.toString()) * 0.986923)));
+                        pascal.setText(String.valueOf(Double.parseDouble(s.toString()) * 100000));
+                        poundforcepersquareinch.setText(String.valueOf(Double.parseDouble(s.toString()) * 14.5038));
+                        torr.setText(String.valueOf(Double.parseDouble(s.toString()) * 750.062));
                     } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
                     } else {
-                        degree.getText().clear();
-                        minuteofarc.getText().clear();
-                        radian.getText().clear();
-                        secondofarc.getText().clear();
+                        atmosphere.getText().clear();
+                        pascal.getText().clear();
+                        poundforcepersquareinch.getText().clear();
+                        torr.getText().clear();
                     }
                 }
             }
         });
 
-        minuteofarc.addTextChangedListener(new TextWatcher() {
+        pascal.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
 
             @Override
@@ -113,24 +114,24 @@ public class PlaneAngleFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (minuteofarc.isFocused()) {
+                if (pascal.isFocused()) {
                     if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
-                        degree.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.0166667));
-                        gradian.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.0185185));
-                        radian.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000290888));
-                        secondofarc.setText(String.valueOf(Double.parseDouble(s.toString()) * 60));
+                        atmosphere.setText(String.valueOf((Double.parseDouble(s.toString()) * 0.0000048692)));
+                        bar.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00001));
+                        poundforcepersquareinch.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000145038));
+                        torr.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00750062));
                     } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
                     } else {
-                        degree.getText().clear();
-                        gradian.getText().clear();
-                        radian.getText().clear();
-                        secondofarc.getText().clear();
+                        atmosphere.getText().clear();
+                        bar.getText().clear();
+                        poundforcepersquareinch.getText().clear();
+                        torr.getText().clear();
                     }
                 }
             }
         });
 
-        radian.addTextChangedListener(new TextWatcher() {
+        poundforcepersquareinch.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
 
             @Override
@@ -145,24 +146,24 @@ public class PlaneAngleFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (radian.isFocused()) {
+                if (poundforcepersquareinch.isFocused()) {
                     if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
-                        degree.setText(String.valueOf(Double.parseDouble(s.toString()) * 57.2958));
-                        gradian.setText(String.valueOf(Double.parseDouble(s.toString()) * 63.662));
-                        minuteofarc.setText(String.valueOf(Double.parseDouble(s.toString()) * 3437.75));
-                        secondofarc.setText(String.valueOf(Double.parseDouble(s.toString()) * 206265));
+                        atmosphere.setText(String.valueOf((Double.parseDouble(s.toString()) * 0.068046)));
+                        bar.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.0689476));
+                        pascal.setText(String.valueOf(Double.parseDouble(s.toString()) * 6894.76));
+                        torr.setText(String.valueOf(Double.parseDouble(s.toString()) * 51.7149));
                     } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
                     } else {
-                        degree.getText().clear();
-                        gradian.getText().clear();
-                        minuteofarc.getText().clear();
-                        secondofarc.getText().clear();
+                        atmosphere.getText().clear();
+                        bar.getText().clear();
+                        pascal.getText().clear();
+                        torr.getText().clear();
                     }
                 }
             }
         });
 
-        secondofarc.addTextChangedListener(new TextWatcher() {
+        torr.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
 
             @Override
@@ -177,18 +178,18 @@ public class PlaneAngleFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (secondofarc.isFocused()) {
+                if (torr.isFocused()) {
                     if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
-                        degree.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000277778));
-                        gradian.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000308642));
-                        minuteofarc.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.0166667));
-                        radian.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.0000048481));
+                        atmosphere.setText(String.valueOf((Double.parseDouble(s.toString()) * 0.00131579)));
+                        bar.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00133322));
+                        pascal.setText(String.valueOf(Double.parseDouble(s.toString()) * 133.322));
+                        poundforcepersquareinch.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.0193368));
                     } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
                     } else {
-                        degree.getText().clear();
-                        gradian.getText().clear();
-                        minuteofarc.getText().clear();
-                        radian.getText().clear();
+                        atmosphere.getText().clear();
+                        bar.getText().clear();
+                        pascal.getText().clear();
+                        poundforcepersquareinch.getText().clear();
                     }
                 }
             }

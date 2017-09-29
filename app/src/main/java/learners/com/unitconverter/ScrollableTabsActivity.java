@@ -18,6 +18,21 @@ import android.view.MenuItem;
 import java.util.ArrayList;
 import java.util.List;
 
+import learners.com.unitconverter.Fragments.AreaFragment;
+import learners.com.unitconverter.Fragments.DataTransferRateFragment;
+import learners.com.unitconverter.Fragments.DigitalStorageFragment;
+import learners.com.unitconverter.Fragments.EnergyFragment;
+import learners.com.unitconverter.Fragments.FrequencyFragment;
+import learners.com.unitconverter.Fragments.FuelEconomyFragment;
+import learners.com.unitconverter.Fragments.LengthFragment;
+import learners.com.unitconverter.Fragments.MassFragment;
+import learners.com.unitconverter.Fragments.PlaneAngleFragment;
+import learners.com.unitconverter.Fragments.PressureFragment;
+import learners.com.unitconverter.Fragments.SpeedFragment;
+import learners.com.unitconverter.Fragments.TemperatureFragment;
+import learners.com.unitconverter.Fragments.TimeFragment;
+import learners.com.unitconverter.Fragments.VolumeFragment;
+
 public class ScrollableTabsActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
