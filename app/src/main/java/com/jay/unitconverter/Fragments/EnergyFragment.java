@@ -1,4 +1,4 @@
-package learners.com.unitconverter.Fragments;
+package com.jay.unitconverter.Fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,10 +9,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 
+import com.jay.unitconverter.R;
+
 import java.math.BigDecimal;
 import java.math.BigInteger;
-
-import learners.com.unitconverter.R;
 
 
 public class EnergyFragment extends Fragment {

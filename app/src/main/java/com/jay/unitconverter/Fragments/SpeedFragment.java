@@ -1,4 +1,5 @@
-package learners.com.unitconverter.Fragments;
+package com.jay.unitconverter.Fragments;
+
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,33 +10,33 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 
-import learners.com.unitconverter.R;
+import com.jay.unitconverter.R;
 
 
-public class PressureFragment extends Fragment {
+/**
+ * A simple {@link Fragment} subclass.
+ */
+public class SpeedFragment extends Fragment {
 
-    public PressureFragment() {
+
+    public SpeedFragment() {
         // Required empty public constructor
     }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_pressure, container, false);
+        View view = inflater.inflate(R.layout.fragment_speed, container, false);
 
-        final EditText atmosphere = (EditText) view.findViewById(R.id.input_atmosphere);
-        final EditText bar = (EditText) view.findViewById(R.id.input_bar);
-        final EditText pascal = (EditText) view.findViewById(R.id.input_pascal);
-        final EditText poundforcepersquareinch = (EditText) view.findViewById(R.id.input_pound_force_per_square_inch);
-        final EditText torr = (EditText) view.findViewById(R.id.input_torr);
+        final EditText milesperhour = (EditText) view.findViewById(R.id.input_miles_per_hour);
+        final EditText footpersecond = (EditText) view.findViewById(R.id.input_foot_per_second);
+        final EditText metrepersecond = (EditText) view.findViewById(R.id.input_metre_per_second);
+        final EditText kilometrepersecond = (EditText) view.findViewById(R.id.input_kilometre_per_second);
+        final EditText knot = (EditText) view.findViewById(R.id.input_knot);
 
-        atmosphere.addTextChangedListener(new TextWatcher() {
+        milesperhour.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
 
             @Override
@@ -50,24 +51,24 @@ public class PressureFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (atmosphere.isFocused()) {
+                if (milesperhour.isFocused()) {
                     if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
-                        bar.setText(String.valueOf((Double.parseDouble(s.toString()) * 1.01325)));
-                        pascal.setText(String.valueOf(Double.parseDouble(s.toString()) * 101325));
-                        poundforcepersquareinch.setText(String.valueOf(Double.parseDouble(s.toString()) * 14.6959));
-                        torr.setText(String.valueOf(Double.parseDouble(s.toString()) * 760));
+                        footpersecond.setText(String.valueOf((Double.parseDouble(s.toString()) * 1.46667)));
+                        metrepersecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.44704));
+                        kilometrepersecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 1.60934));
+                        knot.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.868976));
                     } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
                     } else {
-                        bar.getText().clear();
-                        pascal.getText().clear();
-                        poundforcepersquareinch.getText().clear();
-                        torr.getText().clear();
+                        footpersecond.getText().clear();
+                        metrepersecond.getText().clear();
+                        kilometrepersecond.getText().clear();
+                        knot.getText().clear();
                     }
                 }
             }
         });
 
-        bar.addTextChangedListener(new TextWatcher() {
+        footpersecond.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
 
             @Override
@@ -82,24 +83,24 @@ public class PressureFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (bar.isFocused()) {
+                if (footpersecond.isFocused()) {
                     if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
-                        atmosphere.setText(String.valueOf((Double.parseDouble(s.toString()) * 0.986923)));
-                        pascal.setText(String.valueOf(Double.parseDouble(s.toString()) * 100000));
-                        poundforcepersquareinch.setText(String.valueOf(Double.parseDouble(s.toString()) * 14.5038));
-                        torr.setText(String.valueOf(Double.parseDouble(s.toString()) * 750.062));
+                        milesperhour.setText(String.valueOf((Double.parseDouble(s.toString()) * 0.681818)));
+                        metrepersecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.3048));
+                        kilometrepersecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 1.09728));
+                        knot.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.592484));
                     } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
                     } else {
-                        atmosphere.getText().clear();
-                        pascal.getText().clear();
-                        poundforcepersquareinch.getText().clear();
-                        torr.getText().clear();
+                        milesperhour.getText().clear();
+                        metrepersecond.getText().clear();
+                        kilometrepersecond.getText().clear();
+                        knot.getText().clear();
                     }
                 }
             }
         });
 
-        pascal.addTextChangedListener(new TextWatcher() {
+        metrepersecond.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
 
             @Override
@@ -114,24 +115,24 @@ public class PressureFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (pascal.isFocused()) {
+                if (metrepersecond.isFocused()) {
                     if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
-                        atmosphere.setText(String.valueOf((Double.parseDouble(s.toString()) * 0.0000048692)));
-                        bar.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00001));
-                        poundforcepersquareinch.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000145038));
-                        torr.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00750062));
+                        milesperhour.setText(String.valueOf((Double.parseDouble(s.toString()) * 2.23694)));
+                        footpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 3.28084));
+                        kilometrepersecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 3.6));
+                        knot.setText(String.valueOf(Double.parseDouble(s.toString()) * 1.94384));
                     } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
                     } else {
-                        atmosphere.getText().clear();
-                        bar.getText().clear();
-                        poundforcepersquareinch.getText().clear();
-                        torr.getText().clear();
+                        milesperhour.getText().clear();
+                        footpersecond.getText().clear();
+                        kilometrepersecond.getText().clear();
+                        knot.getText().clear();
                     }
                 }
             }
         });
 
-        poundforcepersquareinch.addTextChangedListener(new TextWatcher() {
+        kilometrepersecond.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
 
             @Override
@@ -146,24 +147,24 @@ public class PressureFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (poundforcepersquareinch.isFocused()) {
+                if (kilometrepersecond.isFocused()) {
                     if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
-                        atmosphere.setText(String.valueOf((Double.parseDouble(s.toString()) * 0.068046)));
-                        bar.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.0689476));
-                        pascal.setText(String.valueOf(Double.parseDouble(s.toString()) * 6894.76));
-                        torr.setText(String.valueOf(Double.parseDouble(s.toString()) * 51.7149));
+                        milesperhour.setText(String.valueOf((Double.parseDouble(s.toString()) * 0.621371)));
+                        footpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.911344));
+                        metrepersecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.277778));
+                        knot.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.539957));
                     } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
                     } else {
-                        atmosphere.getText().clear();
-                        bar.getText().clear();
-                        pascal.getText().clear();
-                        torr.getText().clear();
+                        milesperhour.getText().clear();
+                        footpersecond.getText().clear();
+                        metrepersecond.getText().clear();
+                        knot.getText().clear();
                     }
                 }
             }
         });
 
-        torr.addTextChangedListener(new TextWatcher() {
+        knot.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
 
             @Override
@@ -178,18 +179,18 @@ public class PressureFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (torr.isFocused()) {
+                if (knot.isFocused()) {
                     if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
-                        atmosphere.setText(String.valueOf((Double.parseDouble(s.toString()) * 0.00131579)));
-                        bar.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00133322));
-                        pascal.setText(String.valueOf(Double.parseDouble(s.toString()) * 133.322));
-                        poundforcepersquareinch.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.0193368));
+                        milesperhour.setText(String.valueOf((Double.parseDouble(s.toString()) * 1.15078)));
+                        footpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 1.68781));
+                        metrepersecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.514444));
+                        kilometrepersecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 1.852));
                     } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
                     } else {
-                        atmosphere.getText().clear();
-                        bar.getText().clear();
-                        pascal.getText().clear();
-                        poundforcepersquareinch.getText().clear();
+                        milesperhour.getText().clear();
+                        footpersecond.getText().clear();
+                        metrepersecond.getText().clear();
+                        kilometrepersecond.getText().clear();
                     }
                 }
             }

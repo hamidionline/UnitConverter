@@ -1,4 +1,4 @@
-package learners.com.unitconverter;
+package com.jay.unitconverter;
 
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -15,23 +15,23 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.jay.unitconverter.Fragments.AreaFragment;
+import com.jay.unitconverter.Fragments.DataTransferRateFragment;
+import com.jay.unitconverter.Fragments.DigitalStorageFragment;
+import com.jay.unitconverter.Fragments.EnergyFragment;
+import com.jay.unitconverter.Fragments.FrequencyFragment;
+import com.jay.unitconverter.Fragments.FuelEconomyFragment;
+import com.jay.unitconverter.Fragments.LengthFragment;
+import com.jay.unitconverter.Fragments.MassFragment;
+import com.jay.unitconverter.Fragments.PlaneAngleFragment;
+import com.jay.unitconverter.Fragments.PressureFragment;
+import com.jay.unitconverter.Fragments.SpeedFragment;
+import com.jay.unitconverter.Fragments.TemperatureFragment;
+import com.jay.unitconverter.Fragments.TimeFragment;
+import com.jay.unitconverter.Fragments.VolumeFragment;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import learners.com.unitconverter.Fragments.AreaFragment;
-import learners.com.unitconverter.Fragments.DataTransferRateFragment;
-import learners.com.unitconverter.Fragments.DigitalStorageFragment;
-import learners.com.unitconverter.Fragments.EnergyFragment;
-import learners.com.unitconverter.Fragments.FrequencyFragment;
-import learners.com.unitconverter.Fragments.FuelEconomyFragment;
-import learners.com.unitconverter.Fragments.LengthFragment;
-import learners.com.unitconverter.Fragments.MassFragment;
-import learners.com.unitconverter.Fragments.PlaneAngleFragment;
-import learners.com.unitconverter.Fragments.PressureFragment;
-import learners.com.unitconverter.Fragments.SpeedFragment;
-import learners.com.unitconverter.Fragments.TemperatureFragment;
-import learners.com.unitconverter.Fragments.TimeFragment;
-import learners.com.unitconverter.Fragments.VolumeFragment;
 
 public class ScrollableTabsActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {

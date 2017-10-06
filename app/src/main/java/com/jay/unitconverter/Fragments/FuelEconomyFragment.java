@@ -1,4 +1,4 @@
-package learners.com.unitconverter.Fragments;
+package com.jay.unitconverter.Fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,12 +9,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 
-import learners.com.unitconverter.R;
+import com.jay.unitconverter.R;
 
 
-public class FrequencyFragment extends Fragment {
+public class FuelEconomyFragment extends Fragment {
 
-    public FrequencyFragment() {
+    public FuelEconomyFragment() {
         // Required empty public constructor
     }
 
@@ -27,14 +27,14 @@ public class FrequencyFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_frequency, container, false);
+        View view = inflater.inflate(R.layout.fragment_fuel_economy, container, false);
 
-        final EditText hertz = (EditText) view.findViewById(R.id.input_hertz);
-        final EditText kilohertz = (EditText) view.findViewById(R.id.input_kilohertz);
-        final EditText megahertz = (EditText) view.findViewById(R.id.input_megahertz);
-        final EditText gigahertz = (EditText) view.findViewById(R.id.input_gigahertz);
+        final EditText usmilespergallon = (EditText) view.findViewById(R.id.input_us_miles_per_gallon);
+        final EditText milespergallonimperial = (EditText) view.findViewById(R.id.input_miles_per_gallon_imperial);
+        final EditText kilometerperlitre = (EditText) view.findViewById(R.id.input_kilometer_per_litre);
+        final EditText litreper100kilometres = (EditText) view.findViewById(R.id.input_litre_per_100_kilometres);
 
-        hertz.addTextChangedListener(new TextWatcher() {
+        usmilespergallon.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
 
             @Override
@@ -48,22 +48,22 @@ public class FrequencyFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (hertz.isFocused()) {
+                if (usmilespergallon.isFocused()) {
                     if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
-                        kilohertz.setText(String.valueOf((Double.parseDouble(s.toString()) * 0.001)));
-                        megahertz.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000001));
-                        gigahertz.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000000001));
+                        milespergallonimperial.setText(String.valueOf((Double.parseDouble(s.toString()) * 1.20095)));
+                        kilometerperlitre.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.425144));
+                        litreper100kilometres.setText(String.valueOf(Double.parseDouble(s.toString()) * 235.215));
                     } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
                     } else {
-                        kilohertz.getText().clear();
-                        megahertz.getText().clear();
-                        gigahertz.getText().clear();
+                        milespergallonimperial.getText().clear();
+                        kilometerperlitre.getText().clear();
+                        litreper100kilometres.getText().clear();
                     }
                 }
             }
         });
 
-        kilohertz.addTextChangedListener(new TextWatcher() {
+        milespergallonimperial.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
 
             @Override
@@ -77,22 +77,22 @@ public class FrequencyFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (kilohertz.isFocused()) {
+                if (milespergallonimperial.isFocused()) {
                     if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
-                        hertz.setText(String.valueOf((Double.parseDouble(s.toString()) * 1000)));
-                        megahertz.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.001));
-                        gigahertz.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000001));
+                        usmilespergallon.setText(String.valueOf((Double.parseDouble(s.toString()) * 0.832674)));
+                        kilometerperlitre.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.354006));
+                        litreper100kilometres.setText(String.valueOf(Double.parseDouble(s.toString()) * 282.481));
                     } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
                     } else {
-                        hertz.getText().clear();
-                        megahertz.getText().clear();
-                        gigahertz.getText().clear();
+                        usmilespergallon.getText().clear();
+                        kilometerperlitre.getText().clear();
+                        litreper100kilometres.getText().clear();
                     }
                 }
             }
         });
 
-        megahertz.addTextChangedListener(new TextWatcher() {
+        kilometerperlitre.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
 
             @Override
@@ -106,22 +106,22 @@ public class FrequencyFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (megahertz.isFocused()) {
+                if (kilometerperlitre.isFocused()) {
                     if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
-                        hertz.setText(String.valueOf((Double.parseDouble(s.toString()) * 1000000)));
-                        kilohertz.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000));
-                        gigahertz.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.001));
+                        usmilespergallon.setText(String.valueOf((Double.parseDouble(s.toString()) * 2.35215)));
+                        milespergallonimperial.setText(String.valueOf(Double.parseDouble(s.toString()) * 2.82481));
+                        litreper100kilometres.setText(String.valueOf(Double.parseDouble(s.toString()) * 100));
                     } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
                     } else {
-                        hertz.getText().clear();
-                        kilohertz.getText().clear();
-                        gigahertz.getText().clear();
+                        usmilespergallon.getText().clear();
+                        milespergallonimperial.getText().clear();
+                        litreper100kilometres.getText().clear();
                     }
                 }
             }
         });
 
-        gigahertz.addTextChangedListener(new TextWatcher() {
+        litreper100kilometres.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
 
             @Override
@@ -135,16 +135,16 @@ public class FrequencyFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (gigahertz.isFocused()) {
+                if (litreper100kilometres.isFocused()) {
                     if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
-                        hertz.setText(String.valueOf((Double.parseDouble(s.toString()) * 1000000000)));
-                        kilohertz.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000000));
-                        megahertz.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000));
+                        usmilespergallon.setText(String.valueOf((Double.parseDouble(s.toString()) * 235.215)));
+                        milespergallonimperial.setText(String.valueOf(Double.parseDouble(s.toString()) * 282.481));
+                        kilometerperlitre.setText(String.valueOf(Double.parseDouble(s.toString()) * 100));
                     } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
                     } else {
-                        hertz.getText().clear();
-                        kilohertz.getText().clear();
-                        megahertz.getText().clear();
+                        usmilespergallon.getText().clear();
+                        milespergallonimperial.getText().clear();
+                        kilometerperlitre.getText().clear();
                     }
                 }
             }

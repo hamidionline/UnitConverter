@@ -1,4 +1,4 @@
-package learners.com.unitconverter;
+package com.jay.unitconverter;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
