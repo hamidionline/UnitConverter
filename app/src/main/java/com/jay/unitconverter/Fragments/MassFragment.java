@@ -23,8 +23,7 @@ public class MassFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_mass, container, false);
 
@@ -54,7 +53,7 @@ public class MassFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (tonne.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         kilogram.setText(String.valueOf((Double.parseDouble(s.toString()) * 1000)));
                         gram.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000000));
                         miligram.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000000000));
@@ -63,8 +62,7 @@ public class MassFragment extends Fragment {
                         stone.setText(String.valueOf(Double.parseDouble(s.toString()) * 157.473));
                         pound.setText(String.valueOf(Double.parseDouble(s.toString()) * 2204.62));
                         ounce.setText(String.valueOf(Double.parseDouble(s.toString()) * 35274));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         kilogram.getText().clear();
                         gram.getText().clear();
                         miligram.getText().clear();
@@ -94,7 +92,7 @@ public class MassFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (kilogram.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         tonne.setText(String.valueOf((Double.parseDouble(s.toString()) * 0.001)));
                         gram.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000));
                         miligram.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000000));
@@ -103,8 +101,7 @@ public class MassFragment extends Fragment {
                         stone.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.157473));
                         pound.setText(String.valueOf(Double.parseDouble(s.toString()) * 2.20462));
                         ounce.setText(String.valueOf(Double.parseDouble(s.toString()) * 35.274));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         tonne.getText().clear();
                         gram.getText().clear();
                         miligram.getText().clear();
@@ -134,7 +131,7 @@ public class MassFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (gram.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         tonne.setText(String.valueOf((Double.parseDouble(s.toString()) * 0.000001)));
                         kilogram.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.001));
                         miligram.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000));
@@ -143,8 +140,7 @@ public class MassFragment extends Fragment {
                         stone.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000157473));
                         pound.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00220462));
                         ounce.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.035274));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         tonne.getText().clear();
                         kilogram.getText().clear();
                         miligram.getText().clear();
@@ -174,7 +170,7 @@ public class MassFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (miligram.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         tonne.setText(String.valueOf((Double.parseDouble(s.toString()) * 0.000000001)));
                         kilogram.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000001));
                         gram.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.001));
@@ -183,8 +179,7 @@ public class MassFragment extends Fragment {
                         stone.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00000015747));
                         pound.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.0000022046));
                         ounce.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000035274));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         tonne.getText().clear();
                         kilogram.getText().clear();
                         gram.getText().clear();
@@ -214,7 +209,7 @@ public class MassFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (microgram.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         tonne.setText(String.valueOf((Double.parseDouble(s.toString()) * 0.000000000001)));
                         kilogram.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000000001));
                         gram.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000001));
@@ -223,8 +218,7 @@ public class MassFragment extends Fragment {
                         stone.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00000000015747));
                         pound.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.0000000022046));
                         ounce.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000000035274));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         tonne.getText().clear();
                         kilogram.getText().clear();
                         gram.getText().clear();
@@ -254,7 +248,7 @@ public class MassFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (imperialton.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         tonne.setText(String.valueOf((Double.parseDouble(s.toString()) * 1.01605)));
                         kilogram.setText(String.valueOf(Double.parseDouble(s.toString()) * 1016.05));
                         gram.setText(String.valueOf(Double.parseDouble(s.toString()) * 1016000));
@@ -263,8 +257,7 @@ public class MassFragment extends Fragment {
                         stone.setText(String.valueOf(Double.parseDouble(s.toString()) * 160));
                         pound.setText(String.valueOf(Double.parseDouble(s.toString()) * 2240));
                         ounce.setText(String.valueOf(Double.parseDouble(s.toString()) * 35840));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         tonne.getText().clear();
                         kilogram.getText().clear();
                         gram.getText().clear();
@@ -294,7 +287,7 @@ public class MassFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (stone.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         tonne.setText(String.valueOf((Double.parseDouble(s.toString()) * 1.01605)));
                         kilogram.setText(String.valueOf(Double.parseDouble(s.toString()) * 1016.05));
                         gram.setText(String.valueOf(Double.parseDouble(s.toString()) * 1016000));
@@ -303,8 +296,7 @@ public class MassFragment extends Fragment {
                         imperialton.setText(String.valueOf(Double.parseDouble(s.toString()) * 160));
                         pound.setText(String.valueOf(Double.parseDouble(s.toString()) * 2240));
                         ounce.setText(String.valueOf(Double.parseDouble(s.toString()) * 35840));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         tonne.getText().clear();
                         kilogram.getText().clear();
                         gram.getText().clear();
@@ -334,7 +326,7 @@ public class MassFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (stone.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         tonne.setText(String.valueOf((Double.parseDouble(s.toString()) * 0.00635029)));
                         kilogram.setText(String.valueOf(Double.parseDouble(s.toString()) * 6.35029));
                         gram.setText(String.valueOf(Double.parseDouble(s.toString()) * 6350.29));
@@ -343,8 +335,7 @@ public class MassFragment extends Fragment {
                         imperialton.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00625));
                         pound.setText(String.valueOf(Double.parseDouble(s.toString()) * 14));
                         ounce.setText(String.valueOf(Double.parseDouble(s.toString()) * 224));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         tonne.getText().clear();
                         kilogram.getText().clear();
                         gram.getText().clear();
@@ -374,7 +365,7 @@ public class MassFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (pound.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         tonne.setText(String.valueOf((Double.parseDouble(s.toString()) * 0.000453592)));
                         kilogram.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.453592));
                         gram.setText(String.valueOf(Double.parseDouble(s.toString()) * 453.592));
@@ -383,8 +374,7 @@ public class MassFragment extends Fragment {
                         imperialton.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000446429));
                         stone.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.0714286));
                         ounce.setText(String.valueOf(Double.parseDouble(s.toString()) * 16));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         tonne.getText().clear();
                         kilogram.getText().clear();
                         gram.getText().clear();
@@ -414,7 +404,7 @@ public class MassFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (ounce.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         tonne.setText(String.valueOf((Double.parseDouble(s.toString()) * 0.00002835)));
                         kilogram.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.0283495));
                         gram.setText(String.valueOf(Double.parseDouble(s.toString()) * 28.3495));
@@ -423,8 +413,7 @@ public class MassFragment extends Fragment {
                         imperialton.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000027902));
                         stone.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00446429));
                         pound.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.0625));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         tonne.getText().clear();
                         kilogram.getText().clear();
                         gram.getText().clear();
@@ -449,5 +438,4 @@ public class MassFragment extends Fragment {
             return false;
         }
     }
-
 }

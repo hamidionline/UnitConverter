@@ -25,8 +25,7 @@ public class VolumeFragment extends Fragment {
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_volume, container, false);
 
@@ -66,7 +65,7 @@ public class VolumeFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (usliquidgallon.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         usliquidquart.setText(String.valueOf((Double.parseDouble(s.toString()) * 4)));
                         usliquidpint.setText(String.valueOf(Double.parseDouble(s.toString()) * 8));
                         uslegalcup.setText(String.valueOf(Double.parseDouble(s.toString()) * 16));
@@ -81,8 +80,7 @@ public class VolumeFragment extends Fragment {
                         imperialfluidounce.setText(String.valueOf(Double.parseDouble(s.toString()) * 133.22781447462252544));
                         imperialtablespoon.setText(String.valueOf((Double.parseDouble(s.toString()) * 213.16450315939602432)));
                         imperialteaspoon.setText(String.valueOf(Double.parseDouble(s.toString()) * 639.49350947818807296));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         usliquidquart.getText().clear();
                         usliquidpint.getText().clear();
                         uslegalcup.getText().clear();
@@ -118,7 +116,7 @@ public class VolumeFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (usliquidquart.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         usliquidgallon.setText(String.valueOf((Double.parseDouble(s.toString()) / 4)));
                         usliquidpint.setText(String.valueOf(Double.parseDouble(s.toString()) * 2));
                         uslegalcup.setText(String.valueOf(Double.parseDouble(s.toString()) * 4));
@@ -133,8 +131,7 @@ public class VolumeFragment extends Fragment {
                         imperialfluidounce.setText(String.valueOf(Double.parseDouble(s.toString()) * 33.306953618655629312));
                         imperialtablespoon.setText(String.valueOf((Double.parseDouble(s.toString()) * 53.291125789849001984)));
                         imperialteaspoon.setText(String.valueOf(Double.parseDouble(s.toString()) * 159.87337736954701824));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         usliquidgallon.getText().clear();
                         usliquidpint.getText().clear();
                         uslegalcup.getText().clear();
@@ -170,7 +167,7 @@ public class VolumeFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (usliquidpint.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         usliquidgallon.setText(String.valueOf((Double.parseDouble(s.toString()) / 8)));
                         usliquidquart.setText(String.valueOf(Double.parseDouble(s.toString()) / 2));
                         uslegalcup.setText(String.valueOf(Double.parseDouble(s.toString()) * 2));
@@ -185,8 +182,7 @@ public class VolumeFragment extends Fragment {
                         imperialfluidounce.setText(String.valueOf(Double.parseDouble(s.toString()) * 16.653476809327814656));
                         imperialtablespoon.setText(String.valueOf((Double.parseDouble(s.toString()) * 26.645562894924500992)));
                         imperialteaspoon.setText(String.valueOf(Double.parseDouble(s.toString()) * 79.936688684773507072));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         usliquidgallon.getText().clear();
                         usliquidquart.getText().clear();
                         uslegalcup.getText().clear();
@@ -222,7 +218,7 @@ public class VolumeFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (uslegalcup.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         usliquidgallon.setText(String.valueOf((Double.parseDouble(s.toString()) / 16)));
                         usliquidquart.setText(String.valueOf(Double.parseDouble(s.toString()) / 4));
                         usliquidpint.setText(String.valueOf(Double.parseDouble(s.toString()) / 2));
@@ -237,8 +233,7 @@ public class VolumeFragment extends Fragment {
                         imperialfluidounce.setText(String.valueOf(Double.parseDouble(s.toString()) * 8.3267384046639071232));
                         imperialtablespoon.setText(String.valueOf((Double.parseDouble(s.toString()) * 13.322781447462250496)));
                         imperialteaspoon.setText(String.valueOf(Double.parseDouble(s.toString()) * 39.968344342386753536));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         usliquidgallon.getText().clear();
                         usliquidquart.getText().clear();
                         usliquidpint.getText().clear();
@@ -274,7 +269,7 @@ public class VolumeFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (usfluidounce.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         usliquidgallon.setText(String.valueOf((Double.parseDouble(s.toString()) / 128)));
                         usliquidquart.setText(String.valueOf(Double.parseDouble(s.toString()) / 32));
                         usliquidpint.setText(String.valueOf(Double.parseDouble(s.toString()) / 16));
@@ -289,8 +284,7 @@ public class VolumeFragment extends Fragment {
                         imperialfluidounce.setText(String.valueOf(Double.parseDouble(s.toString()) * 1.0408423005829883904));
                         imperialtablespoon.setText(String.valueOf((Double.parseDouble(s.toString()) * 1.6653476809327814656)));
                         imperialteaspoon.setText(String.valueOf(Double.parseDouble(s.toString()) * 4.9960430427983437824));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         usliquidgallon.getText().clear();
                         usliquidquart.getText().clear();
                         usliquidpint.getText().clear();
@@ -326,7 +320,7 @@ public class VolumeFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (ustablespoon.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         usliquidgallon.setText(String.valueOf((Double.parseDouble(s.toString()) / 256)));
                         usliquidquart.setText(String.valueOf(Double.parseDouble(s.toString()) / 64));
                         usliquidpint.setText(String.valueOf(Double.parseDouble(s.toString()) / 32));
@@ -341,8 +335,7 @@ public class VolumeFragment extends Fragment {
                         imperialfluidounce.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.52042115029149417472));
                         imperialtablespoon.setText(String.valueOf((Double.parseDouble(s.toString()) * 0.83267384046639071232)));
                         imperialteaspoon.setText(String.valueOf(Double.parseDouble(s.toString()) * 2.4980215213991718912));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         usliquidgallon.getText().clear();
                         usliquidquart.getText().clear();
                         usliquidpint.getText().clear();
@@ -378,7 +371,7 @@ public class VolumeFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (usteaspoon.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         usliquidgallon.setText(String.valueOf((Double.parseDouble(s.toString()) / 768)));
                         usliquidquart.setText(String.valueOf(Double.parseDouble(s.toString()) / 192));
                         usliquidpint.setText(String.valueOf(Double.parseDouble(s.toString()) / 96));
@@ -393,8 +386,7 @@ public class VolumeFragment extends Fragment {
                         imperialfluidounce.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.1734737167638313984));
                         imperialtablespoon.setText(String.valueOf((Double.parseDouble(s.toString()) * 0.27755794682213023744)));
                         imperialteaspoon.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.83267384046639071232));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         usliquidgallon.getText().clear();
                         usliquidquart.getText().clear();
                         usliquidpint.getText().clear();
@@ -430,7 +422,7 @@ public class VolumeFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (litre.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         usliquidgallon.setText(String.valueOf((Double.parseDouble(s.toString()) / 3.785411784)));
                         usliquidquart.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.94635294599999995904));
                         usliquidpint.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.47317647299999997952));
@@ -445,8 +437,7 @@ public class VolumeFragment extends Fragment {
                         imperialfluidounce.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.028413074243749994496));
                         imperialtablespoon.setText(String.valueOf((Double.parseDouble(s.toString()) / 0.017758171402343747584)));
                         imperialteaspoon.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.005919390467447916134));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         usliquidgallon.getText().clear();
                         usliquidquart.getText().clear();
                         usliquidpint.getText().clear();
@@ -482,7 +473,7 @@ public class VolumeFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (millilitre.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         usliquidgallon.setText(String.valueOf((Double.parseDouble(s.toString()) / 3785.411784)));
                         usliquidquart.setText(String.valueOf(Double.parseDouble(s.toString()) / 946.35294599999995904));
                         usliquidpint.setText(String.valueOf(Double.parseDouble(s.toString()) / 473.17647299999997952));
@@ -497,8 +488,7 @@ public class VolumeFragment extends Fragment {
                         imperialfluidounce.setText(String.valueOf(Double.parseDouble(s.toString()) / 28.413074243749994496));
                         imperialtablespoon.setText(String.valueOf((Double.parseDouble(s.toString()) / 17.758171402343747584)));
                         imperialteaspoon.setText(String.valueOf(Double.parseDouble(s.toString()) / 5.9193904674479161344));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         usliquidgallon.getText().clear();
                         usliquidquart.getText().clear();
                         usliquidpint.getText().clear();
@@ -534,7 +524,7 @@ public class VolumeFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (imperialgallon.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         usliquidgallon.setText(String.valueOf((Double.parseDouble(s.toString()) / 0.83267384046639071232)));
                         usliquidquart.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.20816846011659767808));
                         usliquidpint.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.10408423005829883904));
@@ -549,8 +539,7 @@ public class VolumeFragment extends Fragment {
                         imperialfluidounce.setText(String.valueOf(Double.parseDouble(s.toString()) * 160));
                         imperialtablespoon.setText(String.valueOf((Double.parseDouble(s.toString()) * 256)));
                         imperialteaspoon.setText(String.valueOf(Double.parseDouble(s.toString()) * 768));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         usliquidgallon.getText().clear();
                         usliquidquart.getText().clear();
                         usliquidpint.getText().clear();
@@ -586,7 +575,7 @@ public class VolumeFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (imperialquant.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         usliquidgallon.setText(String.valueOf((Double.parseDouble(s.toString()) / 3.3306953618655629312)));
                         usliquidquart.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.83267384046639071232));
                         usliquidpint.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.41633692023319535616));
@@ -601,8 +590,7 @@ public class VolumeFragment extends Fragment {
                         imperialfluidounce.setText(String.valueOf(Double.parseDouble(s.toString()) * 40));
                         imperialtablespoon.setText(String.valueOf((Double.parseDouble(s.toString()) * 64)));
                         imperialteaspoon.setText(String.valueOf(Double.parseDouble(s.toString()) * 192));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         usliquidgallon.getText().clear();
                         usliquidquart.getText().clear();
                         usliquidpint.getText().clear();
@@ -638,7 +626,7 @@ public class VolumeFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (imperialpint.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         usliquidgallon.setText(String.valueOf((Double.parseDouble(s.toString()) / 6.6613907237311258624)));
                         usliquidquart.setText(String.valueOf(Double.parseDouble(s.toString()) / 1.6653476809327814656));
                         usliquidpint.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.83267384046639071232));
@@ -653,8 +641,7 @@ public class VolumeFragment extends Fragment {
                         imperialfluidounce.setText(String.valueOf(Double.parseDouble(s.toString()) * 20));
                         imperialtablespoon.setText(String.valueOf((Double.parseDouble(s.toString()) * 32)));
                         imperialteaspoon.setText(String.valueOf(Double.parseDouble(s.toString()) * 96));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         usliquidgallon.getText().clear();
                         usliquidquart.getText().clear();
                         usliquidpint.getText().clear();
@@ -690,7 +677,7 @@ public class VolumeFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (imperialfluidounce.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         usliquidgallon.setText(String.valueOf((Double.parseDouble(s.toString()) / 133.22781447462252544)));
                         usliquidquart.setText(String.valueOf(Double.parseDouble(s.toString()) / 33.306953618655629312));
                         usliquidpint.setText(String.valueOf(Double.parseDouble(s.toString()) / 16.653476809327814656));
@@ -705,8 +692,7 @@ public class VolumeFragment extends Fragment {
                         imperialpint.setText(String.valueOf(Double.parseDouble(s.toString()) / 20));
                         imperialtablespoon.setText(String.valueOf((Double.parseDouble(s.toString()) * 1.6)));
                         imperialteaspoon.setText(String.valueOf(Double.parseDouble(s.toString()) * 4.8));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         usliquidgallon.getText().clear();
                         usliquidquart.getText().clear();
                         usliquidpint.getText().clear();
@@ -742,7 +728,7 @@ public class VolumeFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (imperialtablespoon.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         usliquidgallon.setText(String.valueOf((Double.parseDouble(s.toString()) / 213.16450315939602432)));
                         usliquidquart.setText(String.valueOf(Double.parseDouble(s.toString()) / 53.291125789849001984));
                         usliquidpint.setText(String.valueOf(Double.parseDouble(s.toString()) / 26.645562894924500992));
@@ -757,8 +743,7 @@ public class VolumeFragment extends Fragment {
                         imperialpint.setText(String.valueOf(Double.parseDouble(s.toString()) / 32));
                         imperialfluidounce.setText(String.valueOf((Double.parseDouble(s.toString()) / 1.6)));
                         imperialteaspoon.setText(String.valueOf(Double.parseDouble(s.toString()) * 3));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         usliquidgallon.getText().clear();
                         usliquidquart.getText().clear();
                         usliquidpint.getText().clear();
@@ -794,7 +779,7 @@ public class VolumeFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (imperialteaspoon.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         usliquidgallon.setText(String.valueOf((Double.parseDouble(s.toString()) / 639.49350947818807296)));
                         usliquidquart.setText(String.valueOf(Double.parseDouble(s.toString()) / 159.87337736954701824));
                         usliquidpint.setText(String.valueOf(Double.parseDouble(s.toString()) / 79.936688684773507072));
@@ -809,8 +794,7 @@ public class VolumeFragment extends Fragment {
                         imperialpint.setText(String.valueOf(Double.parseDouble(s.toString()) / 96));
                         imperialfluidounce.setText(String.valueOf((Double.parseDouble(s.toString()) / 4.8)));
                         imperialtablespoon.setText(String.valueOf(Double.parseDouble(s.toString()) / 3));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         usliquidgallon.getText().clear();
                         usliquidquart.getText().clear();
                         usliquidpint.getText().clear();
@@ -841,5 +825,4 @@ public class VolumeFragment extends Fragment {
             return false;
         }
     }
-
 }

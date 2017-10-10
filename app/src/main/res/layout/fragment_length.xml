@@ -4,7 +4,7 @@
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <android.support.design.widget.TextInputLayout
@@ -16,7 +16,7 @@
                 android:id="@+id/input_kilometre"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Kilometre"
+                android:hint="@string/kilometre"
                 android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>
@@ -30,7 +30,7 @@
                 android:id="@+id/input_metre"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Metre"
+                android:hint="@string/metre"
                 android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>
@@ -44,7 +44,7 @@
                 android:id="@+id/input_centimetre"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Centimetre"
+                android:hint="@string/centimetre"
                 android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>
@@ -58,7 +58,7 @@
                 android:id="@+id/input_millimetre"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Millimetre"
+                android:hint="@string/millimetre"
                 android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>
@@ -72,7 +72,7 @@
                 android:id="@+id/input_micrometre"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Micrometre"
+                android:hint="@string/micrometre"
                 android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>
@@ -86,7 +86,7 @@
                 android:id="@+id/input_nanometre"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Nanometre"
+                android:hint="@string/nanometre"
                 android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>
@@ -100,7 +100,7 @@
                 android:id="@+id/input_mile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Mile"
+                android:hint="@string/mile"
                 android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>
@@ -114,7 +114,7 @@
                 android:id="@+id/input_yard"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Yard"
+                android:hint="@string/yard"
                 android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>
@@ -128,7 +128,7 @@
                 android:id="@+id/input_foot"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Foot"
+                android:hint="@string/foot"
                 android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>
@@ -142,7 +142,7 @@
                 android:id="@+id/input_inch"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Inch"
+                android:hint="@string/inch"
                 android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>
@@ -156,7 +156,7 @@
                 android:id="@+id/input_nautical_mile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Nautical mile"
+                android:hint="@string/nautical_mile"
                 android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>

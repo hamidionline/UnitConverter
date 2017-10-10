@@ -5,7 +5,7 @@
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <android.support.design.widget.TextInputLayout
@@ -17,7 +17,7 @@
                 android:id="@+id/input_bit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Bit"
+                android:hint="@string/bit"
                 android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>
@@ -31,7 +31,7 @@
                 android:id="@+id/input_kilobit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Kilobit"
+                android:hint="@string/kilobit"
                 android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>
@@ -59,7 +59,7 @@
                 android:id="@+id/input_megabit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Megabit"
+                android:hint="@string/megabit"
                 android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>
@@ -87,7 +87,7 @@
                 android:id="@+id/input_gigabit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Gigabit"
+                android:hint="@string/gigabit"
                 android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>
@@ -115,7 +115,7 @@
                 android:id="@+id/input_terabit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Terabit"
+                android:hint="@string/terabit"
                 android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>
@@ -143,7 +143,7 @@
                 android:id="@+id/input_petabit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Petabit"
+                android:hint="@string/petabit"
                 android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>
@@ -171,7 +171,7 @@
                 android:id="@+id/input_byte"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Byte"
+                android:hint="@string/bytes"
                 android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>
@@ -185,7 +185,7 @@
                 android:id="@+id/input_kilobyte"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Kilobyte"
+                android:hint="@string/kilobyte"
                 android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>
@@ -213,7 +213,7 @@
                 android:id="@+id/input_megabyte"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Megabyte"
+                android:hint="@string/megabyte"
                 android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>
@@ -241,7 +241,7 @@
                 android:id="@+id/input_gigabyte"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Gigabyte"
+                android:hint="@string/gigabyte"
                 android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>
@@ -269,7 +269,7 @@
                 android:id="@+id/input_terabyte"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Terabyte"
+                android:hint="@string/terabyte"
                 android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>
@@ -297,7 +297,7 @@
                 android:id="@+id/input_petabyte"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Petabyte"
+                android:hint="@string/petabyte"
                 android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>

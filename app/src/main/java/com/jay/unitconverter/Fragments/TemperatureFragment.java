@@ -25,8 +25,7 @@ public class TemperatureFragment extends Fragment {
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         final View view = inflater.inflate(R.layout.fragment_temperature, container, false);
         final EditText celcious = (EditText) view.findViewById(R.id.input_celsius);
@@ -49,11 +48,10 @@ public class TemperatureFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (celcious.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         fahrenheit.setText(String.valueOf(((9.0 / 5.0) * Double.parseDouble(s.toString())) + 32));
                         kelvin.setText(String.valueOf((5.0 / 9 * (Double.parseDouble(s.toString()) - 32) + 273.15)));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         fahrenheit.getText().clear();
                         kelvin.getText().clear();
                     }
@@ -77,11 +75,10 @@ public class TemperatureFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (fahrenheit.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         celcious.setText(String.valueOf((((Double.parseDouble(s.toString()) - 32) * 5) / 9)));
                         kelvin.setText(String.valueOf((5.0 / 9 * (Double.parseDouble(s.toString()) - 32) + 273.15)));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         celcious.getText().clear();
                         kelvin.getText().clear();
                     }
@@ -105,11 +102,10 @@ public class TemperatureFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (kelvin.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         celcious.setText(String.valueOf((((Double.parseDouble(s.toString()) - 32) * 5) / 9)));
                         fahrenheit.setText(String.valueOf((5.0 / 9 * (Double.parseDouble(s.toString()) - 32) + 273.15)));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         celcious.getText().clear();
                         fahrenheit.getText().clear();
                     }
@@ -128,5 +124,4 @@ public class TemperatureFragment extends Fragment {
             return false;
         }
     }
-
 }

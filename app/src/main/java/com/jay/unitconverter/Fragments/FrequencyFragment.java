@@ -24,8 +24,7 @@ public class FrequencyFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_frequency, container, false);
 
@@ -49,12 +48,11 @@ public class FrequencyFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (hertz.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         kilohertz.setText(String.valueOf((Double.parseDouble(s.toString()) * 0.001)));
                         megahertz.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000001));
                         gigahertz.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000000001));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         kilohertz.getText().clear();
                         megahertz.getText().clear();
                         gigahertz.getText().clear();
@@ -78,12 +76,11 @@ public class FrequencyFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (kilohertz.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         hertz.setText(String.valueOf((Double.parseDouble(s.toString()) * 1000)));
                         megahertz.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.001));
                         gigahertz.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000001));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         hertz.getText().clear();
                         megahertz.getText().clear();
                         gigahertz.getText().clear();
@@ -107,12 +104,11 @@ public class FrequencyFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (megahertz.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         hertz.setText(String.valueOf((Double.parseDouble(s.toString()) * 1000000)));
                         kilohertz.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000));
                         gigahertz.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.001));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         hertz.getText().clear();
                         kilohertz.getText().clear();
                         gigahertz.getText().clear();
@@ -136,12 +132,11 @@ public class FrequencyFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (gigahertz.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         hertz.setText(String.valueOf((Double.parseDouble(s.toString()) * 1000000000)));
                         kilohertz.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000000));
                         megahertz.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         hertz.getText().clear();
                         kilohertz.getText().clear();
                         megahertz.getText().clear();
@@ -161,5 +156,4 @@ public class FrequencyFragment extends Fragment {
             return false;
         }
     }
-
 }

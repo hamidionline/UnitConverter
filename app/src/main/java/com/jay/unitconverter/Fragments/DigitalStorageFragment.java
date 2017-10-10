@@ -24,8 +24,7 @@ public class DigitalStorageFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_digital_storage, container, false);
 
@@ -68,7 +67,7 @@ public class DigitalStorageFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (bit.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         kilobit.setText(String.valueOf((Double.parseDouble(s.toString()) / 1024)));
                         megabit.setText(String.valueOf(Double.parseDouble(s.toString()) / 1048576));
                         gigabit.setText(String.valueOf(Double.parseDouble(s.toString()) / 1073741824));
@@ -80,8 +79,7 @@ public class DigitalStorageFragment extends Fragment {
                         gigabyte.setText(String.valueOf(Double.parseDouble(s.toString()) / 8589934592L));
                         terabyte.setText(String.valueOf(Double.parseDouble(s.toString()) / 8796093022208L));
                         petabyte.setText(String.valueOf(Double.parseDouble(s.toString()) / 9007199254740990L));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         kilobit.getText().clear();
                         megabit.getText().clear();
                         gigabit.getText().clear();
@@ -114,7 +112,7 @@ public class DigitalStorageFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (kilobit.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         bit.setText(String.valueOf((Double.parseDouble(s.toString()) * 1024)));
                         megabit.setText(String.valueOf(Double.parseDouble(s.toString()) / 1024));
                         gigabit.setText(String.valueOf(Double.parseDouble(s.toString()) / 1048576));
@@ -126,8 +124,7 @@ public class DigitalStorageFragment extends Fragment {
                         gigabyte.setText(String.valueOf(Double.parseDouble(s.toString()) / 8388608));
                         terabyte.setText(String.valueOf(Double.parseDouble(s.toString()) / 8589934592L));
                         petabyte.setText(String.valueOf(Double.parseDouble(s.toString()) / 8796093022208L));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         bit.getText().clear();
                         megabit.getText().clear();
                         gigabit.getText().clear();
@@ -160,7 +157,7 @@ public class DigitalStorageFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (megabit.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         bit.setText(String.valueOf((Double.parseDouble(s.toString()) * 1048576)));
                         kilobit.setText(String.valueOf(Double.parseDouble(s.toString()) * 1024));
                         gigabit.setText(String.valueOf(Double.parseDouble(s.toString()) / 1024));
@@ -172,8 +169,7 @@ public class DigitalStorageFragment extends Fragment {
                         gigabyte.setText(String.valueOf(Double.parseDouble(s.toString()) / 8192));
                         terabyte.setText(String.valueOf(Double.parseDouble(s.toString()) / 8388608));
                         petabyte.setText(String.valueOf(Double.parseDouble(s.toString()) / 8589934592L));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         bit.getText().clear();
                         kilobit.getText().clear();
                         gigabit.getText().clear();
@@ -206,7 +202,7 @@ public class DigitalStorageFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (gigabit.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         bit.setText(String.valueOf((Double.parseDouble(s.toString()) * 1073741824)));
                         kilobit.setText(String.valueOf(Double.parseDouble(s.toString()) * 1048576));
                         megabit.setText(String.valueOf(Double.parseDouble(s.toString()) * 1024));
@@ -218,8 +214,7 @@ public class DigitalStorageFragment extends Fragment {
                         gigabyte.setText(String.valueOf(Double.parseDouble(s.toString()) / 8));
                         terabyte.setText(String.valueOf(Double.parseDouble(s.toString()) / 8192));
                         petabyte.setText(String.valueOf(Double.parseDouble(s.toString()) / 8388608));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         bit.getText().clear();
                         kilobit.getText().clear();
                         megabit.getText().clear();
@@ -252,7 +247,7 @@ public class DigitalStorageFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (terabit.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         bit.setText(String.valueOf((Double.parseDouble(s.toString()) * 1099511627776L)));
                         kilobit.setText(String.valueOf(Double.parseDouble(s.toString()) * 1073741824));
                         megabit.setText(String.valueOf(Double.parseDouble(s.toString()) * 1048576));
@@ -264,8 +259,7 @@ public class DigitalStorageFragment extends Fragment {
                         gigabyte.setText(String.valueOf(Double.parseDouble(s.toString()) * 128));
                         terabyte.setText(String.valueOf(Double.parseDouble(s.toString()) / 8));
                         petabyte.setText(String.valueOf(Double.parseDouble(s.toString()) / 8192));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         bit.getText().clear();
                         kilobit.getText().clear();
                         megabit.getText().clear();
@@ -298,7 +292,7 @@ public class DigitalStorageFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (petabit.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         bit.setText(String.valueOf((Double.parseDouble(s.toString()) * 1125899906842620L)));
                         kilobit.setText(String.valueOf(Double.parseDouble(s.toString()) * 1099511627776L));
                         megabit.setText(String.valueOf(Double.parseDouble(s.toString()) * 1073741824));
@@ -310,8 +304,7 @@ public class DigitalStorageFragment extends Fragment {
                         gigabyte.setText(String.valueOf(Double.parseDouble(s.toString()) * 131072));
                         terabyte.setText(String.valueOf(Double.parseDouble(s.toString()) * 128));
                         petabyte.setText(String.valueOf(Double.parseDouble(s.toString()) / 8));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         bit.getText().clear();
                         kilobit.getText().clear();
                         megabit.getText().clear();
@@ -344,7 +337,7 @@ public class DigitalStorageFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (bytes.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         bit.setText(String.valueOf((Double.parseDouble(s.toString()) * 8)));
                         kilobit.setText(String.valueOf(Double.parseDouble(s.toString()) / 128));
                         megabit.setText(String.valueOf(Double.parseDouble(s.toString()) / 131072));
@@ -356,8 +349,7 @@ public class DigitalStorageFragment extends Fragment {
                         gigabyte.setText(String.valueOf(Double.parseDouble(s.toString()) / 1073741824));
                         terabyte.setText(String.valueOf(Double.parseDouble(s.toString()) / 1099511627776L));
                         petabyte.setText(String.valueOf(Double.parseDouble(s.toString()) / 1125899906842620L));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         bit.getText().clear();
                         kilobit.getText().clear();
                         megabit.getText().clear();
@@ -390,7 +382,7 @@ public class DigitalStorageFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (kilobyte.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         bit.setText(String.valueOf((Double.parseDouble(s.toString()) * 8192)));
                         kilobit.setText(String.valueOf(Double.parseDouble(s.toString()) * 8));
                         megabit.setText(String.valueOf(Double.parseDouble(s.toString()) / 128));
@@ -402,8 +394,7 @@ public class DigitalStorageFragment extends Fragment {
                         gigabyte.setText(String.valueOf(Double.parseDouble(s.toString()) / 1048576));
                         terabyte.setText(String.valueOf(Double.parseDouble(s.toString()) / 1073741824));
                         petabyte.setText(String.valueOf(Double.parseDouble(s.toString()) / 1099511627776L));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         bit.getText().clear();
                         kilobit.getText().clear();
                         megabit.getText().clear();
@@ -436,7 +427,7 @@ public class DigitalStorageFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (megabyte.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         bit.setText(String.valueOf((Double.parseDouble(s.toString()) * 8388608)));
                         kilobit.setText(String.valueOf(Double.parseDouble(s.toString()) * 8192));
                         megabit.setText(String.valueOf(Double.parseDouble(s.toString()) * 8));
@@ -448,8 +439,7 @@ public class DigitalStorageFragment extends Fragment {
                         gigabyte.setText(String.valueOf(Double.parseDouble(s.toString()) / 1024));
                         terabyte.setText(String.valueOf(Double.parseDouble(s.toString()) / 1048576));
                         petabyte.setText(String.valueOf(Double.parseDouble(s.toString()) / 1073741824));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         bit.getText().clear();
                         kilobit.getText().clear();
                         megabit.getText().clear();
@@ -482,7 +472,7 @@ public class DigitalStorageFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (gigabyte.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         bit.setText(String.valueOf((Double.parseDouble(s.toString()) * 8589934592L)));
                         kilobit.setText(String.valueOf(Double.parseDouble(s.toString()) * 8388608));
                         megabit.setText(String.valueOf(Double.parseDouble(s.toString()) * 8192));
@@ -494,8 +484,7 @@ public class DigitalStorageFragment extends Fragment {
                         megabyte.setText(String.valueOf(Double.parseDouble(s.toString()) * 1024));
                         terabyte.setText(String.valueOf(Double.parseDouble(s.toString()) / 1024));
                         petabyte.setText(String.valueOf(Double.parseDouble(s.toString()) / 1048576));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         bit.getText().clear();
                         kilobit.getText().clear();
                         megabit.getText().clear();
@@ -528,7 +517,7 @@ public class DigitalStorageFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (terabyte.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         bit.setText(String.valueOf((Double.parseDouble(s.toString()) * 8796093022208L)));
                         kilobit.setText(String.valueOf(Double.parseDouble(s.toString()) * 8589934592L));
                         megabit.setText(String.valueOf(Double.parseDouble(s.toString()) * 8388608));
@@ -540,8 +529,7 @@ public class DigitalStorageFragment extends Fragment {
                         megabyte.setText(String.valueOf(Double.parseDouble(s.toString()) * 1048576));
                         gigabyte.setText(String.valueOf(Double.parseDouble(s.toString()) * 1024));
                         petabyte.setText(String.valueOf(Double.parseDouble(s.toString()) / 1024));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         bit.getText().clear();
                         kilobit.getText().clear();
                         megabit.getText().clear();
@@ -574,7 +562,7 @@ public class DigitalStorageFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (petabyte.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         bit.setText(String.valueOf((Double.parseDouble(s.toString()) * 9007199254740990L)));
                         kilobit.setText(String.valueOf(Double.parseDouble(s.toString()) * 8796093022208L));
                         megabit.setText(String.valueOf(Double.parseDouble(s.toString()) * 8589934592L));
@@ -586,8 +574,7 @@ public class DigitalStorageFragment extends Fragment {
                         megabyte.setText(String.valueOf(Double.parseDouble(s.toString()) * 1073741824));
                         gigabyte.setText(String.valueOf(Double.parseDouble(s.toString()) * 1048576));
                         terabyte.setText(String.valueOf(Double.parseDouble(s.toString()) * 1024));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         bit.getText().clear();
                         kilobit.getText().clear();
                         megabit.getText().clear();
@@ -615,5 +602,4 @@ public class DigitalStorageFragment extends Fragment {
             return false;
         }
     }
-
 }

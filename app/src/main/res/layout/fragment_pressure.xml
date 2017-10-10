@@ -4,7 +4,7 @@
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <android.support.design.widget.TextInputLayout
@@ -16,7 +16,7 @@
                 android:id="@+id/input_atmosphere"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Atmosphere"
+                android:hint="@string/atmosphere"
                 android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>
@@ -30,7 +30,7 @@
                 android:id="@+id/input_bar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Bar"
+                android:hint="@string/bar"
                 android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>
@@ -44,7 +44,7 @@
                 android:id="@+id/input_pascal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Pascal"
+                android:hint="@string/pascal"
                 android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>
@@ -58,7 +58,7 @@
                 android:id="@+id/input_pound_force_per_square_inch"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Pound-force per square inch"
+                android:hint="@string/pound_force_per_square_inch"
                 android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>
@@ -72,7 +72,7 @@
                 android:id="@+id/input_torr"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Torr"
+                android:hint="@string/torr"
                 android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>

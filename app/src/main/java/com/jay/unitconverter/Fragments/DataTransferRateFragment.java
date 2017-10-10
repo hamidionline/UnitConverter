@@ -24,8 +24,7 @@ public class DataTransferRateFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_data_transfer_rate, container, false);
 
@@ -59,7 +58,7 @@ public class DataTransferRateFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (bitpersecond.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         kilobitpersecond.setText(String.valueOf((Double.parseDouble(s.toString()) / 1000)));
                         kilobytepersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 8000));
 //                        kibibitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 258.998811));
@@ -72,8 +71,7 @@ public class DataTransferRateFragment extends Fragment {
                         terabitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 1000000000000L));
                         terabytepersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 8000000000000L));
 //                        tebibitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.404685642));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         kilobitpersecond.getText().clear();
                         kilobytepersecond.getText().clear();
 //                        kibibitpersecond.getText().clear();
@@ -107,7 +105,7 @@ public class DataTransferRateFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (kilobitpersecond.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         bitpersecond.setText(String.valueOf((Double.parseDouble(s.toString()) * 1000)));
                         kilobytepersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 8));
 //                        kibibitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 258.998811));
@@ -120,8 +118,7 @@ public class DataTransferRateFragment extends Fragment {
                         terabitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 1000000000));
                         terabytepersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 8000000000L));
 //                        tebibitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.404685642));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         bitpersecond.getText().clear();
                         kilobytepersecond.getText().clear();
 //                        kibibitpersecond.getText().clear();
@@ -155,7 +152,7 @@ public class DataTransferRateFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (kilobytepersecond.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         bitpersecond.setText(String.valueOf((Double.parseDouble(s.toString()) * 8000)));
                         kilobitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 8));
 //                        kibibitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 258.998811));
@@ -168,8 +165,7 @@ public class DataTransferRateFragment extends Fragment {
                         terabitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000000008));
                         terabytepersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 1000000000));
 //                        tebibitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.404685642));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         bitpersecond.getText().clear();
                         kilobitpersecond.getText().clear();
 //                        kibibitpersecond.getText().clear();
@@ -203,7 +199,7 @@ public class DataTransferRateFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (megabitpersecond.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         bitpersecond.setText(String.valueOf((Double.parseDouble(s.toString()) * 1000000)));
                         kilobitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000));
 //                        kibibitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 258.998811));
@@ -216,8 +212,7 @@ public class DataTransferRateFragment extends Fragment {
                         terabitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 1000000));
                         terabytepersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 8000000));
 //                        tebibitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.404685642));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         bitpersecond.getText().clear();
                         kilobitpersecond.getText().clear();
 //                        kibibitpersecond.getText().clear();
@@ -251,7 +246,7 @@ public class DataTransferRateFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (megabytepersecond.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         bitpersecond.setText(String.valueOf((Double.parseDouble(s.toString()) * 8000000)));
                         kilobitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 8000));
 //                        kibibitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 258.998811));
@@ -264,8 +259,7 @@ public class DataTransferRateFragment extends Fragment {
                         terabitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000008));
                         terabytepersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 1000000));
 //                        tebibitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.404685642));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         bitpersecond.getText().clear();
                         kilobitpersecond.getText().clear();
 //                        kibibitpersecond.getText().clear();
@@ -299,7 +293,7 @@ public class DataTransferRateFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (gigabitpersecond.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         bitpersecond.setText(String.valueOf((Double.parseDouble(s.toString()) * 1000000000)));
                         kilobitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000000));
 //                        kibibitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 258.998811));
@@ -312,8 +306,7 @@ public class DataTransferRateFragment extends Fragment {
                         terabitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 1000));
                         terabytepersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 8000));
 //                        tebibitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.404685642));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         bitpersecond.getText().clear();
                         kilobitpersecond.getText().clear();
 //                        kibibitpersecond.getText().clear();
@@ -347,7 +340,7 @@ public class DataTransferRateFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (gigabytepersecond.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         bitpersecond.setText(String.valueOf((Double.parseDouble(s.toString()) * 8000000000L)));
                         kilobitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 8000000));
 //                        kibibitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 258.998811));
@@ -360,8 +353,7 @@ public class DataTransferRateFragment extends Fragment {
                         terabitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.008));
                         terabytepersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 1000));
 //                        tebibitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.404685642));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         bitpersecond.getText().clear();
                         kilobitpersecond.getText().clear();
 //                        kibibitpersecond.getText().clear();
@@ -395,7 +387,7 @@ public class DataTransferRateFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (terabitpersecond.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         bitpersecond.setText(String.valueOf((Double.parseDouble(s.toString()) * 1000000000000L)));
                         kilobitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000000000));
 //                        kibibitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 258.998811));
@@ -408,8 +400,7 @@ public class DataTransferRateFragment extends Fragment {
                         gigabytepersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.008));
                         terabytepersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 8));
 //                        tebibitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.404685642));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         bitpersecond.getText().clear();
                         kilobitpersecond.getText().clear();
 //                        kibibitpersecond.getText().clear();
@@ -443,7 +434,7 @@ public class DataTransferRateFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (terabytepersecond.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         bitpersecond.setText(String.valueOf((Double.parseDouble(s.toString()) * 8000000000000L)));
                         kilobitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 8000000000L));
 //                        kibibitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 258.998811));
@@ -456,8 +447,7 @@ public class DataTransferRateFragment extends Fragment {
                         gigabytepersecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000));
                         terabitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 8));
 //                        tebibitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.404685642));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         bitpersecond.getText().clear();
                         kilobitpersecond.getText().clear();
 //                        kibibitpersecond.getText().clear();

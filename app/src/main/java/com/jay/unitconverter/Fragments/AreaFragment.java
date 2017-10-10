@@ -24,8 +24,7 @@ public class AreaFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_area, container, false);
 
@@ -54,7 +53,7 @@ public class AreaFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (squarekilometre.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         squaremetre.setText(String.valueOf((Double.parseDouble(s.toString()) * 1000000)));
                         squaremile.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.38610));
                         squareyard.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.00000083612736));
@@ -62,8 +61,7 @@ public class AreaFragment extends Fragment {
                         squareinch.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.00000000064516));
                         hectare.setText(String.valueOf(Double.parseDouble(s.toString()) * 100));
                         acre.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.00404685642));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         squaremetre.getText().clear();
                         squaremile.getText().clear();
                         squareyard.getText().clear();
@@ -92,7 +90,7 @@ public class AreaFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (squaremetre.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         squarekilometre.setText(String.valueOf((Double.parseDouble(s.toString()) / 1000000)));
                         squaremile.setText(String.valueOf(Double.parseDouble(s.toString()) / 2589988.11));
                         squareyard.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.83612736));
@@ -100,8 +98,7 @@ public class AreaFragment extends Fragment {
                         squareinch.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.00064516));
                         hectare.setText(String.valueOf(Double.parseDouble(s.toString()) / 10000));
                         acre.setText(String.valueOf(Double.parseDouble(s.toString()) / 4046.85642));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         squarekilometre.getText().clear();
                         squaremile.getText().clear();
                         squareyard.getText().clear();
@@ -130,7 +127,7 @@ public class AreaFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (squaremile.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         squarekilometre.setText(String.valueOf((Double.parseDouble(s.toString()) * 2.58998811)));
                         squaremetre.setText(String.valueOf(Double.parseDouble(s.toString()) * 2589988.11));
                         squareyard.setText(String.valueOf(Double.parseDouble(s.toString()) * 3097600));
@@ -138,8 +135,7 @@ public class AreaFragment extends Fragment {
                         squareinch.setText(String.valueOf(Double.parseDouble(s.toString()) * 4014489600L));
                         hectare.setText(String.valueOf(Double.parseDouble(s.toString()) * 258.998811));
                         acre.setText(String.valueOf(Double.parseDouble(s.toString()) * 640));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         squarekilometre.getText().clear();
                         squaremetre.getText().clear();
                         squareyard.getText().clear();
@@ -168,7 +164,7 @@ public class AreaFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (squareyard.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         squarekilometre.setText(String.valueOf((Double.parseDouble(s.toString()) * 0.00000083612736)));
                         squaremetre.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.83612736));
                         squaremile.setText(String.valueOf(Double.parseDouble(s.toString()) / 3097600));
@@ -176,8 +172,7 @@ public class AreaFragment extends Fragment {
                         squareinch.setText(String.valueOf(Double.parseDouble(s.toString()) * 1296));
                         hectare.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000083612736));
                         acre.setText(String.valueOf(Double.parseDouble(s.toString()) / 4840));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         squarekilometre.getText().clear();
                         squaremetre.getText().clear();
                         squaremile.getText().clear();
@@ -206,7 +201,7 @@ public class AreaFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (squarefoot.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         squarekilometre.setText(String.valueOf((Double.parseDouble(s.toString()) * 0.00000009290304)));
                         squaremetre.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.09290304));
                         squaremile.setText(String.valueOf(Double.parseDouble(s.toString()) / 27878400));
@@ -214,8 +209,7 @@ public class AreaFragment extends Fragment {
                         squareinch.setText(String.valueOf(Double.parseDouble(s.toString()) * 144));
                         hectare.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000009290304));
                         acre.setText(String.valueOf(Double.parseDouble(s.toString()) / 43560));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         squarekilometre.getText().clear();
                         squaremetre.getText().clear();
                         squaremile.getText().clear();
@@ -244,7 +238,7 @@ public class AreaFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (squareinch.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         squarekilometre.setText(String.valueOf((Double.parseDouble(s.toString()) * 0.00000000064516)));
                         squaremetre.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00064516));
                         squaremile.setText(String.valueOf(Double.parseDouble(s.toString()) / 4014489600L));
@@ -252,8 +246,7 @@ public class AreaFragment extends Fragment {
                         squarefoot.setText(String.valueOf(Double.parseDouble(s.toString()) / 144));
                         hectare.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000000064516));
                         acre.setText(String.valueOf(Double.parseDouble(s.toString()) / 6272640));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         squarekilometre.getText().clear();
                         squaremetre.getText().clear();
                         squaremile.getText().clear();
@@ -282,7 +275,7 @@ public class AreaFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (hectare.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         squarekilometre.setText(String.valueOf((Double.parseDouble(s.toString()) / 100)));
                         squaremetre.setText(String.valueOf(Double.parseDouble(s.toString()) * 10000));
                         squaremile.setText(String.valueOf(Double.parseDouble(s.toString()) / 258.998811));
@@ -290,8 +283,7 @@ public class AreaFragment extends Fragment {
                         squarefoot.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.000009290304));
                         squareinch.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.000000064516));
                         acre.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.404685642));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         squarekilometre.getText().clear();
                         squaremetre.getText().clear();
                         squaremile.getText().clear();
@@ -320,7 +312,7 @@ public class AreaFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (acre.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         squarekilometre.setText(String.valueOf((Double.parseDouble(s.toString()) * 0.00404685642)));
                         squaremetre.setText(String.valueOf(Double.parseDouble(s.toString()) * 4046.85642));
                         squaremile.setText(String.valueOf(Double.parseDouble(s.toString()) / 640));
@@ -328,8 +320,7 @@ public class AreaFragment extends Fragment {
                         squarefoot.setText(String.valueOf(Double.parseDouble(s.toString()) * 43560));
                         squareinch.setText(String.valueOf(Double.parseDouble(s.toString()) * 6272640));
                         hectare.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.404685642));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         squarekilometre.getText().clear();
                         squaremetre.getText().clear();
                         squaremile.getText().clear();
@@ -353,5 +344,4 @@ public class AreaFragment extends Fragment {
             return false;
         }
     }
-
 }

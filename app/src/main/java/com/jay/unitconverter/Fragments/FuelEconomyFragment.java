@@ -24,8 +24,7 @@ public class FuelEconomyFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_fuel_economy, container, false);
 
@@ -49,12 +48,11 @@ public class FuelEconomyFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (usmilespergallon.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         milespergallonimperial.setText(String.valueOf((Double.parseDouble(s.toString()) * 1.20095)));
                         kilometerperlitre.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.425144));
                         litreper100kilometres.setText(String.valueOf(Double.parseDouble(s.toString()) * 235.215));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         milespergallonimperial.getText().clear();
                         kilometerperlitre.getText().clear();
                         litreper100kilometres.getText().clear();
@@ -78,12 +76,11 @@ public class FuelEconomyFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (milespergallonimperial.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         usmilespergallon.setText(String.valueOf((Double.parseDouble(s.toString()) * 0.832674)));
                         kilometerperlitre.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.354006));
                         litreper100kilometres.setText(String.valueOf(Double.parseDouble(s.toString()) * 282.481));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         usmilespergallon.getText().clear();
                         kilometerperlitre.getText().clear();
                         litreper100kilometres.getText().clear();
@@ -107,12 +104,11 @@ public class FuelEconomyFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (kilometerperlitre.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         usmilespergallon.setText(String.valueOf((Double.parseDouble(s.toString()) * 2.35215)));
                         milespergallonimperial.setText(String.valueOf(Double.parseDouble(s.toString()) * 2.82481));
                         litreper100kilometres.setText(String.valueOf(Double.parseDouble(s.toString()) * 100));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         usmilespergallon.getText().clear();
                         milespergallonimperial.getText().clear();
                         litreper100kilometres.getText().clear();
@@ -136,12 +132,11 @@ public class FuelEconomyFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (litreper100kilometres.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         usmilespergallon.setText(String.valueOf((Double.parseDouble(s.toString()) * 235.215)));
                         milespergallonimperial.setText(String.valueOf(Double.parseDouble(s.toString()) * 282.481));
                         kilometerperlitre.setText(String.valueOf(Double.parseDouble(s.toString()) * 100));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         usmilespergallon.getText().clear();
                         milespergallonimperial.getText().clear();
                         kilometerperlitre.getText().clear();
@@ -161,5 +156,4 @@ public class FuelEconomyFragment extends Fragment {
             return false;
         }
     }
-
 }

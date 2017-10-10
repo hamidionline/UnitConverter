@@ -4,7 +4,7 @@
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <android.support.design.widget.TextInputLayout
@@ -16,7 +16,7 @@
                 android:id="@+id/input_nanosecond"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Nanosecond"
+                android:hint="@string/nanosecond"
                 android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>
@@ -30,7 +30,7 @@
                 android:id="@+id/input_microsecond"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Microsecond"
+                android:hint="@string/microsecond"
                 android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>
@@ -44,7 +44,7 @@
                 android:id="@+id/input_millisecond"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Millisecond"
+                android:hint="@string/millisecond"
                 android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>
@@ -58,7 +58,7 @@
                 android:id="@+id/input_second"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Second"
+                android:hint="@string/second"
                 android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>
@@ -72,7 +72,7 @@
                 android:id="@+id/input_minute"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Minute"
+                android:hint="@string/minute"
                 android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>
@@ -86,7 +86,7 @@
                 android:id="@+id/input_hour"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Hour"
+                android:hint="@string/hour"
                 android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>
@@ -100,7 +100,7 @@
                 android:id="@+id/input_day"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Day"
+                android:hint="@string/day"
                 android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>
@@ -114,7 +114,7 @@
                 android:id="@+id/input_week"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Week"
+                android:hint="@string/week"
                 android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>
@@ -128,7 +128,7 @@
                 android:id="@+id/input_month"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Month"
+                android:hint="@string/month"
                 android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>
@@ -142,7 +142,7 @@
                 android:id="@+id/input_year"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Year"
+                android:hint="@string/year"
                 android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>
@@ -156,7 +156,7 @@
                 android:id="@+id/input_decade"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Decade"
+                android:hint="@string/decade"
                 android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>
@@ -170,7 +170,7 @@
                 android:id="@+id/input_century"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Century"
+                android:hint="@string/century"
                 android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>

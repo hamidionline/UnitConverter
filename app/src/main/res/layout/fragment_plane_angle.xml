@@ -4,7 +4,7 @@
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <!--<android.support.design.widget.TextInputLayout-->
@@ -30,7 +30,7 @@
                 android:id="@+id/input_degree"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Degree"
+                android:hint="@string/degree"
                 android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>
@@ -44,7 +44,7 @@
                 android:id="@+id/input_gradian"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Gradian"
+                android:hint="@string/gradian"
                 android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>
@@ -58,7 +58,7 @@
                 android:id="@+id/input_minute_of_arc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Minute of arc"
+                android:hint="@string/minute_of_arc"
                 android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>
@@ -72,7 +72,7 @@
                 android:id="@+id/input_radian"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Radian"
+                android:hint="@string/radian"
                 android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>
@@ -86,7 +86,7 @@
                 android:id="@+id/input_second_of_arc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Second of arc"
+                android:hint="@string/second_of_arc"
                 android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>

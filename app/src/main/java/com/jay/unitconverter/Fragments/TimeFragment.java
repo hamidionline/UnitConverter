@@ -24,8 +24,7 @@ public class TimeFragment extends Fragment {
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_time, container, false);
 
@@ -58,7 +57,7 @@ public class TimeFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (nanosecond.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         microsecond.setText(String.valueOf((Double.parseDouble(s.toString()) * 0.001)));
                         millisecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000001));
                         second.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000000001));
@@ -70,8 +69,7 @@ public class TimeFragment extends Fragment {
                         year.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00000000000000003171));
                         decade.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000000000000000003171));
                         century.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.0000000000000000003171));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         microsecond.getText().clear();
                         millisecond.getText().clear();
                         second.getText().clear();
@@ -104,7 +102,7 @@ public class TimeFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (microsecond.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         nanosecond.setText(String.valueOf((Double.parseDouble(s.toString()) * 1000)));
                         millisecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.001));
                         second.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000001));
@@ -116,8 +114,7 @@ public class TimeFragment extends Fragment {
                         year.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00000000000003171));
                         decade.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000000000000003171));
                         century.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.0000000000000003171));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         nanosecond.getText().clear();
                         millisecond.getText().clear();
                         second.getText().clear();
@@ -150,7 +147,7 @@ public class TimeFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (millisecond.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         nanosecond.setText(String.valueOf((Double.parseDouble(s.toString()) * 1000000)));
                         microsecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000));
                         second.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.001));
@@ -162,8 +159,7 @@ public class TimeFragment extends Fragment {
                         year.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00000000003171));
                         decade.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000000000003171));
                         century.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.0000000000003171));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         nanosecond.getText().clear();
                         microsecond.getText().clear();
                         second.getText().clear();
@@ -196,7 +192,7 @@ public class TimeFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (second.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         nanosecond.setText(String.valueOf((Double.parseDouble(s.toString()) * 1000000000)));
                         microsecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000000));
                         millisecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000));
@@ -208,8 +204,7 @@ public class TimeFragment extends Fragment {
                         year.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00000003171));
                         decade.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000000003171));
                         century.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.0000000003171));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         nanosecond.getText().clear();
                         microsecond.getText().clear();
                         millisecond.getText().clear();
@@ -242,7 +237,7 @@ public class TimeFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (minute.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         nanosecond.setText(String.valueOf((Double.parseDouble(s.toString()) * 60000000000L)));
                         microsecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 60000000));
                         millisecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 60000));
@@ -254,8 +249,7 @@ public class TimeFragment extends Fragment {
                         year.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.0000019026));
                         decade.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00000019026));
                         century.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000000019026));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         nanosecond.getText().clear();
                         microsecond.getText().clear();
                         millisecond.getText().clear();
@@ -288,7 +282,7 @@ public class TimeFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (hour.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         nanosecond.setText(String.valueOf((Double.parseDouble(s.toString()) * 3600000000000L)));
                         microsecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 3600000000L));
                         millisecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 3600000));
@@ -300,8 +294,7 @@ public class TimeFragment extends Fragment {
                         year.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000114155));
                         decade.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000011416));
                         century.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.0000011416));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         nanosecond.getText().clear();
                         microsecond.getText().clear();
                         millisecond.getText().clear();
@@ -334,7 +327,7 @@ public class TimeFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (day.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         nanosecond.setText(String.valueOf((Double.parseDouble(s.toString()) * 86400000000000L)));
                         microsecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 86400000000L));
                         millisecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 8.64e+7));
@@ -346,8 +339,7 @@ public class TimeFragment extends Fragment {
                         year.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00273973));
                         decade.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000273973));
                         century.setText(String.valueOf(Double.parseDouble(s.toString()) * 2.7397e-5));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         nanosecond.getText().clear();
                         microsecond.getText().clear();
                         millisecond.getText().clear();
@@ -380,7 +372,7 @@ public class TimeFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (week.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         nanosecond.setText(String.valueOf((Double.parseDouble(s.toString()) * 6.048e+14)));
                         microsecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 6.048e+11));
                         millisecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 6.048e+8));
@@ -392,8 +384,7 @@ public class TimeFragment extends Fragment {
                         year.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.0191781));
                         decade.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00191781));
                         century.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000191781));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         nanosecond.getText().clear();
                         microsecond.getText().clear();
                         millisecond.getText().clear();
@@ -426,7 +417,7 @@ public class TimeFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (month.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         nanosecond.setText(String.valueOf((Double.parseDouble(s.toString()) * 2.628e+15)));
                         microsecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 2.628e+12));
                         millisecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 2.628e+9));
@@ -438,8 +429,7 @@ public class TimeFragment extends Fragment {
                         year.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.0833334));
                         decade.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00833334));
                         century.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000833334));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         nanosecond.getText().clear();
                         microsecond.getText().clear();
                         millisecond.getText().clear();
@@ -472,7 +462,7 @@ public class TimeFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (year.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         nanosecond.setText(String.valueOf((Double.parseDouble(s.toString()) * 3.154e+16)));
                         microsecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 3.154e+13));
                         millisecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 3.154e+10));
@@ -484,8 +474,7 @@ public class TimeFragment extends Fragment {
                         month.setText(String.valueOf(Double.parseDouble(s.toString()) * 12));
                         decade.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.1));
                         century.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.01));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         nanosecond.getText().clear();
                         microsecond.getText().clear();
                         millisecond.getText().clear();
@@ -518,7 +507,7 @@ public class TimeFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (decade.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         nanosecond.setText(String.valueOf((Double.parseDouble(s.toString()) * 3.154e+17)));
                         microsecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 3.154e+14));
                         millisecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 3.154e+11));
@@ -530,8 +519,7 @@ public class TimeFragment extends Fragment {
                         month.setText(String.valueOf(Double.parseDouble(s.toString()) * 120));
                         year.setText(String.valueOf(Double.parseDouble(s.toString()) * 10));
                         century.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.1));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         nanosecond.getText().clear();
                         microsecond.getText().clear();
                         millisecond.getText().clear();
@@ -564,7 +552,7 @@ public class TimeFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if (century.isFocused()) {
-                    if (s.toString().trim() != null && !s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
+                    if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         nanosecond.setText(String.valueOf((Double.parseDouble(s.toString()) * 3.154e+18)));
                         microsecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 3.154e+15));
                         millisecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 3.154e+12));
@@ -576,8 +564,7 @@ public class TimeFragment extends Fragment {
                         month.setText(String.valueOf(Double.parseDouble(s.toString()) * 1200));
                         year.setText(String.valueOf(Double.parseDouble(s.toString()) * 100));
                         decade.setText(String.valueOf(Double.parseDouble(s.toString()) * 10));
-                    } else if (s.toString().trim() != null && !s.toString().trim().isEmpty() && s.toString().trim().charAt(s.length() - 1) == '.') {
-                    } else {
+                    } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         nanosecond.getText().clear();
                         microsecond.getText().clear();
                         millisecond.getText().clear();
@@ -605,5 +592,4 @@ public class TimeFragment extends Fragment {
             return false;
         }
     }
-
 }

@@ -15,6 +15,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
 import com.jay.unitconverter.Fragments.AreaFragment;
 import com.jay.unitconverter.Fragments.DataTransferRateFragment;
 import com.jay.unitconverter.Fragments.DigitalStorageFragment;
@@ -33,11 +36,9 @@ import com.jay.unitconverter.Fragments.VolumeFragment;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ScrollableTabsActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class ScrollableTabsActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    private TabLayout tabLayout;
-    private ViewPager viewPager;
+    private InterstitialAd mInterstitialAd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,11 +56,13 @@ public class ScrollableTabsActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        viewPager = (ViewPager) findViewById(R.id.viewpager);
+        ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
         setupViewPager(viewPager);
 
-        tabLayout = (TabLayout) findViewById(R.id.tabs);
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId("ca-app-pub-7577307801270101/2454530036");
     }
 
     private void setupViewPager(ViewPager viewPager) {
@@ -88,8 +91,20 @@ public class ScrollableTabsActivity extends AppCompatActivity
             drawer.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
+            mInterstitialAd.loadAd(new AdRequest.Builder().build());
+            if (mInterstitialAd.isLoaded()) {
+                mInterstitialAd.show();
+            }
+            mInterstitialAd.setAdListener(new AdListener() {
+                @Override
+                public void onAdLoaded() {
+                    super.onAdLoaded();
+                    mInterstitialAd.show();
+                }
+            });
         }
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -160,11 +175,11 @@ public class ScrollableTabsActivity extends AppCompatActivity
         return true;
     }
 
-    class ViewPagerAdapter extends FragmentPagerAdapter {
+    private class ViewPagerAdapter extends FragmentPagerAdapter {
         private final List<Fragment> mFragmentList = new ArrayList<>();
         private final List<String> mFragmentTitleList = new ArrayList<>();
 
-        public ViewPagerAdapter(FragmentManager manager) {
+        ViewPagerAdapter(FragmentManager manager) {
             super(manager);
         }
 
@@ -178,7 +193,7 @@ public class ScrollableTabsActivity extends AppCompatActivity
             return mFragmentList.size();
         }
 
-        public void addFrag(Fragment fragment, String title) {
+        void addFrag(Fragment fragment, String title) {
             mFragmentList.add(fragment);
             mFragmentTitleList.add(title);
         }

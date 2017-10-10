@@ -5,7 +5,7 @@
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <android.support.design.widget.TextInputLayout
@@ -17,7 +17,7 @@
                 android:id="@+id/input_joule"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Joule"
+                android:hint="@string/joule"
                 android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>
@@ -31,7 +31,7 @@
                 android:id="@+id/input_kilojoule"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Kilojoule"
+                android:hint="@string/kilojoule"
                 android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>
@@ -45,7 +45,7 @@
                 android:id="@+id/input_gram_calorie"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Gram calorie"
+                android:hint="@string/gram_calorie"
                 android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>
@@ -59,7 +59,7 @@
                 android:id="@+id/input_kilocalorie"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Kilocalorie"
+                android:hint="@string/kilocalorie"
                 android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>
@@ -73,7 +73,7 @@
                 android:id="@+id/input_watt_hour"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Watt hour"
+                android:hint="@string/watt_hour"
                 android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>
@@ -87,7 +87,7 @@
                 android:id="@+id/input_kilowatt_hour"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Kilowatt hour"
+                android:hint="@string/kilowatt_hour"
                 android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>
@@ -101,7 +101,7 @@
                 android:id="@+id/input_electronvolt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Electronvolt"
+                android:hint="@string/electronvolt"
                 android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>
@@ -115,7 +115,7 @@
                 android:id="@+id/input_british_thermal_unit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="British thermal unit"
+                android:hint="@string/british_thermal_unit"
                 android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>
@@ -129,7 +129,7 @@
                 android:id="@+id/input_us_therm"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="US therm"
+                android:hint="@string/us_therm"
                 android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>
@@ -143,7 +143,7 @@
                 android:id="@+id/input_foot_pound"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Foot-pound"
+                android:hint="@string/foot_pound"
                 android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>

@@ -3,6 +3,7 @@ package com.jay.unitconverter;
 import android.app.Application;
 
 import com.crashlytics.android.Crashlytics;
+import com.google.android.gms.ads.MobileAds;
 
 import io.fabric.sdk.android.Fabric;
 
@@ -16,5 +17,6 @@ public class MyApplication extends Application {
     public void onCreate() {
         super.onCreate();
         Fabric.with(this, new Crashlytics());
+        MobileAds.initialize(this, "ca-app-pub-7577307801270101~1617581777");
     }
 }
