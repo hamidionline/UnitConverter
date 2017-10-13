@@ -14,10 +14,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.reward.RewardItem;
+import com.google.android.gms.ads.reward.RewardedVideoAd;
+import com.google.android.gms.ads.reward.RewardedVideoAdListener;
 import com.jay.unitconverter.Fragments.AreaFragment;
 import com.jay.unitconverter.Fragments.DataTransferRateFragment;
 import com.jay.unitconverter.Fragments.DigitalStorageFragment;
@@ -36,9 +41,10 @@ import com.jay.unitconverter.Fragments.VolumeFragment;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ScrollableTabsActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class ScrollableTabsActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, RewardedVideoAdListener {
 
     private InterstitialAd mInterstitialAd;
+    private RewardedVideoAd mAd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,8 +67,12 @@ public class ScrollableTabsActivity extends AppCompatActivity implements Navigat
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
+        // Use an activity context to get the Interstitial Ad instance.
         mInterstitialAd = new InterstitialAd(this);
         mInterstitialAd.setAdUnitId("ca-app-pub-7577307801270101/2454530036");
+        // Use an activity context to get the rewarded video instance.
+        mAd = MobileAds.getRewardedVideoAdInstance(this);
+        mAd.setRewardedVideoAdListener(this);
     }
 
     private void setupViewPager(ViewPager viewPager) {
@@ -105,7 +115,6 @@ public class ScrollableTabsActivity extends AppCompatActivity implements Navigat
         }
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -121,11 +130,39 @@ public class ScrollableTabsActivity extends AppCompatActivity implements Navigat
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+//        if (id == R.id.action_settings) {
+//            return true;
+//        }
+        if (id == R.id.action_exit) {
+            loadRewardedVideoAd();
+            if (mAd.isLoaded()) {
+                mAd.show();
+            }
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void loadRewardedVideoAd() {
+        mAd.loadAd("ca-app-pub-7577307801270101/5102095863", new AdRequest.Builder().build());
+    }
+
+    @Override
+    protected void onResume() {
+        mAd.resume(this);
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        mAd.pause(this);
+        super.onPause();
+    }
+
+    @Override
+    protected void onDestroy() {
+        mAd.destroy(this);
+        super.onDestroy();
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -173,6 +210,45 @@ public class ScrollableTabsActivity extends AppCompatActivity implements Navigat
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onRewardedVideoAdLoaded() {
+//        FirebaseCrash.log("onRewardedVideoAdLoaded");
+        if (mAd.isLoaded()) {
+            mAd.show();
+        }
+    }
+
+    @Override
+    public void onRewardedVideoAdOpened() {
+//        FirebaseCrash.log("onRewardedVideoAdOpened");
+    }
+
+    @Override
+    public void onRewardedVideoStarted() {
+//        FirebaseCrash.log("onRewardedVideoStarted");
+    }
+
+    @Override
+    public void onRewardedVideoAdClosed() {
+//        FirebaseCrash.log("onRewardedVideoAdClosed");
+    }
+
+    @Override
+    public void onRewarded(RewardItem rewardItem) {
+//        FirebaseCrash.log("onRewarded! currency: " + rewardItem.getType() + "  amount: " + rewardItem.getAmount());
+        Toast.makeText(this, "Thanks for watching ad:)", Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onRewardedVideoAdLeftApplication() {
+//        FirebaseCrash.log("onRewardedVideoAdLeftApplication");
+    }
+
+    @Override
+    public void onRewardedVideoAdFailedToLoad(int i) {
+//        FirebaseCrash.log("onRewardedVideoAdFailedToLoad");
     }
 
     private class ViewPagerAdapter extends FragmentPagerAdapter {
