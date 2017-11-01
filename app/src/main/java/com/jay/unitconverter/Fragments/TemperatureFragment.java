@@ -103,8 +103,8 @@ public class TemperatureFragment extends Fragment {
             public void afterTextChanged(Editable s) {
                 if (kelvin.isFocused()) {
                     if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
-                        celcious.setText(String.valueOf((((Double.parseDouble(s.toString()) - 32) * 5) / 9)));
-                        fahrenheit.setText(String.valueOf((5.0 / 9 * (Double.parseDouble(s.toString()) - 32) + 273.15)));
+                        celcious.setText(String.valueOf(Double.parseDouble(s.toString()) - 273.15));
+                        fahrenheit.setText(String.valueOf(((Double.parseDouble(s.toString()) * 9 / 5) - 459.67)));
                     } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         celcious.getText().clear();
                         fahrenheit.getText().clear();
