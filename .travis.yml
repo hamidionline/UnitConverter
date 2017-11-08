@@ -1,6 +1,6 @@
 language: android
 jdk: oraclejdk8
-install: true
+install: mvn install
 sudo: true
 
 android:
