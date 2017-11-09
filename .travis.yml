@@ -26,11 +26,3 @@ before_cache:
 cache:
         directories:
         - ~/.gradle
-
-before_script:
-        # Overwrite the keystore if it is a pull request
-        - ./before_script.sh
-before_deploy:
-        # Clean up the output folder
-        # Link up the new builds into individual html files
-        - ./before_deploy.sh
