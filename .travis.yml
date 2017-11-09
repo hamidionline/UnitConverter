@@ -1,3 +1,4 @@
+sudo: true
 language: android
 android:
         components:
@@ -9,9 +10,27 @@ android:
                 - extra-google-google_play_services
                 - extra-google-m2repository
 script:
+        # Override Travis default script to not run connectedCheck until this bug is fixed:
+        # https://code.google.com/p/android/issues/detail?id=59592
+        - ./gradlew clean build findbugs -PdisablePreDex
+        - ./print_findbugs.sh
         - ./gradlew build
 before_install:
         - chmod +x gradlew
 branches:
         only:
                 - master
+before_cache:
+        # Delete the gradle lock file which forces creation of a new build cache
+        - rm ~/.gradle/caches/modules-2/modules-2.lock
+cache:
+        directories:
+        - ~/.gradle
+
+before_script:
+        # Overwrite the keystore if it is a pull request
+        - ./before_script.sh
+before_deploy:
+        # Clean up the output folder
+        # Link up the new builds into individual html files
+        - ./before_deploy.sh
