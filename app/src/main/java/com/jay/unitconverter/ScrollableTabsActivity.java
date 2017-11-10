@@ -73,6 +73,8 @@ public class ScrollableTabsActivity extends AppCompatActivity implements Navigat
         // Use an activity context to get the rewarded video instance.
         mAd = MobileAds.getRewardedVideoAdInstance(this);
         mAd.setRewardedVideoAdListener(this);
+        loadRewardedVideoAd();
+        loadInterstitialAd();
     }
 
     private void setupViewPager(ViewPager viewPager) {
@@ -101,7 +103,17 @@ public class ScrollableTabsActivity extends AppCompatActivity implements Navigat
             drawer.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
-            mInterstitialAd.loadAd(new AdRequest.Builder().build());
+
+            if (mAd.isLoaded()) {
+                mAd.show();
+            } else {
+                loadRewardedVideoAd();
+                if (mAd.isLoaded()) {
+                    mAd.show();
+                }
+                mAd.show();
+            }
+            loadInterstitialAd();
             if (mInterstitialAd.isLoaded()) {
                 mInterstitialAd.show();
             }
@@ -134,8 +146,13 @@ public class ScrollableTabsActivity extends AppCompatActivity implements Navigat
 //            return true;
 //        }
         if (id == R.id.action_exit) {
-            loadRewardedVideoAd();
             if (mAd.isLoaded()) {
+                mAd.show();
+            } else {
+                loadRewardedVideoAd();
+                if (mAd.isLoaded()) {
+                    mAd.show();
+                }
                 mAd.show();
             }
         }
@@ -143,6 +160,9 @@ public class ScrollableTabsActivity extends AppCompatActivity implements Navigat
         return super.onOptionsItemSelected(item);
     }
 
+    private void loadInterstitialAd() {
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
+    }
     private void loadRewardedVideoAd() {
         mAd.loadAd("ca-app-pub-7577307801270101/5102095863", new AdRequest.Builder().build());
     }
