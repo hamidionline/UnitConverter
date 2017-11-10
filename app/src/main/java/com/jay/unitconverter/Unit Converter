@@ -9,6 +9,16 @@ Square inch
 Hectare
 Acre
 
+http://www.unit-conversion.info/category/Measurement_conversion_A-I#data
+New in Area (http://www.unit-conversion.info/area.html#data)
+Are
+Barn
+Homestand
+Rood
+Square centimeter
+Square rod
+Township
+
 Data Transfer Rate
 Bit per second
 Kilobit per second
@@ -23,6 +33,9 @@ Gibibit per second
 Terabit per second
 Terabyte per second
 Tebibit per second
+
+New in Data Transfer Rate (http://www.unit-conversion.info/computer-transfer.html#data)
+Byte per second
 
 Digital Storage
 Bit
@@ -158,3 +171,230 @@ Imperial tablespoon
 Imperial teaspoon
 Cubic foot
 Cubic inch
+
+
+New
+Angle (http://www.unit-conversion.info/angle.html#data)
+Degree
+Full circle
+grad
+radians
+
+Amount of Substance (http://www.unit-conversion.info/amount-of-substance.html#data)
+Millimole
+Mol
+Grammole
+Kilomole
+Poundmole
+
+Astronomical (http://www.unit-conversion.info/astronomical.html#data)
+Parsec
+Astronomical unit
+Kilometer
+Meter
+Mile
+Light Year (Julian)
+Light Year (Gregorian)
+Light Year (Traditional)
+Light Year (Tropical / Solar)
+Light Week
+Light Day
+Light Hour
+Light Minute
+Light Second
+
+Blood Sugar (http://www.unit-conversion.info/blood-sugar.html#data)
+mmol/l
+mg/dl
+mg%
+
+Capacitance (http://www.unit-conversion.info/capacitance.html#data)
+Abfarad (abF)
+Attofarad (aF)
+Centifarad (cF)
+Coulomb per volt
+Decafarad (daF)
+Decifarad (dF)
+Exafarad (EF)
+Farad (F)
+Femtofarad (fF)
+Gigafarad (GF)
+Hectofarad (hF)
+Kilofarad (kF)
+Megafarad (mF)
+Microfarad (µF)
+Millifarad (mF)
+Nanofarad (nF)
+Petafarad (PF)
+Picofarad (pF)
+Statfarad (statF)
+Terafarad (TF)
+Yoctofarad (yF)
+Yottafarad (YF)
+Zeptofarad (zF)
+Zettafarad (ZF)
+
+Cooking (http://www.unit-conversion.info/cooking.html#data)
+cup [US]
+dash
+dessertspoon [US]
+dessertspoon [UK]
+dram[US fluid]
+dram[UK fluid]
+drop
+fifth
+fluid ounce [US fluid, fl oz]
+fluid ounce [UK fluid, fl oz]
+gallon [US, fluid]
+gallon [US, dry]
+gallon [UK]
+gill [US]
+gill [UK]
+liter
+milliliter
+pint [US, fluid]
+pint [US, dry]
+
+Density (http://www.unit-conversion.info/density.html#data)
+gram / cubic centimeter (g/cm³)
+gram / cubic decimeter
+gram / cubic meter (g/m³)
+gram / liter
+gram / milliliter
+megagram / cubic centimeter
+megagram / cubic meter
+megagram / liter
+megagram / milliliter
+milligram / cubic centimeter (mg/cm³)
+milligram / cubic decimeter
+milligram / cubic meter (mg/m³)
+milligram / liter
+milligram / milliliter
+kilogram / cubic centimeter (kg/cm³)
+kilogram / cubic decimeter
+kilogram / cubic meter (kg/m³)
+kilogram / liter
+kilogram / milliliter
+ounce / cubic foot
+ounce / cubic inch
+ounce / cubic yard
+ounce / gallon (U.K.)(oz/gal)
+ounce / gallon (U.S.)(oz/gal)
+pound / circular mil foot
+pound / cubic foot (lb/ft³)
+pound / cubic inch (lb/in³)
+pound / cubic yard
+pound / gallon (U.K.)(lb/gal)
+pound / gallon (U.S.)(lb/gal)
+grain / cubic foot
+grain / cubic inch
+grain / cubic yard
+grain / gallon (U.K.)
+grain / gallon (U.S.)
+tonne / cubic centimeter
+tonne / cubic decimeter
+tonne / cubic meter
+tonne / liter
+tonne / milliliter
+
+Dynamic Viscosity (http://www.unit-conversion.info/dynamic-viscosity.html#data)
+Centipoise (cP)
+Gram per centimeter second (g/(cm·s))
+Kilogram per metre second (kg/(m·s))
+Newton second per square metre (N·s/m²)
+Pascal-second (Pa·s)
+Poise (P)
+Pound-force second per square inch (lbf·s/in²)
+Pound-force second per square foot (lbf·s/ft²)
+Pound per foot second (lb/(ft·s))
+Pound per foot hour (lb/(ft·h))
+Slug per foot second (slug/(ft·s))
+Poundal second per square foot
+Dyne second per square centimetre (dyn·s/cm²)
+
+Electric Charge (http://www.unit-conversion.info/electric-charge.html#data)
+Abcoulomb (abC)
+Ampere-hour (Ah)
+Coulomb (C)
+Elementary charge (e)
+Faraday (F)
+Kilocoulomb (kC)
+Megacoulomb (MC)
+Microcoulomb (µC)
+Milliampere-hour (mAh)
+Millicoulomb (mC)
+Nanocoulomb (nC)
+Statcoulomb (statC)
+
+Electrical Resistance (http://www.unit-conversion.info/electrical-resistance.html#data)
+Abohm (abΩ)
+Gigaohm (GΩ)
+Kiloohm (kΩ)
+Megaohm (MΩ)
+Microohm (µΩ)
+Milliohm (mΩ)
+Nanoohm (nΩ)
+Ohm (Ω)
+Volt per ampere (V/A)
+
+Illuminance (http://www.unit-conversion.info/illuminance.html#data)
+Foot-candle (fc)
+Kilolux (klx)
+Lumen per square centimeter (lm/cm²)
+Lumen per square meter (lm/m²)
+Lux (lx)
+Microlux (µlx)
+Millilux (mlx)
+Nox
+Phot (ph)
+
+Inductance (http://www.unit-conversion.info/inductance.html#data)
+Abhenry (abH)
+Gigahenry (GH)
+Henry (H)
+Kilohenry (kH)
+Megahenry (MH)
+Microhenry (µH)
+Millihenry (mH)
+Nanohenry (nH)
+Weber per ampere (Wb/A)
+
+Force (http://www.unit-conversion.info/force.html#data)
+attonewton
+centinewton
+decigram-force
+decinewton
+dekagram-force
+dekanewton
+dyne (dyn)
+exanewton
+femtonewton
+giganewton (GN)
+gram-force
+hectonewton
+joule / meter (J/m)
+kilogram-force (kgf)
+kilonewton (kN)
+kilopond (kp)
+kip (kip)
+meganewton
+megapond
+micronewton (µN)
+millinewton (mN)
+nanonewton (nN)
+newton (N)
+ounce-force (ozf)
+petanewton
+piconewton
+pond
+pound-force (lbf)
+poundal (pdl)
+sthene (sn)
+teranewton
+ton-force (long)(tnf)
+ton-force (metric)(tnf)
+ton-force (short)(tnf)
+yoctonewton
+yottanewton
+zeptonewton
+zettanewton
