@@ -13,8 +13,8 @@ android {
         applicationId "com.jay.unitconverter"
         minSdkVersion 15
         targetSdkVersion 23
-        versionCode 5
-        versionName "1.4"
+        versionCode 6
+        versionName "1.5"
     }
     buildTypes {
         release {
@@ -30,9 +30,9 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.4.0'
     compile 'com.mikepenz:materialdrawer:5.3.6'
     compile 'com.android.support:support-v4:23.4.0'
-    compile 'com.android.support:design:23.+'
+    compile 'com.android.support:design:23.4.0'
     compile('com.crashlytics.sdk.android:crashlytics:2.6.8@aar') {
         transitive = true
     }
-    compile 'com.google.android.gms:play-services-ads:11.2.0'
+    compile 'com.google.android.gms:play-services-ads:11.4.2'
 }

@@ -181,6 +181,26 @@ public class ScrollableTabsActivity extends AppCompatActivity implements Navigat
 
     @Override
     protected void onDestroy() {
+        if (mAd.isLoaded()) {
+            mAd.show();
+        } else {
+            loadRewardedVideoAd();
+            if (mAd.isLoaded()) {
+                mAd.show();
+            }
+            mAd.show();
+        }
+//        loadInterstitialAd();
+//        if (mInterstitialAd.isLoaded()) {
+//            mInterstitialAd.show();
+//        }
+//        mInterstitialAd.setAdListener(new AdListener() {
+//            @Override
+//            public void onAdLoaded() {
+//                super.onAdLoaded();
+//                mInterstitialAd.show();
+//            }
+//        });
         mAd.destroy(this);
         super.onDestroy();
     }
