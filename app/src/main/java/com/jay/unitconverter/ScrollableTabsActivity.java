@@ -293,9 +293,6 @@ public class ScrollableTabsActivity extends AppCompatActivity implements Navigat
     @Override
     public void onRewardedVideoAdLoaded() {
 //        FirebaseCrash.log("onRewardedVideoAdLoaded");
-        if (mAd.isLoaded()) {
-            mAd.show();
-        }
     }
 
     @Override
