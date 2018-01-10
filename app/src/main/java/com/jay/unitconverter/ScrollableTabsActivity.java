@@ -1,5 +1,6 @@
 package com.jay.unitconverter;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
@@ -52,26 +53,37 @@ public class ScrollableTabsActivity extends AppCompatActivity implements Navigat
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        SharedPreferences pref = getApplicationContext().getSharedPreferences("ThemePref", MODE_PRIVATE);
+        if (pref.getBoolean("dark_theme", false)) {
+            setTheme(R.style.AppThemeDark);
+        } else {
+            setTheme(R.style.AppTheme);
+        }
         setContentView(R.layout.activity_scrollable_tabs);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
+        ViewPager viewPager = findViewById(R.id.viewpager);
         setupViewPager(viewPager);
 
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
+        TabLayout tabLayout = findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
 
-        mAdView = (AdView) findViewById(R.id.adView);
+        mAdView = findViewById(R.id.adView);
+//        if (BuildConfig.DEBUG) {
+//            mAdView.setAdUnitId("ca-app-pub-3940256099942544/6300978111");
+//        } else {
+//            mAdView.setAdUnitId("ca-app-pub-7577307801270101/7780224899");
+//        }
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
         mAdView.setAdListener(new AdListener() {
@@ -107,7 +119,11 @@ public class ScrollableTabsActivity extends AppCompatActivity implements Navigat
 
         // Use an activity context to get the Interstitial Ad instance.
         mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-7577307801270101/2454530036");
+        if (BuildConfig.DEBUG) {
+            mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        } else {
+            mInterstitialAd.setAdUnitId("ca-app-pub-7577307801270101/2454530036");
+        }
         // Use an activity context to get the rewarded video instance.
         mAd = MobileAds.getRewardedVideoAdInstance(this);
         mAd.setRewardedVideoAdListener(this);
@@ -136,7 +152,7 @@ public class ScrollableTabsActivity extends AppCompatActivity implements Navigat
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -180,9 +196,21 @@ public class ScrollableTabsActivity extends AppCompatActivity implements Navigat
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-//        if (id == R.id.action_settings) {
-//            return true;
-//        }
+        if (id == R.id.action_toggle_theme) {
+            SharedPreferences pref = getApplicationContext().getSharedPreferences("ThemePref", MODE_PRIVATE);
+            if (pref.getBoolean("dark_theme", false)) {
+                SharedPreferences.Editor editor = pref.edit();
+                editor.putBoolean("dark_theme", false);
+                editor.apply();
+                recreate();
+            } else {
+                SharedPreferences.Editor editor = pref.edit();
+                editor.putBoolean("dark_theme", true);
+                editor.apply();
+                recreate();
+            }
+            return true;
+        }
         if (id == R.id.action_exit) {
             if (mAd.isLoaded()) {
                 mAd.show();
@@ -201,8 +229,13 @@ public class ScrollableTabsActivity extends AppCompatActivity implements Navigat
     private void loadInterstitialAd() {
         mInterstitialAd.loadAd(new AdRequest.Builder().build());
     }
+
     private void loadRewardedVideoAd() {
-        mAd.loadAd("ca-app-pub-7577307801270101/5102095863", new AdRequest.Builder().build());
+        if (BuildConfig.DEBUG) {
+            mAd.loadAd("ca-app-pub-3940256099942544/5224354917", new AdRequest.Builder().build());
+        } else {
+            mAd.loadAd("ca-app-pub-7577307801270101/5102095863", new AdRequest.Builder().build());
+        }
     }
 
     @Override
@@ -228,102 +261,85 @@ public class ScrollableTabsActivity extends AppCompatActivity implements Navigat
             }
             mAd.show();
         }
-//        loadInterstitialAd();
-//        if (mInterstitialAd.isLoaded()) {
-//            mInterstitialAd.show();
-//        }
-//        mInterstitialAd.setAdListener(new AdListener() {
-//            @Override
-//            public void onAdLoaded() {
-//                super.onAdLoaded();
-//                mInterstitialAd.show();
-//            }
-//        });
         mAd.destroy(this);
         super.onDestroy();
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
+        if (item != null) {
+            int id = item.getItemId();
 
-        if (id == R.id.nav_area) {
-            // Handle the camera action
-            ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(0);
-        } else if (id == R.id.nav_data_transfer_rate) {
-            ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(1);
-        } else if (id == R.id.nav_digital_storage) {
-            ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(2);
-        } else if (id == R.id.nav_energy) {
-            ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(3);
-        } else if (id == R.id.nav_frequency) {
-            ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(4);
-        } else if (id == R.id.nav_fuel_economy) {
-            ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(5);
-        } else if (id == R.id.nav_length) {
-            ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(6);
-        } else if (id == R.id.nav_mass) {
-            ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(7);
-        } else if (id == R.id.nav_plane_angel) {
-            ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(8);
-        } else if (id == R.id.nav_pressure) {
-            ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(9);
-        } else if (id == R.id.nav_speed) {
-            ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(10);
-        } else if (id == R.id.nav_temperature) {
-            ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(11);
-        } else if (id == R.id.nav_time) {
-            ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(12);
-        } else if (id == R.id.nav_volume) {
-            ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(13);
+            if (id == R.id.nav_area) {
+                // Handle the camera action
+                ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(0);
+            } else if (id == R.id.nav_data_transfer_rate) {
+                ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(1);
+            } else if (id == R.id.nav_digital_storage) {
+                ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(2);
+            } else if (id == R.id.nav_energy) {
+                ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(3);
+            } else if (id == R.id.nav_frequency) {
+                ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(4);
+            } else if (id == R.id.nav_fuel_economy) {
+                ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(5);
+            } else if (id == R.id.nav_length) {
+                ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(6);
+            } else if (id == R.id.nav_mass) {
+                ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(7);
+            } else if (id == R.id.nav_plane_angel) {
+                ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(8);
+            } else if (id == R.id.nav_pressure) {
+                ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(9);
+            } else if (id == R.id.nav_speed) {
+                ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(10);
+            } else if (id == R.id.nav_temperature) {
+                ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(11);
+            } else if (id == R.id.nav_time) {
+                ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(12);
+            } else if (id == R.id.nav_volume) {
+                ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(13);
+            }
         }
-//        else if (id == R.id.nav_share) {
-//
-//        } else if (id == R.id.nav_send) {
-//
-//        }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 
     @Override
     public void onRewardedVideoAdLoaded() {
-//        FirebaseCrash.log("onRewardedVideoAdLoaded");
+
     }
 
     @Override
     public void onRewardedVideoAdOpened() {
-//        FirebaseCrash.log("onRewardedVideoAdOpened");
+
     }
 
     @Override
     public void onRewardedVideoStarted() {
-//        FirebaseCrash.log("onRewardedVideoStarted");
+
     }
 
     @Override
     public void onRewardedVideoAdClosed() {
-//        FirebaseCrash.log("onRewardedVideoAdClosed");
+
     }
 
     @Override
     public void onRewarded(RewardItem rewardItem) {
-//        FirebaseCrash.log("onRewarded! currency: " + rewardItem.getType() + "  amount: " + rewardItem.getAmount());
         Toast.makeText(this, "Thanks for watching ad:)", Toast.LENGTH_LONG).show();
     }
 
     @Override
     public void onRewardedVideoAdLeftApplication() {
-//        FirebaseCrash.log("onRewardedVideoAdLeftApplication");
+
     }
 
     @Override
     public void onRewardedVideoAdFailedToLoad(int i) {
-//        FirebaseCrash.log("onRewardedVideoAdFailedToLoad");
+
     }
 
     private class ViewPagerAdapter extends FragmentPagerAdapter {

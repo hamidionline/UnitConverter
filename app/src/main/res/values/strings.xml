@@ -155,4 +155,6 @@
     <string name="imageview">ImageView</string>
     <string name="action_exit">Exit</string>
     <string name="action_view_ad">View Ad</string>
+    <string name="available_conversions">Available Conversions</string>
+    <string name="action_toggle_theme">Toggle Theme</string>
 </resources>

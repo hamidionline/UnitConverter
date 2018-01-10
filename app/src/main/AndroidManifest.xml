@@ -12,14 +12,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.jay.unitconverter.ScrollableTabsActivity"
+            android:name=".ScrollableTabsActivity"
             android:label="@string/title_activity_scrollable_tabs"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="8a4e14809de69ca57aa16761e87880f2fc22ca42" />
