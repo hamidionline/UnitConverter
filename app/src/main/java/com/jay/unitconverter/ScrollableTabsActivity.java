@@ -79,11 +79,6 @@ public class ScrollableTabsActivity extends AppCompatActivity implements Navigat
         tabLayout.setupWithViewPager(viewPager);
 
         mAdView = findViewById(R.id.adView);
-//        if (BuildConfig.DEBUG) {
-//            mAdView.setAdUnitId("ca-app-pub-3940256099942544/6300978111");
-//        } else {
-//            mAdView.setAdUnitId("ca-app-pub-7577307801270101/7780224899");
-//        }
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
         mAdView.setAdListener(new AdListener() {
