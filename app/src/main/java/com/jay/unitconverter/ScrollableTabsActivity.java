@@ -18,6 +18,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.crashlytics.android.Crashlytics;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -97,6 +98,7 @@ public class ScrollableTabsActivity extends AppCompatActivity implements Navigat
             public void onAdOpened() {
                 // Code to be executed when an ad opens an overlay that
                 // covers the screen.
+                Crashlytics.logException(new Exception("Banner ad clicked"));
             }
 
             @Override
@@ -165,12 +167,14 @@ public class ScrollableTabsActivity extends AppCompatActivity implements Navigat
             loadInterstitialAd();
             if (mInterstitialAd.isLoaded()) {
                 mInterstitialAd.show();
+                Crashlytics.logException(new Exception("InterstitialAd loaded"));
             }
             mInterstitialAd.setAdListener(new AdListener() {
                 @Override
                 public void onAdLoaded() {
                     super.onAdLoaded();
                     mInterstitialAd.show();
+                    Crashlytics.logException(new Exception("InterstitialAd loaded"));
                 }
             });
         }
@@ -264,9 +268,7 @@ public class ScrollableTabsActivity extends AppCompatActivity implements Navigat
     public boolean onNavigationItemSelected(MenuItem item) {
         if (item != null) {
             int id = item.getItemId();
-
             if (id == R.id.nav_area) {
-                // Handle the camera action
                 ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(0);
             } else if (id == R.id.nav_data_transfer_rate) {
                 ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(1);
@@ -325,6 +327,7 @@ public class ScrollableTabsActivity extends AppCompatActivity implements Navigat
     @Override
     public void onRewarded(RewardItem rewardItem) {
         Toast.makeText(this, "Thanks for watching ad:)", Toast.LENGTH_LONG).show();
+        Crashlytics.logException(new Exception("Video ad watched"));
     }
 
     @Override
