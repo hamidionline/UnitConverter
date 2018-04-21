@@ -2,6 +2,7 @@ package com.jay.unitconverter;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -65,8 +66,7 @@ public class ScrollableTabsActivity extends AppCompatActivity implements Navigat
         setSupportActionBar(toolbar);
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
@@ -87,40 +87,41 @@ public class ScrollableTabsActivity extends AppCompatActivity implements Navigat
             public void onAdLoaded() {
                 // Code to be executed when an ad finishes loading.
                 mAdView.setVisibility(View.VISIBLE);
+                Crashlytics.logException(new Throwable("Banner onAdOpened()"));
             }
 
             @Override
             public void onAdFailedToLoad(int errorCode) {
                 // Code to be executed when an ad request fails.
+                Crashlytics.logException(new Throwable("Banner onAdFailedToLoad() errorCode : " + errorCode));
             }
 
             @Override
             public void onAdOpened() {
                 // Code to be executed when an ad opens an overlay that
                 // covers the screen.
-                Crashlytics.logException(new Exception("Banner ad clicked"));
+                Crashlytics.logException(new Throwable("Banner onAdOpened()"));
             }
 
             @Override
             public void onAdLeftApplication() {
                 // Code to be executed when the user has left the app.
+                Crashlytics.logException(new Throwable("Banner onAdLeftApplication()"));
             }
 
             @Override
             public void onAdClosed() {
                 // Code to be executed when when the user is about to return
                 // to the app after tapping on an ad.
+                Crashlytics.logException(new Throwable("Banner onAdClosed()"));
             }
         });
 
 
         // Use an activity context to get the Interstitial Ad instance.
         mInterstitialAd = new InterstitialAd(this);
-        if (BuildConfig.DEBUG) {
-            mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
-        } else {
-            mInterstitialAd.setAdUnitId("ca-app-pub-7577307801270101/2454530036");
-        }
+//            mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712"); //Test AD
+        mInterstitialAd.setAdUnitId("ca-app-pub-7157417608226077/2409748257");
         // Use an activity context to get the rewarded video instance.
         mAd = MobileAds.getRewardedVideoAdInstance(this);
         mAd.setRewardedVideoAdListener(this);
@@ -167,14 +168,14 @@ public class ScrollableTabsActivity extends AppCompatActivity implements Navigat
             loadInterstitialAd();
             if (mInterstitialAd.isLoaded()) {
                 mInterstitialAd.show();
-                Crashlytics.logException(new Exception("InterstitialAd loaded"));
+                Crashlytics.logException(new Throwable("InterstitialAd loaded"));
             }
             mInterstitialAd.setAdListener(new AdListener() {
                 @Override
                 public void onAdLoaded() {
                     super.onAdLoaded();
                     mInterstitialAd.show();
-                    Crashlytics.logException(new Exception("InterstitialAd loaded"));
+                    Crashlytics.logException(new Throwable("InterstitialAd loaded"));
                 }
             });
         }
@@ -230,11 +231,8 @@ public class ScrollableTabsActivity extends AppCompatActivity implements Navigat
     }
 
     private void loadRewardedVideoAd() {
-        if (BuildConfig.DEBUG) {
-            mAd.loadAd("ca-app-pub-3940256099942544/5224354917", new AdRequest.Builder().build());
-        } else {
-            mAd.loadAd("ca-app-pub-7577307801270101/5102095863", new AdRequest.Builder().build());
-        }
+//            mAd.loadAd("ca-app-pub-3940256099942544/5224354917", new AdRequest.Builder().build()); //Test AD
+        mAd.loadAd("ca-app-pub-7157417608226077/7825726461", new AdRequest.Builder().build());
     }
 
     @Override
@@ -265,38 +263,36 @@ public class ScrollableTabsActivity extends AppCompatActivity implements Navigat
     }
 
     @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        if (item != null) {
-            int id = item.getItemId();
-            if (id == R.id.nav_area) {
-                ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(0);
-            } else if (id == R.id.nav_data_transfer_rate) {
-                ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(1);
-            } else if (id == R.id.nav_digital_storage) {
-                ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(2);
-            } else if (id == R.id.nav_energy) {
-                ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(3);
-            } else if (id == R.id.nav_frequency) {
-                ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(4);
-            } else if (id == R.id.nav_fuel_economy) {
-                ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(5);
-            } else if (id == R.id.nav_length) {
-                ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(6);
-            } else if (id == R.id.nav_mass) {
-                ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(7);
-            } else if (id == R.id.nav_plane_angel) {
-                ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(8);
-            } else if (id == R.id.nav_pressure) {
-                ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(9);
-            } else if (id == R.id.nav_speed) {
-                ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(10);
-            } else if (id == R.id.nav_temperature) {
-                ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(11);
-            } else if (id == R.id.nav_time) {
-                ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(12);
-            } else if (id == R.id.nav_volume) {
-                ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(13);
-            }
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.nav_area) {
+            ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(0);
+        } else if (id == R.id.nav_data_transfer_rate) {
+            ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(1);
+        } else if (id == R.id.nav_digital_storage) {
+            ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(2);
+        } else if (id == R.id.nav_energy) {
+            ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(3);
+        } else if (id == R.id.nav_frequency) {
+            ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(4);
+        } else if (id == R.id.nav_fuel_economy) {
+            ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(5);
+        } else if (id == R.id.nav_length) {
+            ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(6);
+        } else if (id == R.id.nav_mass) {
+            ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(7);
+        } else if (id == R.id.nav_plane_angel) {
+            ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(8);
+        } else if (id == R.id.nav_pressure) {
+            ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(9);
+        } else if (id == R.id.nav_speed) {
+            ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(10);
+        } else if (id == R.id.nav_temperature) {
+            ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(11);
+        } else if (id == R.id.nav_time) {
+            ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(12);
+        } else if (id == R.id.nav_volume) {
+            ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(13);
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -306,38 +302,43 @@ public class ScrollableTabsActivity extends AppCompatActivity implements Navigat
 
     @Override
     public void onRewardedVideoAdLoaded() {
-
+        Crashlytics.logException(new Throwable("Reward ad onRewardedVideoAdLoaded()"));
     }
 
     @Override
     public void onRewardedVideoAdOpened() {
-
+        Crashlytics.logException(new Throwable("Reward ad onRewardedVideoAdOpened()"));
     }
 
     @Override
     public void onRewardedVideoStarted() {
-
+        Crashlytics.logException(new Throwable("Reward ad onRewardedVideoStarted()"));
     }
 
     @Override
     public void onRewardedVideoAdClosed() {
-
+        Crashlytics.logException(new Throwable("Reward ad onRewardedVideoAdClosed()"));
     }
 
     @Override
     public void onRewarded(RewardItem rewardItem) {
-        Toast.makeText(this, "Thanks for watching ad:)", Toast.LENGTH_LONG).show();
-        Crashlytics.logException(new Exception("Video ad watched"));
+        Crashlytics.logException(new Throwable("Reward ad onRewarded() rewardItem.getAmount() : " + rewardItem.getAmount()));
     }
 
     @Override
     public void onRewardedVideoAdLeftApplication() {
-
+        Crashlytics.logException(new Throwable("Reward ad onRewardedVideoAdLeftApplication()"));
     }
 
     @Override
     public void onRewardedVideoAdFailedToLoad(int i) {
+        Crashlytics.logException(new Throwable("Reward ad onRewardedVideoAdFailedToLoad() errorCode : " + i));
+    }
 
+    @Override
+    public void onRewardedVideoCompleted() {
+        Toast.makeText(this, "Thanks for watching ad:)", Toast.LENGTH_LONG).show();
+        Crashlytics.logException(new Throwable("Reward ad onRewardedVideoCompleted()"));
     }
 
     private class ViewPagerAdapter extends FragmentPagerAdapter {

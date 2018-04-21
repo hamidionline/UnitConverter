@@ -28,17 +28,17 @@ public class LengthFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_length, container, false);
 
-        final EditText kilometre = (EditText) view.findViewById(R.id.input_kilometre);
-        final EditText metre = (EditText) view.findViewById(R.id.input_metre);
-        final EditText centimetre = (EditText) view.findViewById(R.id.input_centimetre);
-        final EditText millimetre = (EditText) view.findViewById(R.id.input_millimetre);
-        final EditText micrometre = (EditText) view.findViewById(R.id.input_micrometre);
-        final EditText nanometre = (EditText) view.findViewById(R.id.input_nanometre);
-        final EditText mile = (EditText) view.findViewById(R.id.input_mile);
-        final EditText yard = (EditText) view.findViewById(R.id.input_yard);
-        final EditText foot = (EditText) view.findViewById(R.id.input_foot);
-        final EditText inch = (EditText) view.findViewById(R.id.input_inch);
-        final EditText nauticalmile = (EditText) view.findViewById(R.id.input_nautical_mile);
+        final EditText kilometre = view.findViewById(R.id.input_kilometre);
+        final EditText metre = view.findViewById(R.id.input_metre);
+        final EditText centimetre = view.findViewById(R.id.input_centimetre);
+        final EditText millimetre = view.findViewById(R.id.input_millimetre);
+        final EditText micrometre = view.findViewById(R.id.input_micrometre);
+        final EditText nanometre = view.findViewById(R.id.input_nanometre);
+        final EditText mile = view.findViewById(R.id.input_mile);
+        final EditText yard = view.findViewById(R.id.input_yard);
+        final EditText foot = view.findViewById(R.id.input_foot);
+        final EditText inch = view.findViewById(R.id.input_inch);
+        final EditText nauticalmile = view.findViewById(R.id.input_nautical_mile);
 
         kilometre.addTextChangedListener(new TextWatcher() {
             int charCount = 0;

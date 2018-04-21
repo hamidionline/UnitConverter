@@ -29,25 +29,25 @@ public class VolumeFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_volume, container, false);
 
-        final EditText usliquidgallon = (EditText) view.findViewById(R.id.input_us_liquid_gallon);
-        final EditText usliquidquart = (EditText) view.findViewById(R.id.input_us_liquid_quart);
-        final EditText usliquidpint = (EditText) view.findViewById(R.id.input_us_liquid_pint);
-        final EditText uslegalcup = (EditText) view.findViewById(R.id.input_us_legal_cup);
-        final EditText usfluidounce = (EditText) view.findViewById(R.id.input_us_fluid_ounce);
-        final EditText ustablespoon = (EditText) view.findViewById(R.id.input_us_tablespoon);
-        final EditText usteaspoon = (EditText) view.findViewById(R.id.input_us_teaspoon);
-//        final EditText cubicmetre = (EditText) view.findViewById(R.id.input_cubic_metre);
-        final EditText litre = (EditText) view.findViewById(R.id.input_litre);
-        final EditText millilitre = (EditText) view.findViewById(R.id.input_millilitre);
-        final EditText imperialgallon = (EditText) view.findViewById(R.id.input_imperial_gallon);
-        final EditText imperialquant = (EditText) view.findViewById(R.id.input_imperial_quart);
-        final EditText imperialpint = (EditText) view.findViewById(R.id.input_imperial_pint);
-//        final EditText imperialcup = (EditText) view.findViewById(R.id.input_imperial_cup);
-        final EditText imperialfluidounce = (EditText) view.findViewById(R.id.input_imperial_fluid_ounce);
-        final EditText imperialtablespoon = (EditText) view.findViewById(R.id.input_imperial_tablespoon);
-        final EditText imperialteaspoon = (EditText) view.findViewById(R.id.input_imperial_teaspoon);
-//        final EditText cubicfoot = (EditText) view.findViewById(R.id.input_cubic_foot);
-//        final EditText cubicinch = (EditText) view.findViewById(R.id.input_cubic_inch);
+        final EditText usliquidgallon = view.findViewById(R.id.input_us_liquid_gallon);
+        final EditText usliquidquart = view.findViewById(R.id.input_us_liquid_quart);
+        final EditText usliquidpint = view.findViewById(R.id.input_us_liquid_pint);
+        final EditText uslegalcup = view.findViewById(R.id.input_us_legal_cup);
+        final EditText usfluidounce = view.findViewById(R.id.input_us_fluid_ounce);
+        final EditText ustablespoon = view.findViewById(R.id.input_us_tablespoon);
+        final EditText usteaspoon = view.findViewById(R.id.input_us_teaspoon);
+//        final EditText cubicmetre = view.findViewById(R.id.input_cubic_metre);
+        final EditText litre = view.findViewById(R.id.input_litre);
+        final EditText millilitre = view.findViewById(R.id.input_millilitre);
+        final EditText imperialgallon = view.findViewById(R.id.input_imperial_gallon);
+        final EditText imperialquant = view.findViewById(R.id.input_imperial_quart);
+        final EditText imperialpint = view.findViewById(R.id.input_imperial_pint);
+//        final EditText imperialcup = view.findViewById(R.id.input_imperial_cup);
+        final EditText imperialfluidounce = view.findViewById(R.id.input_imperial_fluid_ounce);
+        final EditText imperialtablespoon = view.findViewById(R.id.input_imperial_tablespoon);
+        final EditText imperialteaspoon = view.findViewById(R.id.input_imperial_teaspoon);
+//        final EditText cubicfoot = view.findViewById(R.id.input_cubic_foot);
+//        final EditText cubicinch = view.findViewById(R.id.input_cubic_inch);
 
         usliquidgallon.addTextChangedListener(new TextWatcher() {
             int charCount = 0;

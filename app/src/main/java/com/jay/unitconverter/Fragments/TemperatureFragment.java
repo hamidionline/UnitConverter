@@ -28,9 +28,9 @@ public class TemperatureFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         final View view = inflater.inflate(R.layout.fragment_temperature, container, false);
-        final EditText celcious = (EditText) view.findViewById(R.id.input_celsius);
-        final EditText fahrenheit = (EditText) view.findViewById(R.id.input_fahrenheit);
-        final EditText kelvin = (EditText) view.findViewById(R.id.input_kelvin);
+        final EditText celcious = view.findViewById(R.id.input_celsius);
+        final EditText fahrenheit = view.findViewById(R.id.input_fahrenheit);
+        final EditText kelvin = view.findViewById(R.id.input_kelvin);
 
         celcious.addTextChangedListener(new TextWatcher() {
             int charCount = 0;

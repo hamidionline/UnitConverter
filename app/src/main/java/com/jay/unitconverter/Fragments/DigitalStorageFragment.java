@@ -28,28 +28,28 @@ public class DigitalStorageFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_digital_storage, container, false);
 
-        final EditText bit = (EditText) view.findViewById(R.id.input_bit);
-        final EditText kilobit = (EditText) view.findViewById(R.id.input_kilobit);
-        //EditText kibibit = (EditText) view.findViewById(R.id.input_kibibit);
-        final EditText megabit = (EditText) view.findViewById(R.id.input_megabit);
-        //EditText mebibit = (EditText) view.findViewById(R.id.input_mebibit);
-        final EditText gigabit = (EditText) view.findViewById(R.id.input_gigabit);
-        //EditText gibibit = (EditText) view.findViewById(R.id.input_gibibit);
-        final EditText terabit = (EditText) view.findViewById(R.id.input_terabit);
-        //EditText tebibit = (EditText) view.findViewById(R.id.input_tebibit);
-        final EditText petabit = (EditText) view.findViewById(R.id.input_petabit);
-        //EditText pebibit = (EditText) view.findViewById(R.id.input_pebibit);
-        final EditText bytes = (EditText) view.findViewById(R.id.input_byte);
-        final EditText kilobyte = (EditText) view.findViewById(R.id.input_kilobyte);
-        //EditText kibibyte = (EditText) view.findViewById(R.id.input_kibibyte);
-        final EditText megabyte = (EditText) view.findViewById(R.id.input_megabyte);
-        //EditText mebibyte = (EditText) view.findViewById(R.id.input_mebibyte);
-        final EditText gigabyte = (EditText) view.findViewById(R.id.input_gigabyte);
-        //EditText gibibyte = (EditText) view.findViewById(R.id.input_gibibyte);
-        final EditText terabyte = (EditText) view.findViewById(R.id.input_terabyte);
-        //EditText tebibyte = (EditText) view.findViewById(R.id.input_tebibyte);
-        final EditText petabyte = (EditText) view.findViewById(R.id.input_petabyte);
-        //EditText pebibyte = (EditText) view.findViewById(R.id.input_pebibyte);
+        final EditText bit = view.findViewById(R.id.input_bit);
+        final EditText kilobit = view.findViewById(R.id.input_kilobit);
+        //EditText kibibit = view.findViewById(R.id.input_kibibit);
+        final EditText megabit = view.findViewById(R.id.input_megabit);
+        //EditText mebibit = view.findViewById(R.id.input_mebibit);
+        final EditText gigabit = view.findViewById(R.id.input_gigabit);
+        //EditText gibibit = view.findViewById(R.id.input_gibibit);
+        final EditText terabit = view.findViewById(R.id.input_terabit);
+        //EditText tebibit = view.findViewById(R.id.input_tebibit);
+        final EditText petabit = view.findViewById(R.id.input_petabit);
+        //EditText pebibit = view.findViewById(R.id.input_pebibit);
+        final EditText bytes = view.findViewById(R.id.input_byte);
+        final EditText kilobyte = view.findViewById(R.id.input_kilobyte);
+        //EditText kibibyte = view.findViewById(R.id.input_kibibyte);
+        final EditText megabyte = view.findViewById(R.id.input_megabyte);
+        //EditText mebibyte = view.findViewById(R.id.input_mebibyte);
+        final EditText gigabyte = view.findViewById(R.id.input_gigabyte);
+        //EditText gibibyte = view.findViewById(R.id.input_gibibyte);
+        final EditText terabyte = view.findViewById(R.id.input_terabyte);
+        //EditText tebibyte = view.findViewById(R.id.input_tebibyte);
+        final EditText petabyte = view.findViewById(R.id.input_petabyte);
+        //EditText pebibyte = view.findViewById(R.id.input_pebibyte);
 
         bit.addTextChangedListener(new TextWatcher() {
             int charCount = 0;

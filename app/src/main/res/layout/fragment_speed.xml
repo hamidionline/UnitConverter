@@ -55,10 +55,10 @@
             android:layout_height="wrap_content">
 
             <EditText
-                android:id="@+id/input_kilometre_per_second"
+                android:id="@+id/input_kilometre_per_hour"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/kilometre_per_second"
+                android:hint="@string/kilometre_per_hour"
                 android:inputType="numberSigned|numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>

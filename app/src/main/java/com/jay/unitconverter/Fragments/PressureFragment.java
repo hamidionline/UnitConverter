@@ -28,11 +28,11 @@ public class PressureFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_pressure, container, false);
 
-        final EditText atmosphere = (EditText) view.findViewById(R.id.input_atmosphere);
-        final EditText bar = (EditText) view.findViewById(R.id.input_bar);
-        final EditText pascal = (EditText) view.findViewById(R.id.input_pascal);
-        final EditText poundforcepersquareinch = (EditText) view.findViewById(R.id.input_pound_force_per_square_inch);
-        final EditText torr = (EditText) view.findViewById(R.id.input_torr);
+        final EditText atmosphere = view.findViewById(R.id.input_atmosphere);
+        final EditText bar = view.findViewById(R.id.input_bar);
+        final EditText pascal = view.findViewById(R.id.input_pascal);
+        final EditText poundforcepersquareinch = view.findViewById(R.id.input_pound_force_per_square_inch);
+        final EditText torr = view.findViewById(R.id.input_torr);
 
         atmosphere.addTextChangedListener(new TextWatcher() {
             int charCount = 0;

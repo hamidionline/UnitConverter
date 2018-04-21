@@ -31,16 +31,16 @@ public class EnergyFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_energy, container, false);
 
-        final EditText joule = (EditText) view.findViewById(R.id.input_joule);
-        final EditText kilojoule = (EditText) view.findViewById(R.id.input_kilojoule);
-        final EditText gramcalorie = (EditText) view.findViewById(R.id.input_gram_calorie);
-        final EditText kilocalorie = (EditText) view.findViewById(R.id.input_kilocalorie);
-        final EditText watthour = (EditText) view.findViewById(R.id.input_watt_hour);
-        final EditText kilowatthour = (EditText) view.findViewById(R.id.input_kilowatt_hour);
-        final EditText electronvolt = (EditText) view.findViewById(R.id.input_electronvolt);
-        final EditText britishthermalunit = (EditText) view.findViewById(R.id.input_british_thermal_unit);
-        final EditText ustherm = (EditText) view.findViewById(R.id.input_us_therm);
-        final EditText footpound = (EditText) view.findViewById(R.id.input_foot_pound);
+        final EditText joule = view.findViewById(R.id.input_joule);
+        final EditText kilojoule = view.findViewById(R.id.input_kilojoule);
+        final EditText gramcalorie = view.findViewById(R.id.input_gram_calorie);
+        final EditText kilocalorie = view.findViewById(R.id.input_kilocalorie);
+        final EditText watthour = view.findViewById(R.id.input_watt_hour);
+        final EditText kilowatthour = view.findViewById(R.id.input_kilowatt_hour);
+        final EditText electronvolt = view.findViewById(R.id.input_electronvolt);
+        final EditText britishthermalunit = view.findViewById(R.id.input_british_thermal_unit);
+        final EditText ustherm = view.findViewById(R.id.input_us_therm);
+        final EditText footpound = view.findViewById(R.id.input_foot_pound);
 
         joule.addTextChangedListener(new TextWatcher() {
             int charCount = 0;

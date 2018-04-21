@@ -28,18 +28,18 @@ public class TimeFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_time, container, false);
 
-        final EditText nanosecond = (EditText) view.findViewById(R.id.input_nanosecond);
-        final EditText microsecond = (EditText) view.findViewById(R.id.input_microsecond);
-        final EditText millisecond = (EditText) view.findViewById(R.id.input_millisecond);
-        final EditText second = (EditText) view.findViewById(R.id.input_second);
-        final EditText minute = (EditText) view.findViewById(R.id.input_minute);
-        final EditText hour = (EditText) view.findViewById(R.id.input_hour);
-        final EditText day = (EditText) view.findViewById(R.id.input_day);
-        final EditText week = (EditText) view.findViewById(R.id.input_week);
-        final EditText month = (EditText) view.findViewById(R.id.input_month);
-        final EditText year = (EditText) view.findViewById(R.id.input_year);
-        final EditText decade = (EditText) view.findViewById(R.id.input_decade);
-        final EditText century = (EditText) view.findViewById(R.id.input_century);
+        final EditText nanosecond = view.findViewById(R.id.input_nanosecond);
+        final EditText microsecond = view.findViewById(R.id.input_microsecond);
+        final EditText millisecond = view.findViewById(R.id.input_millisecond);
+        final EditText second = view.findViewById(R.id.input_second);
+        final EditText minute = view.findViewById(R.id.input_minute);
+        final EditText hour = view.findViewById(R.id.input_hour);
+        final EditText day = view.findViewById(R.id.input_day);
+        final EditText week = view.findViewById(R.id.input_week);
+        final EditText month = view.findViewById(R.id.input_month);
+        final EditText year = view.findViewById(R.id.input_year);
+        final EditText decade = view.findViewById(R.id.input_decade);
+        final EditText century = view.findViewById(R.id.input_century);
 
         nanosecond.addTextChangedListener(new TextWatcher() {
             int charCount = 0;

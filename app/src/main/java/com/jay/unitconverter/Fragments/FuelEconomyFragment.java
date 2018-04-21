@@ -28,10 +28,10 @@ public class FuelEconomyFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_fuel_economy, container, false);
 
-        final EditText usmilespergallon = (EditText) view.findViewById(R.id.input_us_miles_per_gallon);
-        final EditText milespergallonimperial = (EditText) view.findViewById(R.id.input_miles_per_gallon_imperial);
-        final EditText kilometerperlitre = (EditText) view.findViewById(R.id.input_kilometer_per_litre);
-        final EditText litreper100kilometres = (EditText) view.findViewById(R.id.input_litre_per_100_kilometres);
+        final EditText usmilespergallon = view.findViewById(R.id.input_us_miles_per_gallon);
+        final EditText milespergallonimperial = view.findViewById(R.id.input_miles_per_gallon_imperial);
+        final EditText kilometerperlitre = view.findViewById(R.id.input_kilometer_per_litre);
+        final EditText litreper100kilometres = view.findViewById(R.id.input_litre_per_100_kilometres);
 
         usmilespergallon.addTextChangedListener(new TextWatcher() {
             int charCount = 0;

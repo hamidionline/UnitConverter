@@ -28,12 +28,12 @@ public class PlaneAngleFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_plane_angle, container, false);
 
-//        final EditText angularmill = (EditText) view.findViewById(R.id.input_angular_mill);
-        final EditText degree = (EditText) view.findViewById(R.id.input_degree);
-        final EditText gradian = (EditText) view.findViewById(R.id.input_gradian);
-        final EditText minuteofarc = (EditText) view.findViewById(R.id.input_minute_of_arc);
-        final EditText radian = (EditText) view.findViewById(R.id.input_radian);
-        final EditText secondofarc = (EditText) view.findViewById(R.id.input_second_of_arc);
+//        final EditText angularmill = view.findViewById(R.id.input_angular_mill);
+        final EditText degree = view.findViewById(R.id.input_degree);
+        final EditText gradian = view.findViewById(R.id.input_gradian);
+        final EditText minuteofarc = view.findViewById(R.id.input_minute_of_arc);
+        final EditText radian = view.findViewById(R.id.input_radian);
+        final EditText secondofarc = view.findViewById(R.id.input_second_of_arc);
 
         degree.addTextChangedListener(new TextWatcher() {
             int charCount = 0;

@@ -28,14 +28,14 @@ public class AreaFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_area, container, false);
 
-        final EditText squarekilometre = (EditText) view.findViewById(R.id.input_square_kilometer);
-        final EditText squaremetre = (EditText) view.findViewById(R.id.input_square_metre);
-        final EditText squaremile = (EditText) view.findViewById(R.id.input_square_mile);
-        final EditText squareyard = (EditText) view.findViewById(R.id.input_square_yard);
-        final EditText squarefoot = (EditText) view.findViewById(R.id.input_square_foot);
-        final EditText squareinch = (EditText) view.findViewById(R.id.input_square_inch);
-        final EditText hectare = (EditText) view.findViewById(R.id.input_hectare);
-        final EditText acre = (EditText) view.findViewById(R.id.input_acre);
+        final EditText squarekilometre = view.findViewById(R.id.input_square_kilometer);
+        final EditText squaremetre = view.findViewById(R.id.input_square_metre);
+        final EditText squaremile = view.findViewById(R.id.input_square_mile);
+        final EditText squareyard = view.findViewById(R.id.input_square_yard);
+        final EditText squarefoot = view.findViewById(R.id.input_square_foot);
+        final EditText squareinch = view.findViewById(R.id.input_square_inch);
+        final EditText hectare = view.findViewById(R.id.input_hectare);
+        final EditText acre = view.findViewById(R.id.input_acre);
 
         squarekilometre.addTextChangedListener(new TextWatcher() {
             int charCount = 0;

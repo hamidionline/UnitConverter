@@ -17,6 +17,6 @@ public class MyApplication extends Application {
     public void onCreate() {
         super.onCreate();
         Fabric.with(this, new Crashlytics());
-        MobileAds.initialize(this, "ca-app-pub-7577307801270101~1617581777");
+        MobileAds.initialize(this, "ca-app-pub-7157417608226077~2192048412");
     }
 }

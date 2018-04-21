@@ -27,15 +27,15 @@ public class MassFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_mass, container, false);
 
-        final EditText tonne = (EditText) view.findViewById(R.id.input_tonne);
-        final EditText kilogram = (EditText) view.findViewById(R.id.input_kilogram);
-        final EditText gram = (EditText) view.findViewById(R.id.input_gram);
-        final EditText miligram = (EditText) view.findViewById(R.id.input_milligram);
-        final EditText microgram = (EditText) view.findViewById(R.id.input_microgram);
-        final EditText imperialton = (EditText) view.findViewById(R.id.input_imperial_ton);
-        final EditText stone = (EditText) view.findViewById(R.id.input_stone);
-        final EditText pound = (EditText) view.findViewById(R.id.input_pound);
-        final EditText ounce = (EditText) view.findViewById(R.id.input_ounce);
+        final EditText tonne = view.findViewById(R.id.input_tonne);
+        final EditText kilogram = view.findViewById(R.id.input_kilogram);
+        final EditText gram = view.findViewById(R.id.input_gram);
+        final EditText miligram = view.findViewById(R.id.input_milligram);
+        final EditText microgram = view.findViewById(R.id.input_microgram);
+        final EditText imperialton = view.findViewById(R.id.input_imperial_ton);
+        final EditText stone = view.findViewById(R.id.input_stone);
+        final EditText pound = view.findViewById(R.id.input_pound);
+        final EditText ounce = view.findViewById(R.id.input_ounce);
 
         tonne.addTextChangedListener(new TextWatcher() {
             int charCount = 0;

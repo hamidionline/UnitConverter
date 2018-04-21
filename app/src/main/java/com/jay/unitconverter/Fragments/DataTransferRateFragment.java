@@ -28,19 +28,19 @@ public class DataTransferRateFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_data_transfer_rate, container, false);
 
-        final EditText bitpersecond = (EditText) view.findViewById(R.id.input_bit_per_second);
-        final EditText kilobitpersecond = (EditText) view.findViewById(R.id.input_kilobit_per_second);
-        final EditText kilobytepersecond = (EditText) view.findViewById(R.id.input_kilobyte_per_second);
-//        final EditText kibibitpersecond = (EditText) view.findViewById(R.id.input_kibibit_per_second);
-        final EditText megabitpersecond = (EditText) view.findViewById(R.id.input_megabit_per_second);
-        final EditText megabytepersecond = (EditText) view.findViewById(R.id.input_megabyte_per_second);
-//        final EditText mebibitpersecond = (EditText) view.findViewById(R.id.input_mebibit_per_second);
-        final EditText gigabitpersecond = (EditText) view.findViewById(R.id.input_gigabit_per_second);
-        final EditText gigabytepersecond = (EditText) view.findViewById(R.id.input_gigabyte_per_second);
-//        final EditText gibibitpersecond = (EditText) view.findViewById(R.id.input_gibibit_per_second);
-        final EditText terabitpersecond = (EditText) view.findViewById(R.id.input_terabit_per_second);
-        final EditText terabytepersecond = (EditText) view.findViewById(R.id.input_terabyte_per_second);
-//        final EditText tebibitpersecond = (EditText) view.findViewById(R.id.input_tebibit_per_second);
+        final EditText bitpersecond = view.findViewById(R.id.input_bit_per_second);
+        final EditText kilobitpersecond = view.findViewById(R.id.input_kilobit_per_second);
+        final EditText kilobytepersecond = view.findViewById(R.id.input_kilobyte_per_second);
+//        final EditText kibibitpersecond = view.findViewById(R.id.input_kibibit_per_second);
+        final EditText megabitpersecond = view.findViewById(R.id.input_megabit_per_second);
+        final EditText megabytepersecond = view.findViewById(R.id.input_megabyte_per_second);
+//        final EditText mebibitpersecond = view.findViewById(R.id.input_mebibit_per_second);
+        final EditText gigabitpersecond = view.findViewById(R.id.input_gigabit_per_second);
+        final EditText gigabytepersecond = view.findViewById(R.id.input_gigabyte_per_second);
+//        final EditText gibibitpersecond = view.findViewById(R.id.input_gibibit_per_second);
+        final EditText terabitpersecond = view.findViewById(R.id.input_terabit_per_second);
+        final EditText terabytepersecond = view.findViewById(R.id.input_terabyte_per_second);
+//        final EditText tebibitpersecond = view.findViewById(R.id.input_tebibit_per_second);
 
         bitpersecond.addTextChangedListener(new TextWatcher() {
             int charCount = 0;

@@ -28,10 +28,10 @@ public class FrequencyFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_frequency, container, false);
 
-        final EditText hertz = (EditText) view.findViewById(R.id.input_hertz);
-        final EditText kilohertz = (EditText) view.findViewById(R.id.input_kilohertz);
-        final EditText megahertz = (EditText) view.findViewById(R.id.input_megahertz);
-        final EditText gigahertz = (EditText) view.findViewById(R.id.input_gigahertz);
+        final EditText hertz = view.findViewById(R.id.input_hertz);
+        final EditText kilohertz = view.findViewById(R.id.input_kilohertz);
+        final EditText megahertz = view.findViewById(R.id.input_megahertz);
+        final EditText gigahertz = view.findViewById(R.id.input_gigahertz);
 
         hertz.addTextChangedListener(new TextWatcher() {
             int charCount = 0;

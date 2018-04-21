@@ -121,7 +121,7 @@
     <string name="miles_per_hour">Miles per hour</string>
     <string name="foot_per_second">Foot per second</string>
     <string name="metre_per_second">Metre per second</string>
-    <string name="kilometre_per_second">Kilometre per second</string>
+    <string name="kilometre_per_hour">Kilometre per hour</string>
     <string name="knot">Knot</string>
     <string name="nanosecond">Nanosecond</string>
     <string name="microsecond">Microsecond</string>
