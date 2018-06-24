@@ -121,7 +121,7 @@ public class ScrollableTabsActivity extends AppCompatActivity implements Navigat
         // Use an activity context to get the Interstitial Ad instance.
         mInterstitialAd = new InterstitialAd(this);
 //            mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712"); //Test AD
-        mInterstitialAd.setAdUnitId("ca-app-pub-7157417608226077/2409748257");
+        mInterstitialAd.setAdUnitId("ca-app-pub-4955764862648857/9987542608");
         // Use an activity context to get the rewarded video instance.
         mAd = MobileAds.getRewardedVideoAdInstance(this);
         mAd.setRewardedVideoAdListener(this);
@@ -232,7 +232,7 @@ public class ScrollableTabsActivity extends AppCompatActivity implements Navigat
 
     private void loadRewardedVideoAd() {
 //            mAd.loadAd("ca-app-pub-3940256099942544/5224354917", new AdRequest.Builder().build()); //Test AD
-        mAd.loadAd("ca-app-pub-7157417608226077/7825726461", new AdRequest.Builder().build());
+        mAd.loadAd("ca-app-pub-4955764862648857/8070991558", new AdRequest.Builder().build());
     }
 
     @Override
