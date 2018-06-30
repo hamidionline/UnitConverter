@@ -28,12 +28,12 @@ public class FuelEconomyFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_fuel_economy, container, false);
 
-        final EditText usmilespergallon = view.findViewById(R.id.input_us_miles_per_gallon);
-        final EditText milespergallonimperial = view.findViewById(R.id.input_miles_per_gallon_imperial);
-        final EditText kilometerperlitre = view.findViewById(R.id.input_kilometer_per_litre);
-        final EditText litreper100kilometres = view.findViewById(R.id.input_litre_per_100_kilometres);
+        final EditText usMilesPerGallon = view.findViewById(R.id.input_us_miles_per_gallon);
+        final EditText milesPerGallonImperial = view.findViewById(R.id.input_miles_per_gallon_imperial);
+        final EditText kilometerPerLitre = view.findViewById(R.id.input_kilometer_per_litre);
+        final EditText litrePer100Kilometres = view.findViewById(R.id.input_litre_per_100_kilometres);
 
-        usmilespergallon.addTextChangedListener(new TextWatcher() {
+        usMilesPerGallon.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
 
             @Override
@@ -47,21 +47,21 @@ public class FuelEconomyFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (usmilespergallon.isFocused()) {
+                if (usMilesPerGallon.isFocused()) {
                     if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
-                        milespergallonimperial.setText(String.valueOf((Double.parseDouble(s.toString()) * 1.20095)));
-                        kilometerperlitre.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.425144));
-                        litreper100kilometres.setText(String.valueOf(Double.parseDouble(s.toString()) * 235.215));
+                        milesPerGallonImperial.setText(String.valueOf((Double.parseDouble(s.toString()) * 1.20095)));
+                        kilometerPerLitre.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.425144));
+                        litrePer100Kilometres.setText(String.valueOf(Double.parseDouble(s.toString()) * 235.215));
                     } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
-                        milespergallonimperial.getText().clear();
-                        kilometerperlitre.getText().clear();
-                        litreper100kilometres.getText().clear();
+                        milesPerGallonImperial.getText().clear();
+                        kilometerPerLitre.getText().clear();
+                        litrePer100Kilometres.getText().clear();
                     }
                 }
             }
         });
 
-        milespergallonimperial.addTextChangedListener(new TextWatcher() {
+        milesPerGallonImperial.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
 
             @Override
@@ -75,21 +75,21 @@ public class FuelEconomyFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (milespergallonimperial.isFocused()) {
+                if (milesPerGallonImperial.isFocused()) {
                     if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
-                        usmilespergallon.setText(String.valueOf((Double.parseDouble(s.toString()) * 0.832674)));
-                        kilometerperlitre.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.354006));
-                        litreper100kilometres.setText(String.valueOf(Double.parseDouble(s.toString()) * 282.481));
+                        usMilesPerGallon.setText(String.valueOf((Double.parseDouble(s.toString()) * 0.832674)));
+                        kilometerPerLitre.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.354006));
+                        litrePer100Kilometres.setText(String.valueOf(Double.parseDouble(s.toString()) * 282.481));
                     } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
-                        usmilespergallon.getText().clear();
-                        kilometerperlitre.getText().clear();
-                        litreper100kilometres.getText().clear();
+                        usMilesPerGallon.getText().clear();
+                        kilometerPerLitre.getText().clear();
+                        litrePer100Kilometres.getText().clear();
                     }
                 }
             }
         });
 
-        kilometerperlitre.addTextChangedListener(new TextWatcher() {
+        kilometerPerLitre.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
 
             @Override
@@ -103,21 +103,21 @@ public class FuelEconomyFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (kilometerperlitre.isFocused()) {
+                if (kilometerPerLitre.isFocused()) {
                     if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
-                        usmilespergallon.setText(String.valueOf((Double.parseDouble(s.toString()) * 2.35215)));
-                        milespergallonimperial.setText(String.valueOf(Double.parseDouble(s.toString()) * 2.82481));
-                        litreper100kilometres.setText(String.valueOf(Double.parseDouble(s.toString()) * 100));
+                        usMilesPerGallon.setText(String.valueOf((Double.parseDouble(s.toString()) * 2.35215)));
+                        milesPerGallonImperial.setText(String.valueOf(Double.parseDouble(s.toString()) * 2.82481));
+                        litrePer100Kilometres.setText(String.valueOf(Double.parseDouble(s.toString()) * 100));
                     } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
-                        usmilespergallon.getText().clear();
-                        milespergallonimperial.getText().clear();
-                        litreper100kilometres.getText().clear();
+                        usMilesPerGallon.getText().clear();
+                        milesPerGallonImperial.getText().clear();
+                        litrePer100Kilometres.getText().clear();
                     }
                 }
             }
         });
 
-        litreper100kilometres.addTextChangedListener(new TextWatcher() {
+        litrePer100Kilometres.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
 
             @Override
@@ -131,15 +131,15 @@ public class FuelEconomyFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (litreper100kilometres.isFocused()) {
+                if (litrePer100Kilometres.isFocused()) {
                     if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
-                        usmilespergallon.setText(String.valueOf((Double.parseDouble(s.toString()) * 235.215)));
-                        milespergallonimperial.setText(String.valueOf(Double.parseDouble(s.toString()) * 282.481));
-                        kilometerperlitre.setText(String.valueOf(Double.parseDouble(s.toString()) * 100));
+                        usMilesPerGallon.setText(String.valueOf((Double.parseDouble(s.toString()) * 235.215)));
+                        milesPerGallonImperial.setText(String.valueOf(Double.parseDouble(s.toString()) * 282.481));
+                        kilometerPerLitre.setText(String.valueOf(Double.parseDouble(s.toString()) * 100));
                     } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
-                        usmilespergallon.getText().clear();
-                        milespergallonimperial.getText().clear();
-                        kilometerperlitre.getText().clear();
+                        usMilesPerGallon.getText().clear();
+                        milesPerGallonImperial.getText().clear();
+                        kilometerPerLitre.getText().clear();
                     }
                 }
             }

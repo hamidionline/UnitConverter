@@ -31,7 +31,7 @@ public class PressureFragment extends Fragment {
         final EditText atmosphere = view.findViewById(R.id.input_atmosphere);
         final EditText bar = view.findViewById(R.id.input_bar);
         final EditText pascal = view.findViewById(R.id.input_pascal);
-        final EditText poundforcepersquareinch = view.findViewById(R.id.input_pound_force_per_square_inch);
+        final EditText poundForcePerSquareInch = view.findViewById(R.id.input_pound_force_per_square_inch);
         final EditText torr = view.findViewById(R.id.input_torr);
 
         atmosphere.addTextChangedListener(new TextWatcher() {
@@ -53,12 +53,12 @@ public class PressureFragment extends Fragment {
                     if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         bar.setText(String.valueOf((Double.parseDouble(s.toString()) * 1.01325)));
                         pascal.setText(String.valueOf(Double.parseDouble(s.toString()) * 101325));
-                        poundforcepersquareinch.setText(String.valueOf(Double.parseDouble(s.toString()) * 14.6959));
+                        poundForcePerSquareInch.setText(String.valueOf(Double.parseDouble(s.toString()) * 14.6959));
                         torr.setText(String.valueOf(Double.parseDouble(s.toString()) * 760));
                     } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         bar.getText().clear();
                         pascal.getText().clear();
-                        poundforcepersquareinch.getText().clear();
+                        poundForcePerSquareInch.getText().clear();
                         torr.getText().clear();
                     }
                 }
@@ -84,12 +84,12 @@ public class PressureFragment extends Fragment {
                     if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         atmosphere.setText(String.valueOf((Double.parseDouble(s.toString()) * 0.986923)));
                         pascal.setText(String.valueOf(Double.parseDouble(s.toString()) * 100000));
-                        poundforcepersquareinch.setText(String.valueOf(Double.parseDouble(s.toString()) * 14.5038));
+                        poundForcePerSquareInch.setText(String.valueOf(Double.parseDouble(s.toString()) * 14.5038));
                         torr.setText(String.valueOf(Double.parseDouble(s.toString()) * 750.062));
                     } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         atmosphere.getText().clear();
                         pascal.getText().clear();
-                        poundforcepersquareinch.getText().clear();
+                        poundForcePerSquareInch.getText().clear();
                         torr.getText().clear();
                     }
                 }
@@ -115,19 +115,19 @@ public class PressureFragment extends Fragment {
                     if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         atmosphere.setText(String.valueOf((Double.parseDouble(s.toString()) * 0.0000048692)));
                         bar.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00001));
-                        poundforcepersquareinch.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000145038));
+                        poundForcePerSquareInch.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000145038));
                         torr.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00750062));
                     } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         atmosphere.getText().clear();
                         bar.getText().clear();
-                        poundforcepersquareinch.getText().clear();
+                        poundForcePerSquareInch.getText().clear();
                         torr.getText().clear();
                     }
                 }
             }
         });
 
-        poundforcepersquareinch.addTextChangedListener(new TextWatcher() {
+        poundForcePerSquareInch.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
 
             @Override
@@ -142,7 +142,7 @@ public class PressureFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (poundforcepersquareinch.isFocused()) {
+                if (poundForcePerSquareInch.isFocused()) {
                     if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         atmosphere.setText(String.valueOf((Double.parseDouble(s.toString()) * 0.068046)));
                         bar.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.0689476));
@@ -178,12 +178,12 @@ public class PressureFragment extends Fragment {
                         atmosphere.setText(String.valueOf((Double.parseDouble(s.toString()) * 0.00131579)));
                         bar.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00133322));
                         pascal.setText(String.valueOf(Double.parseDouble(s.toString()) * 133.322));
-                        poundforcepersquareinch.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.0193368));
+                        poundForcePerSquareInch.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.0193368));
                     } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         atmosphere.getText().clear();
                         bar.getText().clear();
                         pascal.getText().clear();
-                        poundforcepersquareinch.getText().clear();
+                        poundForcePerSquareInch.getText().clear();
                     }
                 }
             }

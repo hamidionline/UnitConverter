@@ -31,9 +31,9 @@ public class PlaneAngleFragment extends Fragment {
 //        final EditText angularmill = view.findViewById(R.id.input_angular_mill);
         final EditText degree = view.findViewById(R.id.input_degree);
         final EditText gradian = view.findViewById(R.id.input_gradian);
-        final EditText minuteofarc = view.findViewById(R.id.input_minute_of_arc);
+        final EditText minuteOfArc = view.findViewById(R.id.input_minute_of_arc);
         final EditText radian = view.findViewById(R.id.input_radian);
-        final EditText secondofarc = view.findViewById(R.id.input_second_of_arc);
+        final EditText secondOfArc = view.findViewById(R.id.input_second_of_arc);
 
         degree.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
@@ -53,14 +53,14 @@ public class PlaneAngleFragment extends Fragment {
                 if (degree.isFocused()) {
                     if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         gradian.setText(String.valueOf(Double.parseDouble(s.toString()) * 1.11111));
-                        minuteofarc.setText(String.valueOf(Double.parseDouble(s.toString()) * 60));
+                        minuteOfArc.setText(String.valueOf(Double.parseDouble(s.toString()) * 60));
                         radian.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.0174533));
-                        secondofarc.setText(String.valueOf(Double.parseDouble(s.toString()) * 3600));
+                        secondOfArc.setText(String.valueOf(Double.parseDouble(s.toString()) * 3600));
                     } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         gradian.getText().clear();
-                        minuteofarc.getText().clear();
+                        minuteOfArc.getText().clear();
                         radian.getText().clear();
-                        secondofarc.getText().clear();
+                        secondOfArc.getText().clear();
                     }
                 }
             }
@@ -84,20 +84,20 @@ public class PlaneAngleFragment extends Fragment {
                 if (gradian.isFocused()) {
                     if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         degree.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.9));
-                        minuteofarc.setText(String.valueOf(Double.parseDouble(s.toString()) * 54));
+                        minuteOfArc.setText(String.valueOf(Double.parseDouble(s.toString()) * 54));
                         radian.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.015708));
-                        secondofarc.setText(String.valueOf(Double.parseDouble(s.toString()) * 3240));
+                        secondOfArc.setText(String.valueOf(Double.parseDouble(s.toString()) * 3240));
                     } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         degree.getText().clear();
-                        minuteofarc.getText().clear();
+                        minuteOfArc.getText().clear();
                         radian.getText().clear();
-                        secondofarc.getText().clear();
+                        secondOfArc.getText().clear();
                     }
                 }
             }
         });
 
-        minuteofarc.addTextChangedListener(new TextWatcher() {
+        minuteOfArc.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
 
             @Override
@@ -112,17 +112,17 @@ public class PlaneAngleFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (minuteofarc.isFocused()) {
+                if (minuteOfArc.isFocused()) {
                     if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         degree.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.0166667));
                         gradian.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.0185185));
                         radian.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000290888));
-                        secondofarc.setText(String.valueOf(Double.parseDouble(s.toString()) * 60));
+                        secondOfArc.setText(String.valueOf(Double.parseDouble(s.toString()) * 60));
                     } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         degree.getText().clear();
                         gradian.getText().clear();
                         radian.getText().clear();
-                        secondofarc.getText().clear();
+                        secondOfArc.getText().clear();
                     }
                 }
             }
@@ -147,19 +147,19 @@ public class PlaneAngleFragment extends Fragment {
                     if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         degree.setText(String.valueOf(Double.parseDouble(s.toString()) * 57.2958));
                         gradian.setText(String.valueOf(Double.parseDouble(s.toString()) * 63.662));
-                        minuteofarc.setText(String.valueOf(Double.parseDouble(s.toString()) * 3437.75));
-                        secondofarc.setText(String.valueOf(Double.parseDouble(s.toString()) * 206265));
+                        minuteOfArc.setText(String.valueOf(Double.parseDouble(s.toString()) * 3437.75));
+                        secondOfArc.setText(String.valueOf(Double.parseDouble(s.toString()) * 206265));
                     } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         degree.getText().clear();
                         gradian.getText().clear();
-                        minuteofarc.getText().clear();
-                        secondofarc.getText().clear();
+                        minuteOfArc.getText().clear();
+                        secondOfArc.getText().clear();
                     }
                 }
             }
         });
 
-        secondofarc.addTextChangedListener(new TextWatcher() {
+        secondOfArc.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
 
             @Override
@@ -174,16 +174,16 @@ public class PlaneAngleFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (secondofarc.isFocused()) {
+                if (secondOfArc.isFocused()) {
                     if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         degree.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000277778));
                         gradian.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000308642));
-                        minuteofarc.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.0166667));
+                        minuteOfArc.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.0166667));
                         radian.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.0000048481));
                     } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         degree.getText().clear();
                         gradian.getText().clear();
-                        minuteofarc.getText().clear();
+                        minuteOfArc.getText().clear();
                         radian.getText().clear();
                     }
                 }

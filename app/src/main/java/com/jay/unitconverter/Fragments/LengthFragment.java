@@ -38,7 +38,7 @@ public class LengthFragment extends Fragment {
         final EditText yard = view.findViewById(R.id.input_yard);
         final EditText foot = view.findViewById(R.id.input_foot);
         final EditText inch = view.findViewById(R.id.input_inch);
-        final EditText nauticalmile = view.findViewById(R.id.input_nautical_mile);
+        final EditText nauticalMile = view.findViewById(R.id.input_nautical_mile);
 
         kilometre.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
@@ -65,7 +65,7 @@ public class LengthFragment extends Fragment {
                         yard.setText(String.valueOf(Double.parseDouble(s.toString()) * 1093.61));
                         foot.setText(String.valueOf(Double.parseDouble(s.toString()) * 3280.84));
                         inch.setText(String.valueOf(Double.parseDouble(s.toString()) * 39370.1));
-                        nauticalmile.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.539957));
+                        nauticalMile.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.539957));
                     } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         metre.getText().clear();
                         centimetre.getText().clear();
@@ -76,7 +76,7 @@ public class LengthFragment extends Fragment {
                         yard.getText().clear();
                         foot.getText().clear();
                         inch.getText().clear();
-                        nauticalmile.getText().clear();
+                        nauticalMile.getText().clear();
                     }
                 }
             }
@@ -107,7 +107,7 @@ public class LengthFragment extends Fragment {
                         yard.setText(String.valueOf(Double.parseDouble(s.toString()) * 1.09361));
                         foot.setText(String.valueOf(Double.parseDouble(s.toString()) * 3.28084));
                         inch.setText(String.valueOf(Double.parseDouble(s.toString()) * 39.3701));
-                        nauticalmile.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000539957));
+                        nauticalMile.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000539957));
                     } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         kilometre.getText().clear();
                         centimetre.getText().clear();
@@ -118,7 +118,7 @@ public class LengthFragment extends Fragment {
                         yard.getText().clear();
                         foot.getText().clear();
                         inch.getText().clear();
-                        nauticalmile.getText().clear();
+                        nauticalMile.getText().clear();
                     }
                 }
             }
@@ -149,7 +149,7 @@ public class LengthFragment extends Fragment {
                         yard.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.010936111996938));
                         foot.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.0328084));
                         inch.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.393701));
-                        nauticalmile.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00000539957));
+                        nauticalMile.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00000539957));
                     } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         kilometre.getText().clear();
                         metre.getText().clear();
@@ -160,7 +160,7 @@ public class LengthFragment extends Fragment {
                         yard.getText().clear();
                         foot.getText().clear();
                         inch.getText().clear();
-                        nauticalmile.getText().clear();
+                        nauticalMile.getText().clear();
                     }
                 }
             }
@@ -191,7 +191,7 @@ public class LengthFragment extends Fragment {
                         yard.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00109361));
                         foot.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00328084));
                         inch.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.0393701));
-                        nauticalmile.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00000053996));
+                        nauticalMile.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00000053996));
                     } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         kilometre.getText().clear();
                         metre.getText().clear();
@@ -202,7 +202,7 @@ public class LengthFragment extends Fragment {
                         yard.getText().clear();
                         foot.getText().clear();
                         inch.getText().clear();
-                        nauticalmile.getText().clear();
+                        nauticalMile.getText().clear();
                     }
                 }
             }
@@ -233,7 +233,7 @@ public class LengthFragment extends Fragment {
                         yard.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.0000010936));
                         foot.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.0000032808));
                         inch.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00003937));
-                        nauticalmile.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00000000053996));
+                        nauticalMile.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00000000053996));
                     } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         kilometre.getText().clear();
                         metre.getText().clear();
@@ -244,7 +244,7 @@ public class LengthFragment extends Fragment {
                         yard.getText().clear();
                         foot.getText().clear();
                         inch.getText().clear();
-                        nauticalmile.getText().clear();
+                        nauticalMile.getText().clear();
                     }
                 }
             }
@@ -275,7 +275,7 @@ public class LengthFragment extends Fragment {
                         yard.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.0000010936));
                         foot.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.0000000010936));
                         inch.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00000003937));
-                        nauticalmile.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00000000000053996));
+                        nauticalMile.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00000000000053996));
                     } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         kilometre.getText().clear();
                         metre.getText().clear();
@@ -286,7 +286,7 @@ public class LengthFragment extends Fragment {
                         yard.getText().clear();
                         foot.getText().clear();
                         inch.getText().clear();
-                        nauticalmile.getText().clear();
+                        nauticalMile.getText().clear();
                     }
                 }
             }
@@ -317,7 +317,7 @@ public class LengthFragment extends Fragment {
                         yard.setText(String.valueOf(Double.parseDouble(s.toString()) * 1760));
                         foot.setText(String.valueOf(Double.parseDouble(s.toString()) * 5280));
                         inch.setText(String.valueOf(Double.parseDouble(s.toString()) * 63360));
-                        nauticalmile.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.868976));
+                        nauticalMile.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.868976));
                     } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         kilometre.getText().clear();
                         metre.getText().clear();
@@ -328,7 +328,7 @@ public class LengthFragment extends Fragment {
                         yard.getText().clear();
                         foot.getText().clear();
                         inch.getText().clear();
-                        nauticalmile.getText().clear();
+                        nauticalMile.getText().clear();
                     }
                 }
             }
@@ -359,7 +359,7 @@ public class LengthFragment extends Fragment {
                         mile.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000568182));
                         foot.setText(String.valueOf(Double.parseDouble(s.toString()) * 3));
                         inch.setText(String.valueOf(Double.parseDouble(s.toString()) * 36));
-                        nauticalmile.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000493737));
+                        nauticalMile.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000493737));
                     } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         kilometre.getText().clear();
                         metre.getText().clear();
@@ -370,7 +370,7 @@ public class LengthFragment extends Fragment {
                         mile.getText().clear();
                         foot.getText().clear();
                         inch.getText().clear();
-                        nauticalmile.getText().clear();
+                        nauticalMile.getText().clear();
                     }
                 }
             }
@@ -401,7 +401,7 @@ public class LengthFragment extends Fragment {
                         mile.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000189394));
                         yard.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.333333));
                         inch.setText(String.valueOf(Double.parseDouble(s.toString()) * 12));
-                        nauticalmile.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000164579));
+                        nauticalMile.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000164579));
                     } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         kilometre.getText().clear();
                         metre.getText().clear();
@@ -412,7 +412,7 @@ public class LengthFragment extends Fragment {
                         mile.getText().clear();
                         yard.getText().clear();
                         inch.getText().clear();
-                        nauticalmile.getText().clear();
+                        nauticalMile.getText().clear();
                     }
                 }
             }
@@ -443,7 +443,7 @@ public class LengthFragment extends Fragment {
                         mile.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000015783));
                         yard.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.0277778));
                         foot.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.0833333));
-                        nauticalmile.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000013715));
+                        nauticalMile.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000013715));
                     } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         kilometre.getText().clear();
                         metre.getText().clear();
@@ -454,13 +454,13 @@ public class LengthFragment extends Fragment {
                         mile.getText().clear();
                         yard.getText().clear();
                         foot.getText().clear();
-                        nauticalmile.getText().clear();
+                        nauticalMile.getText().clear();
                     }
                 }
             }
         });
 
-        nauticalmile.addTextChangedListener(new TextWatcher() {
+        nauticalMile.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
 
             @Override
@@ -474,7 +474,7 @@ public class LengthFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (nauticalmile.isFocused()) {
+                if (nauticalMile.isFocused()) {
                     if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         kilometre.setText(String.valueOf((Double.parseDouble(s.toString()) * 1.852)));
                         metre.setText(String.valueOf(Double.parseDouble(s.toString()) * 1852));

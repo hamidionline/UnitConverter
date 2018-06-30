@@ -28,16 +28,16 @@ public class AreaFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_area, container, false);
 
-        final EditText squarekilometre = view.findViewById(R.id.input_square_kilometer);
-        final EditText squaremetre = view.findViewById(R.id.input_square_metre);
-        final EditText squaremile = view.findViewById(R.id.input_square_mile);
-        final EditText squareyard = view.findViewById(R.id.input_square_yard);
-        final EditText squarefoot = view.findViewById(R.id.input_square_foot);
-        final EditText squareinch = view.findViewById(R.id.input_square_inch);
+        final EditText squareKilometre = view.findViewById(R.id.input_square_kilometer);
+        final EditText squareMetre = view.findViewById(R.id.input_square_metre);
+        final EditText squareMile = view.findViewById(R.id.input_square_mile);
+        final EditText squareYard = view.findViewById(R.id.input_square_yard);
+        final EditText squareFoot = view.findViewById(R.id.input_square_foot);
+        final EditText squareInch = view.findViewById(R.id.input_square_inch);
         final EditText hectare = view.findViewById(R.id.input_hectare);
         final EditText acre = view.findViewById(R.id.input_acre);
 
-        squarekilometre.addTextChangedListener(new TextWatcher() {
+        squareKilometre.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
 
             @Override
@@ -52,21 +52,21 @@ public class AreaFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (squarekilometre.isFocused()) {
+                if (squareKilometre.isFocused()) {
                     if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
-                        squaremetre.setText(String.valueOf((Double.parseDouble(s.toString()) * 1000000)));
-                        squaremile.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.38610));
-                        squareyard.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.00000083612736));
-                        squarefoot.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.00000009290304));
-                        squareinch.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.00000000064516));
+                        squareMetre.setText(String.valueOf((Double.parseDouble(s.toString()) * 1000000)));
+                        squareMile.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.38610));
+                        squareYard.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.00000083612736));
+                        squareFoot.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.00000009290304));
+                        squareInch.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.00000000064516));
                         hectare.setText(String.valueOf(Double.parseDouble(s.toString()) * 100));
                         acre.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.00404685642));
                     } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
-                        squaremetre.getText().clear();
-                        squaremile.getText().clear();
-                        squareyard.getText().clear();
-                        squarefoot.getText().clear();
-                        squareinch.getText().clear();
+                        squareMetre.getText().clear();
+                        squareMile.getText().clear();
+                        squareYard.getText().clear();
+                        squareFoot.getText().clear();
+                        squareInch.getText().clear();
                         hectare.getText().clear();
                         acre.getText().clear();
                     }
@@ -74,7 +74,7 @@ public class AreaFragment extends Fragment {
             }
         });
 
-        squaremetre.addTextChangedListener(new TextWatcher() {
+        squareMetre.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
 
             @Override
@@ -89,21 +89,21 @@ public class AreaFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (squaremetre.isFocused()) {
+                if (squareMetre.isFocused()) {
                     if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
-                        squarekilometre.setText(String.valueOf((Double.parseDouble(s.toString()) / 1000000)));
-                        squaremile.setText(String.valueOf(Double.parseDouble(s.toString()) / 2589988.11));
-                        squareyard.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.83612736));
-                        squarefoot.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.09290304));
-                        squareinch.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.00064516));
+                        squareKilometre.setText(String.valueOf((Double.parseDouble(s.toString()) / 1000000)));
+                        squareMile.setText(String.valueOf(Double.parseDouble(s.toString()) / 2589988.11));
+                        squareYard.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.83612736));
+                        squareFoot.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.09290304));
+                        squareInch.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.00064516));
                         hectare.setText(String.valueOf(Double.parseDouble(s.toString()) / 10000));
                         acre.setText(String.valueOf(Double.parseDouble(s.toString()) / 4046.85642));
                     } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
-                        squarekilometre.getText().clear();
-                        squaremile.getText().clear();
-                        squareyard.getText().clear();
-                        squarefoot.getText().clear();
-                        squareinch.getText().clear();
+                        squareKilometre.getText().clear();
+                        squareMile.getText().clear();
+                        squareYard.getText().clear();
+                        squareFoot.getText().clear();
+                        squareInch.getText().clear();
                         hectare.getText().clear();
                         acre.getText().clear();
                     }
@@ -111,7 +111,7 @@ public class AreaFragment extends Fragment {
             }
         });
 
-        squaremile.addTextChangedListener(new TextWatcher() {
+        squareMile.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
 
             @Override
@@ -126,21 +126,21 @@ public class AreaFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (squaremile.isFocused()) {
+                if (squareMile.isFocused()) {
                     if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
-                        squarekilometre.setText(String.valueOf((Double.parseDouble(s.toString()) * 2.58998811)));
-                        squaremetre.setText(String.valueOf(Double.parseDouble(s.toString()) * 2589988.11));
-                        squareyard.setText(String.valueOf(Double.parseDouble(s.toString()) * 3097600));
-                        squarefoot.setText(String.valueOf(Double.parseDouble(s.toString()) * 27878400));
-                        squareinch.setText(String.valueOf(Double.parseDouble(s.toString()) * 4014489600L));
+                        squareKilometre.setText(String.valueOf((Double.parseDouble(s.toString()) * 2.58998811)));
+                        squareMetre.setText(String.valueOf(Double.parseDouble(s.toString()) * 2589988.11));
+                        squareYard.setText(String.valueOf(Double.parseDouble(s.toString()) * 3097600));
+                        squareFoot.setText(String.valueOf(Double.parseDouble(s.toString()) * 27878400));
+                        squareInch.setText(String.valueOf(Double.parseDouble(s.toString()) * 4014489600L));
                         hectare.setText(String.valueOf(Double.parseDouble(s.toString()) * 258.998811));
                         acre.setText(String.valueOf(Double.parseDouble(s.toString()) * 640));
                     } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
-                        squarekilometre.getText().clear();
-                        squaremetre.getText().clear();
-                        squareyard.getText().clear();
-                        squarefoot.getText().clear();
-                        squareinch.getText().clear();
+                        squareKilometre.getText().clear();
+                        squareMetre.getText().clear();
+                        squareYard.getText().clear();
+                        squareFoot.getText().clear();
+                        squareInch.getText().clear();
                         hectare.getText().clear();
                         acre.getText().clear();
                     }
@@ -148,7 +148,7 @@ public class AreaFragment extends Fragment {
             }
         });
 
-        squareyard.addTextChangedListener(new TextWatcher() {
+        squareYard.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
 
             @Override
@@ -163,21 +163,21 @@ public class AreaFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (squareyard.isFocused()) {
+                if (squareYard.isFocused()) {
                     if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
-                        squarekilometre.setText(String.valueOf((Double.parseDouble(s.toString()) * 0.00000083612736)));
-                        squaremetre.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.83612736));
-                        squaremile.setText(String.valueOf(Double.parseDouble(s.toString()) / 3097600));
-                        squarefoot.setText(String.valueOf(Double.parseDouble(s.toString()) * 9));
-                        squareinch.setText(String.valueOf(Double.parseDouble(s.toString()) * 1296));
+                        squareKilometre.setText(String.valueOf((Double.parseDouble(s.toString()) * 0.00000083612736)));
+                        squareMetre.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.83612736));
+                        squareMile.setText(String.valueOf(Double.parseDouble(s.toString()) / 3097600));
+                        squareFoot.setText(String.valueOf(Double.parseDouble(s.toString()) * 9));
+                        squareInch.setText(String.valueOf(Double.parseDouble(s.toString()) * 1296));
                         hectare.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000083612736));
                         acre.setText(String.valueOf(Double.parseDouble(s.toString()) / 4840));
                     } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
-                        squarekilometre.getText().clear();
-                        squaremetre.getText().clear();
-                        squaremile.getText().clear();
-                        squarefoot.getText().clear();
-                        squareinch.getText().clear();
+                        squareKilometre.getText().clear();
+                        squareMetre.getText().clear();
+                        squareMile.getText().clear();
+                        squareFoot.getText().clear();
+                        squareInch.getText().clear();
                         hectare.getText().clear();
                         acre.getText().clear();
                     }
@@ -185,7 +185,7 @@ public class AreaFragment extends Fragment {
             }
         });
 
-        squarefoot.addTextChangedListener(new TextWatcher() {
+        squareFoot.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
 
             @Override
@@ -200,21 +200,21 @@ public class AreaFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (squarefoot.isFocused()) {
+                if (squareFoot.isFocused()) {
                     if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
-                        squarekilometre.setText(String.valueOf((Double.parseDouble(s.toString()) * 0.00000009290304)));
-                        squaremetre.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.09290304));
-                        squaremile.setText(String.valueOf(Double.parseDouble(s.toString()) / 27878400));
-                        squareyard.setText(String.valueOf(Double.parseDouble(s.toString()) / 9));
-                        squareinch.setText(String.valueOf(Double.parseDouble(s.toString()) * 144));
+                        squareKilometre.setText(String.valueOf((Double.parseDouble(s.toString()) * 0.00000009290304)));
+                        squareMetre.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.09290304));
+                        squareMile.setText(String.valueOf(Double.parseDouble(s.toString()) / 27878400));
+                        squareYard.setText(String.valueOf(Double.parseDouble(s.toString()) / 9));
+                        squareInch.setText(String.valueOf(Double.parseDouble(s.toString()) * 144));
                         hectare.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000009290304));
                         acre.setText(String.valueOf(Double.parseDouble(s.toString()) / 43560));
                     } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
-                        squarekilometre.getText().clear();
-                        squaremetre.getText().clear();
-                        squaremile.getText().clear();
-                        squareyard.getText().clear();
-                        squareinch.getText().clear();
+                        squareKilometre.getText().clear();
+                        squareMetre.getText().clear();
+                        squareMile.getText().clear();
+                        squareYard.getText().clear();
+                        squareInch.getText().clear();
                         hectare.getText().clear();
                         acre.getText().clear();
                     }
@@ -222,7 +222,7 @@ public class AreaFragment extends Fragment {
             }
         });
 
-        squareinch.addTextChangedListener(new TextWatcher() {
+        squareInch.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
 
             @Override
@@ -237,21 +237,21 @@ public class AreaFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (squareinch.isFocused()) {
+                if (squareInch.isFocused()) {
                     if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
-                        squarekilometre.setText(String.valueOf((Double.parseDouble(s.toString()) * 0.00000000064516)));
-                        squaremetre.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00064516));
-                        squaremile.setText(String.valueOf(Double.parseDouble(s.toString()) / 4014489600L));
-                        squareyard.setText(String.valueOf(Double.parseDouble(s.toString()) / 1296));
-                        squarefoot.setText(String.valueOf(Double.parseDouble(s.toString()) / 144));
+                        squareKilometre.setText(String.valueOf((Double.parseDouble(s.toString()) * 0.00000000064516)));
+                        squareMetre.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00064516));
+                        squareMile.setText(String.valueOf(Double.parseDouble(s.toString()) / 4014489600L));
+                        squareYard.setText(String.valueOf(Double.parseDouble(s.toString()) / 1296));
+                        squareFoot.setText(String.valueOf(Double.parseDouble(s.toString()) / 144));
                         hectare.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000000064516));
                         acre.setText(String.valueOf(Double.parseDouble(s.toString()) / 6272640));
                     } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
-                        squarekilometre.getText().clear();
-                        squaremetre.getText().clear();
-                        squaremile.getText().clear();
-                        squareyard.getText().clear();
-                        squarefoot.getText().clear();
+                        squareKilometre.getText().clear();
+                        squareMetre.getText().clear();
+                        squareMile.getText().clear();
+                        squareYard.getText().clear();
+                        squareFoot.getText().clear();
                         hectare.getText().clear();
                         acre.getText().clear();
                     }
@@ -276,20 +276,20 @@ public class AreaFragment extends Fragment {
             public void afterTextChanged(Editable s) {
                 if (hectare.isFocused()) {
                     if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
-                        squarekilometre.setText(String.valueOf((Double.parseDouble(s.toString()) / 100)));
-                        squaremetre.setText(String.valueOf(Double.parseDouble(s.toString()) * 10000));
-                        squaremile.setText(String.valueOf(Double.parseDouble(s.toString()) / 258.998811));
-                        squareyard.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.000083612736));
-                        squarefoot.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.000009290304));
-                        squareinch.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.000000064516));
+                        squareKilometre.setText(String.valueOf((Double.parseDouble(s.toString()) / 100)));
+                        squareMetre.setText(String.valueOf(Double.parseDouble(s.toString()) * 10000));
+                        squareMile.setText(String.valueOf(Double.parseDouble(s.toString()) / 258.998811));
+                        squareYard.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.000083612736));
+                        squareFoot.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.000009290304));
+                        squareInch.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.000000064516));
                         acre.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.404685642));
                     } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
-                        squarekilometre.getText().clear();
-                        squaremetre.getText().clear();
-                        squaremile.getText().clear();
-                        squareyard.getText().clear();
-                        squarefoot.getText().clear();
-                        squareinch.getText().clear();
+                        squareKilometre.getText().clear();
+                        squareMetre.getText().clear();
+                        squareMile.getText().clear();
+                        squareYard.getText().clear();
+                        squareFoot.getText().clear();
+                        squareInch.getText().clear();
                         acre.getText().clear();
                     }
                 }
@@ -313,20 +313,20 @@ public class AreaFragment extends Fragment {
             public void afterTextChanged(Editable s) {
                 if (acre.isFocused()) {
                     if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
-                        squarekilometre.setText(String.valueOf((Double.parseDouble(s.toString()) * 0.00404685642)));
-                        squaremetre.setText(String.valueOf(Double.parseDouble(s.toString()) * 4046.85642));
-                        squaremile.setText(String.valueOf(Double.parseDouble(s.toString()) / 640));
-                        squareyard.setText(String.valueOf(Double.parseDouble(s.toString()) * 4840));
-                        squarefoot.setText(String.valueOf(Double.parseDouble(s.toString()) * 43560));
-                        squareinch.setText(String.valueOf(Double.parseDouble(s.toString()) * 6272640));
+                        squareKilometre.setText(String.valueOf((Double.parseDouble(s.toString()) * 0.00404685642)));
+                        squareMetre.setText(String.valueOf(Double.parseDouble(s.toString()) * 4046.85642));
+                        squareMile.setText(String.valueOf(Double.parseDouble(s.toString()) / 640));
+                        squareYard.setText(String.valueOf(Double.parseDouble(s.toString()) * 4840));
+                        squareFoot.setText(String.valueOf(Double.parseDouble(s.toString()) * 43560));
+                        squareInch.setText(String.valueOf(Double.parseDouble(s.toString()) * 6272640));
                         hectare.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.404685642));
                     } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
-                        squarekilometre.getText().clear();
-                        squaremetre.getText().clear();
-                        squaremile.getText().clear();
-                        squareyard.getText().clear();
-                        squarefoot.getText().clear();
-                        squareinch.getText().clear();
+                        squareKilometre.getText().clear();
+                        squareMetre.getText().clear();
+                        squareMile.getText().clear();
+                        squareYard.getText().clear();
+                        squareFoot.getText().clear();
+                        squareInch.getText().clear();
                         hectare.getText().clear();
                     }
                 }

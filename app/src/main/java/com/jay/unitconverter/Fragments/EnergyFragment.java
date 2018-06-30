@@ -12,8 +12,6 @@ import android.widget.EditText;
 import com.jay.unitconverter.R;
 
 import java.math.BigDecimal;
-import java.math.BigInteger;
-
 
 public class EnergyFragment extends Fragment {
 
@@ -32,15 +30,15 @@ public class EnergyFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_energy, container, false);
 
         final EditText joule = view.findViewById(R.id.input_joule);
-        final EditText kilojoule = view.findViewById(R.id.input_kilojoule);
-        final EditText gramcalorie = view.findViewById(R.id.input_gram_calorie);
-        final EditText kilocalorie = view.findViewById(R.id.input_kilocalorie);
-        final EditText watthour = view.findViewById(R.id.input_watt_hour);
-        final EditText kilowatthour = view.findViewById(R.id.input_kilowatt_hour);
-        final EditText electronvolt = view.findViewById(R.id.input_electronvolt);
-        final EditText britishthermalunit = view.findViewById(R.id.input_british_thermal_unit);
-        final EditText ustherm = view.findViewById(R.id.input_us_therm);
-        final EditText footpound = view.findViewById(R.id.input_foot_pound);
+        final EditText kiloJoule = view.findViewById(R.id.input_kilojoule);
+        final EditText gramCalorie = view.findViewById(R.id.input_gram_calorie);
+        final EditText kiloCalorie = view.findViewById(R.id.input_kilocalorie);
+        final EditText wattHour = view.findViewById(R.id.input_watt_hour);
+        final EditText kiloWattHour = view.findViewById(R.id.input_kilowatt_hour);
+        final EditText electronVolt = view.findViewById(R.id.input_electronvolt);
+        final EditText britishThermalUnit = view.findViewById(R.id.input_british_thermal_unit);
+        final EditText usTherm = view.findViewById(R.id.input_us_therm);
+        final EditText footPound = view.findViewById(R.id.input_foot_pound);
 
         joule.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
@@ -59,31 +57,31 @@ public class EnergyFragment extends Fragment {
             public void afterTextChanged(Editable s) {
                 if (joule.isFocused()) {
                     if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
-                        kilojoule.setText(String.valueOf((Double.parseDouble(s.toString()) * 0.001)));
-                        gramcalorie.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.239006));
-                        kilocalorie.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000239006));
-                        watthour.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000277778));
-                        kilowatthour.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00000027778));
-                        electronvolt.setText(String.valueOf(Double.parseDouble(s.toString()) * 6242000000000000000L));
-                        britishthermalunit.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000947817));
-                        ustherm.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.0000000094804));
-                        footpound.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.737562));
+                        kiloJoule.setText(String.valueOf((Double.parseDouble(s.toString()) * 0.001)));
+                        gramCalorie.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.239006));
+                        kiloCalorie.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000239006));
+                        wattHour.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000277778));
+                        kiloWattHour.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00000027778));
+                        electronVolt.setText(String.valueOf(Double.parseDouble(s.toString()) * 6242000000000000000L));
+                        britishThermalUnit.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000947817));
+                        usTherm.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.0000000094804));
+                        footPound.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.737562));
                     } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
-                        kilojoule.getText().clear();
-                        gramcalorie.getText().clear();
-                        kilocalorie.getText().clear();
-                        watthour.getText().clear();
-                        kilowatthour.getText().clear();
-                        electronvolt.getText().clear();
-                        britishthermalunit.getText().clear();
-                        ustherm.getText().clear();
-                        footpound.getText().clear();
+                        kiloJoule.getText().clear();
+                        gramCalorie.getText().clear();
+                        kiloCalorie.getText().clear();
+                        wattHour.getText().clear();
+                        kiloWattHour.getText().clear();
+                        electronVolt.getText().clear();
+                        britishThermalUnit.getText().clear();
+                        usTherm.getText().clear();
+                        footPound.getText().clear();
                     }
                 }
             }
         });
 
-        gramcalorie.addTextChangedListener(new TextWatcher() {
+        gramCalorie.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
 
             @Override
@@ -98,36 +96,36 @@ public class EnergyFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (gramcalorie.isFocused()) {
+                if (gramCalorie.isFocused()) {
 
                     if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         joule.setText(String.valueOf((Double.parseDouble(s.toString()) * 4.184)));
-                        kilojoule.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.004184));
-                        kilocalorie.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.001));
-                        watthour.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00116222));
-                        kilowatthour.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.0000011622));
-                        BigInteger sBigInteger = new BigInteger(s.toString());
-                        BigInteger multiplicant = new BigInteger("26110000000000000000");
-                        electronvolt.setText(String.valueOf(sBigInteger.multiply(multiplicant)));
-                        britishthermalunit.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00396567));
-                        ustherm.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000000039666));
-                        footpound.setText(String.valueOf(Double.parseDouble(s.toString()) * 3.08596));
+                        kiloJoule.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.004184));
+                        kiloCalorie.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.001));
+                        wattHour.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00116222));
+                        kiloWattHour.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.0000011622));
+                        BigDecimal sBigInteger = new BigDecimal(s.toString());
+                        BigDecimal multiplicant = new BigDecimal("26110000000000000000");
+                        electronVolt.setText(String.valueOf(sBigInteger.multiply(multiplicant)));
+                        britishThermalUnit.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00396567));
+                        usTherm.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000000039666));
+                        footPound.setText(String.valueOf(Double.parseDouble(s.toString()) * 3.08596));
                     } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         joule.getText().clear();
-                        kilojoule.getText().clear();
-                        kilocalorie.getText().clear();
-                        watthour.getText().clear();
-                        kilowatthour.getText().clear();
-                        electronvolt.getText().clear();
-                        britishthermalunit.getText().clear();
-                        ustherm.getText().clear();
-                        footpound.getText().clear();
+                        kiloJoule.getText().clear();
+                        kiloCalorie.getText().clear();
+                        wattHour.getText().clear();
+                        kiloWattHour.getText().clear();
+                        electronVolt.getText().clear();
+                        britishThermalUnit.getText().clear();
+                        usTherm.getText().clear();
+                        footPound.getText().clear();
                     }
                 }
             }
         });
 
-        kilojoule.addTextChangedListener(new TextWatcher() {
+        kiloJoule.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
 
             @Override
@@ -142,35 +140,35 @@ public class EnergyFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (kilojoule.isFocused()) {
+                if (kiloJoule.isFocused()) {
                     if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         joule.setText(String.valueOf((Double.parseDouble(s.toString()) * 1000)));
-                        gramcalorie.setText(String.valueOf(Double.parseDouble(s.toString()) * 239.006));
-                        kilocalorie.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.239006));
-                        watthour.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.277778));
-                        kilowatthour.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00027778));
-                        BigInteger sBigInteger = new BigInteger(s.toString());
-                        BigInteger multiplicant = new BigInteger("6241999999999999976712");
-                        electronvolt.setText(String.valueOf(sBigInteger.multiply(multiplicant)));
-                        britishthermalunit.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.947817));
-                        ustherm.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.0000094804));
-                        footpound.setText(String.valueOf(Double.parseDouble(s.toString()) * 737.562));
+                        gramCalorie.setText(String.valueOf(Double.parseDouble(s.toString()) * 239.006));
+                        kiloCalorie.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.239006));
+                        wattHour.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.277778));
+                        kiloWattHour.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00027778));
+                        BigDecimal sBigInteger = new BigDecimal(s.toString());
+                        BigDecimal multiplicant = new BigDecimal("6241999999999999976712");
+                        electronVolt.setText(String.valueOf(sBigInteger.multiply(multiplicant)));
+                        britishThermalUnit.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.947817));
+                        usTherm.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.0000094804));
+                        footPound.setText(String.valueOf(Double.parseDouble(s.toString()) * 737.562));
                     } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         joule.getText().clear();
-                        gramcalorie.getText().clear();
-                        kilocalorie.getText().clear();
-                        watthour.getText().clear();
-                        kilowatthour.getText().clear();
-                        electronvolt.getText().clear();
-                        britishthermalunit.getText().clear();
-                        ustherm.getText().clear();
-                        footpound.getText().clear();
+                        gramCalorie.getText().clear();
+                        kiloCalorie.getText().clear();
+                        wattHour.getText().clear();
+                        kiloWattHour.getText().clear();
+                        electronVolt.getText().clear();
+                        britishThermalUnit.getText().clear();
+                        usTherm.getText().clear();
+                        footPound.getText().clear();
                     }
                 }
             }
         });
 
-        kilocalorie.addTextChangedListener(new TextWatcher() {
+        kiloCalorie.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
 
             @Override
@@ -185,35 +183,35 @@ public class EnergyFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (kilocalorie.isFocused()) {
+                if (kiloCalorie.isFocused()) {
                     if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         joule.setText(String.valueOf((Double.parseDouble(s.toString()) * 4184)));
-                        gramcalorie.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000));
-                        kilojoule.setText(String.valueOf(Double.parseDouble(s.toString()) * 4.184));
-                        watthour.setText(String.valueOf(Double.parseDouble(s.toString()) * 1.16222));
-                        kilowatthour.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00116222));
-                        BigInteger sBigInteger = new BigInteger(s.toString());
-                        BigInteger multiplicant = new BigInteger("26110000000000000000288");
-                        electronvolt.setText(String.valueOf(sBigInteger.multiply(multiplicant)));
-                        britishthermalunit.setText(String.valueOf(Double.parseDouble(s.toString()) * 3.96567));
-                        ustherm.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000039666));
-                        footpound.setText(String.valueOf(Double.parseDouble(s.toString()) * 3085.96));
+                        gramCalorie.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000));
+                        kiloJoule.setText(String.valueOf(Double.parseDouble(s.toString()) * 4.184));
+                        wattHour.setText(String.valueOf(Double.parseDouble(s.toString()) * 1.16222));
+                        kiloWattHour.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00116222));
+                        BigDecimal sBigInteger = new BigDecimal(s.toString());
+                        BigDecimal multiplicant = new BigDecimal("26110000000000000000288");
+                        electronVolt.setText(String.valueOf(sBigInteger.multiply(multiplicant)));
+                        britishThermalUnit.setText(String.valueOf(Double.parseDouble(s.toString()) * 3.96567));
+                        usTherm.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000039666));
+                        footPound.setText(String.valueOf(Double.parseDouble(s.toString()) * 3085.96));
                     } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         joule.getText().clear();
-                        gramcalorie.getText().clear();
-                        kilojoule.getText().clear();
-                        watthour.getText().clear();
-                        kilowatthour.getText().clear();
-                        electronvolt.getText().clear();
-                        britishthermalunit.getText().clear();
-                        ustherm.getText().clear();
-                        footpound.getText().clear();
+                        gramCalorie.getText().clear();
+                        kiloJoule.getText().clear();
+                        wattHour.getText().clear();
+                        kiloWattHour.getText().clear();
+                        electronVolt.getText().clear();
+                        britishThermalUnit.getText().clear();
+                        usTherm.getText().clear();
+                        footPound.getText().clear();
                     }
                 }
             }
         });
 
-        watthour.addTextChangedListener(new TextWatcher() {
+        wattHour.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
 
             @Override
@@ -228,35 +226,35 @@ public class EnergyFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (watthour.isFocused()) {
+                if (wattHour.isFocused()) {
                     if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         joule.setText(String.valueOf((Double.parseDouble(s.toString()) * 3600)));
-                        gramcalorie.setText(String.valueOf(Double.parseDouble(s.toString()) * 860.421));
-                        kilojoule.setText(String.valueOf(Double.parseDouble(s.toString()) * 3.6));
-                        kilocalorie.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.860421));
-                        kilowatthour.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.001));
-                        BigInteger sBigInteger = new BigInteger(s.toString());
-                        BigInteger multiplicant = new BigInteger("22470000000000000000136");
-                        electronvolt.setText(String.valueOf(sBigInteger.multiply(multiplicant)));
-                        britishthermalunit.setText(String.valueOf(Double.parseDouble(s.toString()) * 3.41214));
-                        ustherm.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00003413));
-                        footpound.setText(String.valueOf(Double.parseDouble(s.toString()) * 2655.22));
+                        gramCalorie.setText(String.valueOf(Double.parseDouble(s.toString()) * 860.421));
+                        kiloJoule.setText(String.valueOf(Double.parseDouble(s.toString()) * 3.6));
+                        kiloCalorie.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.860421));
+                        kiloWattHour.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.001));
+                        BigDecimal sBigInteger = new BigDecimal(s.toString());
+                        BigDecimal multiplicant = new BigDecimal("22470000000000000000136");
+                        electronVolt.setText(String.valueOf(sBigInteger.multiply(multiplicant)));
+                        britishThermalUnit.setText(String.valueOf(Double.parseDouble(s.toString()) * 3.41214));
+                        usTherm.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00003413));
+                        footPound.setText(String.valueOf(Double.parseDouble(s.toString()) * 2655.22));
                     } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         joule.getText().clear();
-                        gramcalorie.getText().clear();
-                        kilojoule.getText().clear();
-                        kilocalorie.getText().clear();
-                        kilowatthour.getText().clear();
-                        electronvolt.getText().clear();
-                        britishthermalunit.getText().clear();
-                        ustherm.getText().clear();
-                        footpound.getText().clear();
+                        gramCalorie.getText().clear();
+                        kiloJoule.getText().clear();
+                        kiloCalorie.getText().clear();
+                        kiloWattHour.getText().clear();
+                        electronVolt.getText().clear();
+                        britishThermalUnit.getText().clear();
+                        usTherm.getText().clear();
+                        footPound.getText().clear();
                     }
                 }
             }
         });
 
-        kilowatthour.addTextChangedListener(new TextWatcher() {
+        kiloWattHour.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
 
             @Override
@@ -271,35 +269,35 @@ public class EnergyFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (kilowatthour.isFocused()) {
+                if (kiloWattHour.isFocused()) {
                     if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         joule.setText(String.valueOf((Double.parseDouble(s.toString()) * 3600000)));
-                        gramcalorie.setText(String.valueOf(Double.parseDouble(s.toString()) * 860421));
-                        kilojoule.setText(String.valueOf(Double.parseDouble(s.toString()) * 3600));
-                        kilocalorie.setText(String.valueOf(Double.parseDouble(s.toString()) * 860.421));
-                        watthour.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000));
-                        BigInteger sBigInteger = new BigInteger(s.toString());
-                        BigInteger multiplicant = new BigInteger("22470000000000004096440496");
-                        electronvolt.setText(String.valueOf(sBigInteger.multiply(multiplicant)));
-                        britishthermalunit.setText(String.valueOf(Double.parseDouble(s.toString()) * 3412.14));
-                        ustherm.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.0341296));
-                        footpound.setText(String.valueOf(Double.parseDouble(s.toString()) * 2655000));
+                        gramCalorie.setText(String.valueOf(Double.parseDouble(s.toString()) * 860421));
+                        kiloJoule.setText(String.valueOf(Double.parseDouble(s.toString()) * 3600));
+                        kiloCalorie.setText(String.valueOf(Double.parseDouble(s.toString()) * 860.421));
+                        wattHour.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000));
+                        BigDecimal sBigInteger = new BigDecimal(s.toString());
+                        BigDecimal multiplicant = new BigDecimal("22470000000000004096440496");
+                        electronVolt.setText(String.valueOf(sBigInteger.multiply(multiplicant)));
+                        britishThermalUnit.setText(String.valueOf(Double.parseDouble(s.toString()) * 3412.14));
+                        usTherm.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.0341296));
+                        footPound.setText(String.valueOf(Double.parseDouble(s.toString()) * 2655000));
                     } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         joule.getText().clear();
-                        gramcalorie.getText().clear();
-                        kilojoule.getText().clear();
-                        kilocalorie.getText().clear();
-                        watthour.getText().clear();
-                        electronvolt.getText().clear();
-                        britishthermalunit.getText().clear();
-                        ustherm.getText().clear();
-                        footpound.getText().clear();
+                        gramCalorie.getText().clear();
+                        kiloJoule.getText().clear();
+                        kiloCalorie.getText().clear();
+                        wattHour.getText().clear();
+                        electronVolt.getText().clear();
+                        britishThermalUnit.getText().clear();
+                        usTherm.getText().clear();
+                        footPound.getText().clear();
                     }
                 }
             }
         });
 
-        electronvolt.addTextChangedListener(new TextWatcher() {
+        electronVolt.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
 
             @Override
@@ -314,43 +312,43 @@ public class EnergyFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (electronvolt.isFocused()) {
+                if (electronVolt.isFocused()) {
                     if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         BigDecimal sBigInteger = new BigDecimal(s.toString());
                         BigDecimal multiplicantjoule = new BigDecimal("0.00000000000000000016022");
                         joule.setText(String.valueOf(sBigInteger.multiply(multiplicantjoule)));
                         BigDecimal multiplicantgramcalorie = new BigDecimal("0.000000000000000000038293");
-                        gramcalorie.setText(String.valueOf(sBigInteger.multiply(multiplicantgramcalorie)));
+                        gramCalorie.setText(String.valueOf(sBigInteger.multiply(multiplicantgramcalorie)));
                         BigDecimal multiplicantkilojoule = new BigDecimal("0.00000000000000000000016022");
-                        kilojoule.setText(String.valueOf(sBigInteger.multiply(multiplicantkilojoule)));
+                        kiloJoule.setText(String.valueOf(sBigInteger.multiply(multiplicantkilojoule)));
                         BigDecimal multiplicantkilocalorie = new BigDecimal("0.000000000000000000000038293");
-                        kilocalorie.setText(String.valueOf(sBigInteger.multiply(multiplicantkilocalorie)));
+                        kiloCalorie.setText(String.valueOf(sBigInteger.multiply(multiplicantkilocalorie)));
                         BigDecimal multiplicantwatthour = new BigDecimal("0.000000000000000000000044505");
-                        watthour.setText(String.valueOf(sBigInteger.multiply(multiplicantwatthour)));
+                        wattHour.setText(String.valueOf(sBigInteger.multiply(multiplicantwatthour)));
                         BigDecimal multiplicantkilowatthour = new BigDecimal("0.000000000000000000000000044505");
-                        kilowatthour.setText(String.valueOf(sBigInteger.multiply(multiplicantkilowatthour)));
+                        kiloWattHour.setText(String.valueOf(sBigInteger.multiply(multiplicantkilowatthour)));
                         BigDecimal multiplicantbritishthermalunit = new BigDecimal("0.00000000000000000000015186");
-                        britishthermalunit.setText(String.valueOf(sBigInteger.multiply(multiplicantbritishthermalunit)));
+                        britishThermalUnit.setText(String.valueOf(sBigInteger.multiply(multiplicantbritishthermalunit)));
                         BigDecimal multiplicantustherm = new BigDecimal("0.0000000000000000000000000015189");
-                        ustherm.setText(String.valueOf(sBigInteger.multiply(multiplicantustherm)));
+                        usTherm.setText(String.valueOf(sBigInteger.multiply(multiplicantustherm)));
                         BigDecimal multiplicantfootpound = new BigDecimal("0.00000000000000000011817");
-                        footpound.setText(String.valueOf(sBigInteger.multiply(multiplicantfootpound)));
+                        footPound.setText(String.valueOf(sBigInteger.multiply(multiplicantfootpound)));
                     } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         joule.getText().clear();
-                        gramcalorie.getText().clear();
-                        kilojoule.getText().clear();
-                        kilocalorie.getText().clear();
-                        watthour.getText().clear();
-                        kilowatthour.getText().clear();
-                        britishthermalunit.getText().clear();
-                        ustherm.getText().clear();
-                        footpound.getText().clear();
+                        gramCalorie.getText().clear();
+                        kiloJoule.getText().clear();
+                        kiloCalorie.getText().clear();
+                        wattHour.getText().clear();
+                        kiloWattHour.getText().clear();
+                        britishThermalUnit.getText().clear();
+                        usTherm.getText().clear();
+                        footPound.getText().clear();
                     }
                 }
             }
         });
 
-        britishthermalunit.addTextChangedListener(new TextWatcher() {
+        britishThermalUnit.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
 
             @Override
@@ -365,35 +363,35 @@ public class EnergyFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (britishthermalunit.isFocused()) {
+                if (britishThermalUnit.isFocused()) {
                     if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         joule.setText(String.valueOf((Double.parseDouble(s.toString()) * 1055.06)));
-                        gramcalorie.setText(String.valueOf(Double.parseDouble(s.toString()) * 252.164));
-                        kilojoule.setText(String.valueOf(Double.parseDouble(s.toString()) * 1.05506));
-                        kilocalorie.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.252164));
-                        watthour.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.293071));
-                        kilowatthour.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000293071));
-                        BigInteger sBigInteger = new BigInteger(s.toString());
-                        BigInteger multiplicant = new BigInteger("6585000000000000000856");
-                        electronvolt.setText(String.valueOf(sBigInteger.multiply(multiplicant)));
-                        ustherm.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000010002));
-                        footpound.setText(String.valueOf(Double.parseDouble(s.toString()) * 778.169));
+                        gramCalorie.setText(String.valueOf(Double.parseDouble(s.toString()) * 252.164));
+                        kiloJoule.setText(String.valueOf(Double.parseDouble(s.toString()) * 1.05506));
+                        kiloCalorie.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.252164));
+                        wattHour.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.293071));
+                        kiloWattHour.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000293071));
+                        BigDecimal sBigInteger = new BigDecimal(s.toString());
+                        BigDecimal multiplicant = new BigDecimal("6585000000000000000856");
+                        electronVolt.setText(String.valueOf(sBigInteger.multiply(multiplicant)));
+                        usTherm.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000010002));
+                        footPound.setText(String.valueOf(Double.parseDouble(s.toString()) * 778.169));
                     } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         joule.getText().clear();
-                        gramcalorie.getText().clear();
-                        kilojoule.getText().clear();
-                        kilocalorie.getText().clear();
-                        watthour.getText().clear();
-                        kilowatthour.getText().clear();
-                        electronvolt.getText().clear();
-                        ustherm.getText().clear();
-                        footpound.getText().clear();
+                        gramCalorie.getText().clear();
+                        kiloJoule.getText().clear();
+                        kiloCalorie.getText().clear();
+                        wattHour.getText().clear();
+                        kiloWattHour.getText().clear();
+                        electronVolt.getText().clear();
+                        usTherm.getText().clear();
+                        footPound.getText().clear();
                     }
                 }
             }
         });
 
-        ustherm.addTextChangedListener(new TextWatcher() {
+        usTherm.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
 
             @Override
@@ -408,35 +406,35 @@ public class EnergyFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (ustherm.isFocused()) {
+                if (usTherm.isFocused()) {
                     if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         joule.setText(String.valueOf((Double.parseDouble(s.toString()) * 105500000)));
-                        gramcalorie.setText(String.valueOf(Double.parseDouble(s.toString()) * 25210000));
-                        kilojoule.setText(String.valueOf(Double.parseDouble(s.toString()) * 105480));
-                        kilocalorie.setText(String.valueOf(Double.parseDouble(s.toString()) * 25210.4));
-                        watthour.setText(String.valueOf(Double.parseDouble(s.toString()) * 29300.1));
-                        kilowatthour.setText(String.valueOf(Double.parseDouble(s.toString()) * 29.3001));
-                        BigInteger sBigInteger = new BigInteger(s.toString());
-                        BigInteger multiplicant = new BigInteger("658400000000000128072472696");
-                        electronvolt.setText(String.valueOf(sBigInteger.multiply(multiplicant)));
-                        britishthermalunit.setText(String.valueOf(Double.parseDouble(s.toString()) * 99976.1));
-                        footpound.setText(String.valueOf(Double.parseDouble(s.toString()) * 77800000));
+                        gramCalorie.setText(String.valueOf(Double.parseDouble(s.toString()) * 25210000));
+                        kiloJoule.setText(String.valueOf(Double.parseDouble(s.toString()) * 105480));
+                        kiloCalorie.setText(String.valueOf(Double.parseDouble(s.toString()) * 25210.4));
+                        wattHour.setText(String.valueOf(Double.parseDouble(s.toString()) * 29300.1));
+                        kiloWattHour.setText(String.valueOf(Double.parseDouble(s.toString()) * 29.3001));
+                        BigDecimal sBigInteger = new BigDecimal(s.toString());
+                        BigDecimal multiplicant = new BigDecimal("658400000000000128072472696");
+                        electronVolt.setText(String.valueOf(sBigInteger.multiply(multiplicant)));
+                        britishThermalUnit.setText(String.valueOf(Double.parseDouble(s.toString()) * 99976.1));
+                        footPound.setText(String.valueOf(Double.parseDouble(s.toString()) * 77800000));
                     } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         joule.getText().clear();
-                        gramcalorie.getText().clear();
-                        kilojoule.getText().clear();
-                        kilocalorie.getText().clear();
-                        watthour.getText().clear();
-                        kilowatthour.getText().clear();
-                        electronvolt.getText().clear();
-                        britishthermalunit.getText().clear();
-                        footpound.getText().clear();
+                        gramCalorie.getText().clear();
+                        kiloJoule.getText().clear();
+                        kiloCalorie.getText().clear();
+                        wattHour.getText().clear();
+                        kiloWattHour.getText().clear();
+                        electronVolt.getText().clear();
+                        britishThermalUnit.getText().clear();
+                        footPound.getText().clear();
                     }
                 }
             }
         });
 
-        footpound.addTextChangedListener(new TextWatcher() {
+        footPound.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
 
             @Override
@@ -451,29 +449,29 @@ public class EnergyFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (footpound.isFocused()) {
+                if (footPound.isFocused()) {
                     if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         joule.setText(String.valueOf((Double.parseDouble(s.toString()) * 1.35582)));
-                        gramcalorie.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.324048));
-                        kilojoule.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00135582));
-                        kilocalorie.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000324048));
-                        watthour.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000376616));
-                        kilowatthour.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00000037662));
-                        BigInteger sBigInteger = new BigInteger(s.toString());
-                        BigInteger multiplicant = new BigInteger("8462000000000000000");
-                        electronvolt.setText(String.valueOf(sBigInteger.multiply(multiplicant)));
-                        britishthermalunit.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00128507));
-                        ustherm.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000000012854));
+                        gramCalorie.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.324048));
+                        kiloJoule.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00135582));
+                        kiloCalorie.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000324048));
+                        wattHour.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000376616));
+                        kiloWattHour.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00000037662));
+                        BigDecimal sBigInteger = new BigDecimal(s.toString());
+                        BigDecimal multiplicant = new BigDecimal("8462000000000000000");
+                        electronVolt.setText(String.valueOf(sBigInteger.multiply(multiplicant)));
+                        britishThermalUnit.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00128507));
+                        usTherm.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000000012854));
                     } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         joule.getText().clear();
-                        gramcalorie.getText().clear();
-                        kilojoule.getText().clear();
-                        kilocalorie.getText().clear();
-                        watthour.getText().clear();
-                        kilowatthour.getText().clear();
-                        electronvolt.getText().clear();
-                        britishthermalunit.getText().clear();
-                        ustherm.getText().clear();
+                        gramCalorie.getText().clear();
+                        kiloJoule.getText().clear();
+                        kiloCalorie.getText().clear();
+                        wattHour.getText().clear();
+                        kiloWattHour.getText().clear();
+                        electronVolt.getText().clear();
+                        britishThermalUnit.getText().clear();
+                        usTherm.getText().clear();
                     }
                 }
             }

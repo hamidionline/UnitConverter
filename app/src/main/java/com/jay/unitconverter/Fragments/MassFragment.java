@@ -30,9 +30,9 @@ public class MassFragment extends Fragment {
         final EditText tonne = view.findViewById(R.id.input_tonne);
         final EditText kilogram = view.findViewById(R.id.input_kilogram);
         final EditText gram = view.findViewById(R.id.input_gram);
-        final EditText miligram = view.findViewById(R.id.input_milligram);
-        final EditText microgram = view.findViewById(R.id.input_microgram);
-        final EditText imperialton = view.findViewById(R.id.input_imperial_ton);
+        final EditText milliGram = view.findViewById(R.id.input_milligram);
+        final EditText microGram = view.findViewById(R.id.input_microgram);
+        final EditText imperialTon = view.findViewById(R.id.input_imperial_ton);
         final EditText stone = view.findViewById(R.id.input_stone);
         final EditText pound = view.findViewById(R.id.input_pound);
         final EditText ounce = view.findViewById(R.id.input_ounce);
@@ -56,18 +56,18 @@ public class MassFragment extends Fragment {
                     if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         kilogram.setText(String.valueOf((Double.parseDouble(s.toString()) * 1000)));
                         gram.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000000));
-                        miligram.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000000000));
-                        microgram.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000000000000L));
-                        imperialton.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.984207));
+                        milliGram.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000000000));
+                        microGram.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000000000000L));
+                        imperialTon.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.984207));
                         stone.setText(String.valueOf(Double.parseDouble(s.toString()) * 157.473));
                         pound.setText(String.valueOf(Double.parseDouble(s.toString()) * 2204.62));
                         ounce.setText(String.valueOf(Double.parseDouble(s.toString()) * 35274));
                     } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         kilogram.getText().clear();
                         gram.getText().clear();
-                        miligram.getText().clear();
-                        microgram.getText().clear();
-                        imperialton.getText().clear();
+                        milliGram.getText().clear();
+                        microGram.getText().clear();
+                        imperialTon.getText().clear();
                         stone.getText().clear();
                         pound.getText().clear();
                         ounce.getText().clear();
@@ -95,18 +95,18 @@ public class MassFragment extends Fragment {
                     if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         tonne.setText(String.valueOf((Double.parseDouble(s.toString()) * 0.001)));
                         gram.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000));
-                        miligram.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000000));
-                        microgram.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000000000));
-                        imperialton.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000984207));
+                        milliGram.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000000));
+                        microGram.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000000000));
+                        imperialTon.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000984207));
                         stone.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.157473));
                         pound.setText(String.valueOf(Double.parseDouble(s.toString()) * 2.20462));
                         ounce.setText(String.valueOf(Double.parseDouble(s.toString()) * 35.274));
                     } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         tonne.getText().clear();
                         gram.getText().clear();
-                        miligram.getText().clear();
-                        microgram.getText().clear();
-                        imperialton.getText().clear();
+                        milliGram.getText().clear();
+                        microGram.getText().clear();
+                        imperialTon.getText().clear();
                         stone.getText().clear();
                         pound.getText().clear();
                         ounce.getText().clear();
@@ -134,18 +134,18 @@ public class MassFragment extends Fragment {
                     if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         tonne.setText(String.valueOf((Double.parseDouble(s.toString()) * 0.000001)));
                         kilogram.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.001));
-                        miligram.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000));
-                        microgram.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000000));
-                        imperialton.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00000098421));
+                        milliGram.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000));
+                        microGram.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000000));
+                        imperialTon.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00000098421));
                         stone.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000157473));
                         pound.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00220462));
                         ounce.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.035274));
                     } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         tonne.getText().clear();
                         kilogram.getText().clear();
-                        miligram.getText().clear();
-                        microgram.getText().clear();
-                        imperialton.getText().clear();
+                        milliGram.getText().clear();
+                        microGram.getText().clear();
+                        imperialTon.getText().clear();
                         stone.getText().clear();
                         pound.getText().clear();
                         ounce.getText().clear();
@@ -154,7 +154,7 @@ public class MassFragment extends Fragment {
             }
         });
 
-        miligram.addTextChangedListener(new TextWatcher() {
+        milliGram.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
 
             @Override
@@ -169,13 +169,13 @@ public class MassFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (miligram.isFocused()) {
+                if (milliGram.isFocused()) {
                     if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         tonne.setText(String.valueOf((Double.parseDouble(s.toString()) * 0.000000001)));
                         kilogram.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000001));
                         gram.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.001));
-                        microgram.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000));
-                        imperialton.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00000000098421));
+                        microGram.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000));
+                        imperialTon.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00000000098421));
                         stone.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00000015747));
                         pound.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.0000022046));
                         ounce.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000035274));
@@ -183,8 +183,8 @@ public class MassFragment extends Fragment {
                         tonne.getText().clear();
                         kilogram.getText().clear();
                         gram.getText().clear();
-                        microgram.getText().clear();
-                        imperialton.getText().clear();
+                        microGram.getText().clear();
+                        imperialTon.getText().clear();
                         stone.getText().clear();
                         pound.getText().clear();
                         ounce.getText().clear();
@@ -193,7 +193,7 @@ public class MassFragment extends Fragment {
             }
         });
 
-        microgram.addTextChangedListener(new TextWatcher() {
+        microGram.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
 
             @Override
@@ -208,13 +208,13 @@ public class MassFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (microgram.isFocused()) {
+                if (microGram.isFocused()) {
                     if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         tonne.setText(String.valueOf((Double.parseDouble(s.toString()) * 0.000000000001)));
                         kilogram.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000000001));
                         gram.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000001));
-                        miligram.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.001));
-                        imperialton.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00000000000098421));
+                        milliGram.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.001));
+                        imperialTon.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00000000000098421));
                         stone.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00000000015747));
                         pound.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.0000000022046));
                         ounce.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000000035274));
@@ -222,8 +222,8 @@ public class MassFragment extends Fragment {
                         tonne.getText().clear();
                         kilogram.getText().clear();
                         gram.getText().clear();
-                        miligram.getText().clear();
-                        imperialton.getText().clear();
+                        milliGram.getText().clear();
+                        imperialTon.getText().clear();
                         stone.getText().clear();
                         pound.getText().clear();
                         ounce.getText().clear();
@@ -232,7 +232,7 @@ public class MassFragment extends Fragment {
             }
         });
 
-        imperialton.addTextChangedListener(new TextWatcher() {
+        imperialTon.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
 
             @Override
@@ -247,13 +247,13 @@ public class MassFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (imperialton.isFocused()) {
+                if (imperialTon.isFocused()) {
                     if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
                         tonne.setText(String.valueOf((Double.parseDouble(s.toString()) * 1.01605)));
                         kilogram.setText(String.valueOf(Double.parseDouble(s.toString()) * 1016.05));
                         gram.setText(String.valueOf(Double.parseDouble(s.toString()) * 1016000));
-                        miligram.setText(String.valueOf(Double.parseDouble(s.toString()) * 1016000000));
-                        microgram.setText(String.valueOf(Double.parseDouble(s.toString()) * 1016000000000L));
+                        milliGram.setText(String.valueOf(Double.parseDouble(s.toString()) * 1016000000));
+                        microGram.setText(String.valueOf(Double.parseDouble(s.toString()) * 1016000000000L));
                         stone.setText(String.valueOf(Double.parseDouble(s.toString()) * 160));
                         pound.setText(String.valueOf(Double.parseDouble(s.toString()) * 2240));
                         ounce.setText(String.valueOf(Double.parseDouble(s.toString()) * 35840));
@@ -261,8 +261,8 @@ public class MassFragment extends Fragment {
                         tonne.getText().clear();
                         kilogram.getText().clear();
                         gram.getText().clear();
-                        miligram.getText().clear();
-                        microgram.getText().clear();
+                        milliGram.getText().clear();
+                        microGram.getText().clear();
                         stone.getText().clear();
                         pound.getText().clear();
                         ounce.getText().clear();
@@ -291,18 +291,18 @@ public class MassFragment extends Fragment {
                         tonne.setText(String.valueOf((Double.parseDouble(s.toString()) * 1.01605)));
                         kilogram.setText(String.valueOf(Double.parseDouble(s.toString()) * 1016.05));
                         gram.setText(String.valueOf(Double.parseDouble(s.toString()) * 1016000));
-                        miligram.setText(String.valueOf(Double.parseDouble(s.toString()) * 1016000000));
-                        microgram.setText(String.valueOf(Double.parseDouble(s.toString()) * 1016000000000L));
-                        imperialton.setText(String.valueOf(Double.parseDouble(s.toString()) * 160));
+                        milliGram.setText(String.valueOf(Double.parseDouble(s.toString()) * 1016000000));
+                        microGram.setText(String.valueOf(Double.parseDouble(s.toString()) * 1016000000000L));
+                        imperialTon.setText(String.valueOf(Double.parseDouble(s.toString()) * 160));
                         pound.setText(String.valueOf(Double.parseDouble(s.toString()) * 2240));
                         ounce.setText(String.valueOf(Double.parseDouble(s.toString()) * 35840));
                     } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         tonne.getText().clear();
                         kilogram.getText().clear();
                         gram.getText().clear();
-                        miligram.getText().clear();
-                        microgram.getText().clear();
-                        imperialton.getText().clear();
+                        milliGram.getText().clear();
+                        microGram.getText().clear();
+                        imperialTon.getText().clear();
                         pound.getText().clear();
                         ounce.getText().clear();
                     }
@@ -330,18 +330,18 @@ public class MassFragment extends Fragment {
                         tonne.setText(String.valueOf((Double.parseDouble(s.toString()) * 0.00635029)));
                         kilogram.setText(String.valueOf(Double.parseDouble(s.toString()) * 6.35029));
                         gram.setText(String.valueOf(Double.parseDouble(s.toString()) * 6350.29));
-                        miligram.setText(String.valueOf(Double.parseDouble(s.toString()) * 6350000));
-                        microgram.setText(String.valueOf(Double.parseDouble(s.toString()) * 6350000000L));
-                        imperialton.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00625));
+                        milliGram.setText(String.valueOf(Double.parseDouble(s.toString()) * 6350000));
+                        microGram.setText(String.valueOf(Double.parseDouble(s.toString()) * 6350000000L));
+                        imperialTon.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00625));
                         pound.setText(String.valueOf(Double.parseDouble(s.toString()) * 14));
                         ounce.setText(String.valueOf(Double.parseDouble(s.toString()) * 224));
                     } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         tonne.getText().clear();
                         kilogram.getText().clear();
                         gram.getText().clear();
-                        miligram.getText().clear();
-                        microgram.getText().clear();
-                        imperialton.getText().clear();
+                        milliGram.getText().clear();
+                        microGram.getText().clear();
+                        imperialTon.getText().clear();
                         pound.getText().clear();
                         ounce.getText().clear();
                     }
@@ -369,18 +369,18 @@ public class MassFragment extends Fragment {
                         tonne.setText(String.valueOf((Double.parseDouble(s.toString()) * 0.000453592)));
                         kilogram.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.453592));
                         gram.setText(String.valueOf(Double.parseDouble(s.toString()) * 453.592));
-                        miligram.setText(String.valueOf(Double.parseDouble(s.toString()) * 453592));
-                        microgram.setText(String.valueOf(Double.parseDouble(s.toString()) * 453600000));
-                        imperialton.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000446429));
+                        milliGram.setText(String.valueOf(Double.parseDouble(s.toString()) * 453592));
+                        microGram.setText(String.valueOf(Double.parseDouble(s.toString()) * 453600000));
+                        imperialTon.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000446429));
                         stone.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.0714286));
                         ounce.setText(String.valueOf(Double.parseDouble(s.toString()) * 16));
                     } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         tonne.getText().clear();
                         kilogram.getText().clear();
                         gram.getText().clear();
-                        miligram.getText().clear();
-                        microgram.getText().clear();
-                        imperialton.getText().clear();
+                        milliGram.getText().clear();
+                        microGram.getText().clear();
+                        imperialTon.getText().clear();
                         stone.getText().clear();
                         ounce.getText().clear();
                     }
@@ -408,18 +408,18 @@ public class MassFragment extends Fragment {
                         tonne.setText(String.valueOf((Double.parseDouble(s.toString()) * 0.00002835)));
                         kilogram.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.0283495));
                         gram.setText(String.valueOf(Double.parseDouble(s.toString()) * 28.3495));
-                        miligram.setText(String.valueOf(Double.parseDouble(s.toString()) * 28349.5));
-                        microgram.setText(String.valueOf(Double.parseDouble(s.toString()) * 28350000));
-                        imperialton.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000027902));
+                        milliGram.setText(String.valueOf(Double.parseDouble(s.toString()) * 28349.5));
+                        microGram.setText(String.valueOf(Double.parseDouble(s.toString()) * 28350000));
+                        imperialTon.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000027902));
                         stone.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.00446429));
                         pound.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.0625));
                     } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
                         tonne.getText().clear();
                         kilogram.getText().clear();
                         gram.getText().clear();
-                        miligram.getText().clear();
-                        microgram.getText().clear();
-                        imperialton.getText().clear();
+                        milliGram.getText().clear();
+                        microGram.getText().clear();
+                        imperialTon.getText().clear();
                         stone.getText().clear();
                         pound.getText().clear();
                     }

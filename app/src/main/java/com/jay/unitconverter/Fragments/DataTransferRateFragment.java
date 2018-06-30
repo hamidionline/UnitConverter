@@ -28,21 +28,21 @@ public class DataTransferRateFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_data_transfer_rate, container, false);
 
-        final EditText bitpersecond = view.findViewById(R.id.input_bit_per_second);
-        final EditText kilobitpersecond = view.findViewById(R.id.input_kilobit_per_second);
-        final EditText kilobytepersecond = view.findViewById(R.id.input_kilobyte_per_second);
+        final EditText bitPerSecond = view.findViewById(R.id.input_bit_per_second);
+        final EditText kiloBitPerSecond = view.findViewById(R.id.input_kilobit_per_second);
+        final EditText kiloBytePerSecond = view.findViewById(R.id.input_kilobyte_per_second);
 //        final EditText kibibitpersecond = view.findViewById(R.id.input_kibibit_per_second);
-        final EditText megabitpersecond = view.findViewById(R.id.input_megabit_per_second);
-        final EditText megabytepersecond = view.findViewById(R.id.input_megabyte_per_second);
+        final EditText megaBitPerSecond = view.findViewById(R.id.input_megabit_per_second);
+        final EditText megaBytePerSecond = view.findViewById(R.id.input_megabyte_per_second);
 //        final EditText mebibitpersecond = view.findViewById(R.id.input_mebibit_per_second);
-        final EditText gigabitpersecond = view.findViewById(R.id.input_gigabit_per_second);
-        final EditText gigabytepersecond = view.findViewById(R.id.input_gigabyte_per_second);
+        final EditText gigaBitPerSecond = view.findViewById(R.id.input_gigabit_per_second);
+        final EditText gigaBytePerSecond = view.findViewById(R.id.input_gigabyte_per_second);
 //        final EditText gibibitpersecond = view.findViewById(R.id.input_gibibit_per_second);
-        final EditText terabitpersecond = view.findViewById(R.id.input_terabit_per_second);
-        final EditText terabytepersecond = view.findViewById(R.id.input_terabyte_per_second);
+        final EditText teraBitPerSecond = view.findViewById(R.id.input_terabit_per_second);
+        final EditText teraBytePerSecond = view.findViewById(R.id.input_terabyte_per_second);
 //        final EditText tebibitpersecond = view.findViewById(R.id.input_tebibit_per_second);
 
-        bitpersecond.addTextChangedListener(new TextWatcher() {
+        bitPerSecond.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
 
             @Override
@@ -57,39 +57,39 @@ public class DataTransferRateFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (bitpersecond.isFocused()) {
+                if (bitPerSecond.isFocused()) {
                     if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
-                        kilobitpersecond.setText(String.valueOf((Double.parseDouble(s.toString()) / 1000)));
-                        kilobytepersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 8000));
+                        kiloBitPerSecond.setText(String.valueOf((Double.parseDouble(s.toString()) / 1000)));
+                        kiloBytePerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 8000));
 //                        kibibitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 258.998811));
-                        megabitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 1000000));
-                        megabytepersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 8000000));
+                        megaBitPerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 1000000));
+                        megaBytePerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 8000000));
 //                        mebibitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.000000064516));
-                        gigabitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 1000000000));
-                        gigabytepersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 8000000000L));
+                        gigaBitPerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 1000000000));
+                        gigaBytePerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 8000000000L));
 //                        gibibitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.404685642));
-                        terabitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 1000000000000L));
-                        terabytepersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 8000000000000L));
+                        teraBitPerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 1000000000000L));
+                        teraBytePerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 8000000000000L));
 //                        tebibitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.404685642));
                     } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
-                        kilobitpersecond.getText().clear();
-                        kilobytepersecond.getText().clear();
+                        kiloBitPerSecond.getText().clear();
+                        kiloBytePerSecond.getText().clear();
 //                        kibibitpersecond.getText().clear();
-                        megabitpersecond.getText().clear();
-                        megabytepersecond.getText().clear();
+                        megaBitPerSecond.getText().clear();
+                        megaBytePerSecond.getText().clear();
 //                        mebibitpersecond.getText().clear();
-                        gigabitpersecond.getText().clear();
-                        gigabytepersecond.getText().clear();
+                        gigaBitPerSecond.getText().clear();
+                        gigaBytePerSecond.getText().clear();
 //                        gibibitpersecond.getText().clear();
-                        terabitpersecond.getText().clear();
-                        terabytepersecond.getText().clear();
+                        teraBitPerSecond.getText().clear();
+                        teraBytePerSecond.getText().clear();
 //                        tebibitpersecond.getText().clear();
                     }
                 }
             }
         });
 
-        kilobitpersecond.addTextChangedListener(new TextWatcher() {
+        kiloBitPerSecond.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
 
             @Override
@@ -104,39 +104,39 @@ public class DataTransferRateFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (kilobitpersecond.isFocused()) {
+                if (kiloBitPerSecond.isFocused()) {
                     if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
-                        bitpersecond.setText(String.valueOf((Double.parseDouble(s.toString()) * 1000)));
-                        kilobytepersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 8));
+                        bitPerSecond.setText(String.valueOf((Double.parseDouble(s.toString()) * 1000)));
+                        kiloBytePerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 8));
 //                        kibibitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 258.998811));
-                        megabitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 1000));
-                        megabytepersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 8000));
+                        megaBitPerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 1000));
+                        megaBytePerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 8000));
 //                        mebibitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.000000064516));
-                        gigabitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 1000000));
-                        gigabytepersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 8000000));
+                        gigaBitPerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 1000000));
+                        gigaBytePerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 8000000));
 //                        gibibitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.404685642));
-                        terabitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 1000000000));
-                        terabytepersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 8000000000L));
+                        teraBitPerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 1000000000));
+                        teraBytePerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 8000000000L));
 //                        tebibitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.404685642));
                     } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
-                        bitpersecond.getText().clear();
-                        kilobytepersecond.getText().clear();
+                        bitPerSecond.getText().clear();
+                        kiloBytePerSecond.getText().clear();
 //                        kibibitpersecond.getText().clear();
-                        megabitpersecond.getText().clear();
-                        megabytepersecond.getText().clear();
+                        megaBitPerSecond.getText().clear();
+                        megaBytePerSecond.getText().clear();
 //                        mebibitpersecond.getText().clear();
-                        gigabitpersecond.getText().clear();
-                        gigabytepersecond.getText().clear();
+                        gigaBitPerSecond.getText().clear();
+                        gigaBytePerSecond.getText().clear();
 //                        gibibitpersecond.getText().clear();
-                        terabitpersecond.getText().clear();
-                        terabytepersecond.getText().clear();
+                        teraBitPerSecond.getText().clear();
+                        teraBytePerSecond.getText().clear();
 //                        tebibitpersecond.getText().clear();
                     }
                 }
             }
         });
 
-        kilobytepersecond.addTextChangedListener(new TextWatcher() {
+        kiloBytePerSecond.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
 
             @Override
@@ -151,39 +151,39 @@ public class DataTransferRateFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (kilobytepersecond.isFocused()) {
+                if (kiloBytePerSecond.isFocused()) {
                     if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
-                        bitpersecond.setText(String.valueOf((Double.parseDouble(s.toString()) * 8000)));
-                        kilobitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 8));
+                        bitPerSecond.setText(String.valueOf((Double.parseDouble(s.toString()) * 8000)));
+                        kiloBitPerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 8));
 //                        kibibitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 258.998811));
-                        megabitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 125));
-                        megabytepersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 1000));
+                        megaBitPerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 125));
+                        megaBytePerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 1000));
 //                        mebibitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.000000064516));
-                        gigabitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000008));
-                        gigabytepersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 1000000));
+                        gigaBitPerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000008));
+                        gigaBytePerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 1000000));
 //                        gibibitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.404685642));
-                        terabitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000000008));
-                        terabytepersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 1000000000));
+                        teraBitPerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000000008));
+                        teraBytePerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 1000000000));
 //                        tebibitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.404685642));
                     } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
-                        bitpersecond.getText().clear();
-                        kilobitpersecond.getText().clear();
+                        bitPerSecond.getText().clear();
+                        kiloBitPerSecond.getText().clear();
 //                        kibibitpersecond.getText().clear();
-                        megabitpersecond.getText().clear();
-                        megabytepersecond.getText().clear();
+                        megaBitPerSecond.getText().clear();
+                        megaBytePerSecond.getText().clear();
 //                        mebibitpersecond.getText().clear();
-                        gigabitpersecond.getText().clear();
-                        gigabytepersecond.getText().clear();
+                        gigaBitPerSecond.getText().clear();
+                        gigaBytePerSecond.getText().clear();
 //                        gibibitpersecond.getText().clear();
-                        terabitpersecond.getText().clear();
-                        terabytepersecond.getText().clear();
+                        teraBitPerSecond.getText().clear();
+                        teraBytePerSecond.getText().clear();
 //                        tebibitpersecond.getText().clear();
                     }
                 }
             }
         });
 
-        megabitpersecond.addTextChangedListener(new TextWatcher() {
+        megaBitPerSecond.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
 
             @Override
@@ -198,39 +198,39 @@ public class DataTransferRateFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (megabitpersecond.isFocused()) {
+                if (megaBitPerSecond.isFocused()) {
                     if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
-                        bitpersecond.setText(String.valueOf((Double.parseDouble(s.toString()) * 1000000)));
-                        kilobitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000));
+                        bitPerSecond.setText(String.valueOf((Double.parseDouble(s.toString()) * 1000000)));
+                        kiloBitPerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000));
 //                        kibibitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 258.998811));
-                        kilobytepersecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 125));
-                        megabytepersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 8));
+                        kiloBytePerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 125));
+                        megaBytePerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 8));
 //                        mebibitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.000000064516));
-                        gigabitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 1000));
-                        gigabytepersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 8000));
+                        gigaBitPerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 1000));
+                        gigaBytePerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 8000));
 //                        gibibitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.404685642));
-                        terabitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 1000000));
-                        terabytepersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 8000000));
+                        teraBitPerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 1000000));
+                        teraBytePerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 8000000));
 //                        tebibitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.404685642));
                     } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
-                        bitpersecond.getText().clear();
-                        kilobitpersecond.getText().clear();
+                        bitPerSecond.getText().clear();
+                        kiloBitPerSecond.getText().clear();
 //                        kibibitpersecond.getText().clear();
-                        kilobytepersecond.getText().clear();
-                        megabytepersecond.getText().clear();
+                        kiloBytePerSecond.getText().clear();
+                        megaBytePerSecond.getText().clear();
 //                        mebibitpersecond.getText().clear();
-                        gigabitpersecond.getText().clear();
-                        gigabytepersecond.getText().clear();
+                        gigaBitPerSecond.getText().clear();
+                        gigaBytePerSecond.getText().clear();
 //                        gibibitpersecond.getText().clear();
-                        terabitpersecond.getText().clear();
-                        terabytepersecond.getText().clear();
+                        teraBitPerSecond.getText().clear();
+                        teraBytePerSecond.getText().clear();
 //                        tebibitpersecond.getText().clear();
                     }
                 }
             }
         });
 
-        megabytepersecond.addTextChangedListener(new TextWatcher() {
+        megaBytePerSecond.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
 
             @Override
@@ -245,39 +245,39 @@ public class DataTransferRateFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (megabytepersecond.isFocused()) {
+                if (megaBytePerSecond.isFocused()) {
                     if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
-                        bitpersecond.setText(String.valueOf((Double.parseDouble(s.toString()) * 8000000)));
-                        kilobitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 8000));
+                        bitPerSecond.setText(String.valueOf((Double.parseDouble(s.toString()) * 8000000)));
+                        kiloBitPerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 8000));
 //                        kibibitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 258.998811));
-                        kilobytepersecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000));
-                        megabitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 8));
+                        kiloBytePerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000));
+                        megaBitPerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 8));
 //                        mebibitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.000000064516));
-                        gigabitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.008));
-                        gigabytepersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 1000));
+                        gigaBitPerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.008));
+                        gigaBytePerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 1000));
 //                        gibibitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.404685642));
-                        terabitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000008));
-                        terabytepersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 1000000));
+                        teraBitPerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.000008));
+                        teraBytePerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 1000000));
 //                        tebibitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.404685642));
                     } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
-                        bitpersecond.getText().clear();
-                        kilobitpersecond.getText().clear();
+                        bitPerSecond.getText().clear();
+                        kiloBitPerSecond.getText().clear();
 //                        kibibitpersecond.getText().clear();
-                        kilobytepersecond.getText().clear();
-                        megabitpersecond.getText().clear();
+                        kiloBytePerSecond.getText().clear();
+                        megaBitPerSecond.getText().clear();
 //                        mebibitpersecond.getText().clear();
-                        gigabitpersecond.getText().clear();
-                        gigabytepersecond.getText().clear();
+                        gigaBitPerSecond.getText().clear();
+                        gigaBytePerSecond.getText().clear();
 //                        gibibitpersecond.getText().clear();
-                        terabitpersecond.getText().clear();
-                        terabytepersecond.getText().clear();
+                        teraBitPerSecond.getText().clear();
+                        teraBytePerSecond.getText().clear();
 //                        tebibitpersecond.getText().clear();
                     }
                 }
             }
         });
 
-        gigabitpersecond.addTextChangedListener(new TextWatcher() {
+        gigaBitPerSecond.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
 
             @Override
@@ -292,39 +292,39 @@ public class DataTransferRateFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (gigabitpersecond.isFocused()) {
+                if (gigaBitPerSecond.isFocused()) {
                     if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
-                        bitpersecond.setText(String.valueOf((Double.parseDouble(s.toString()) * 1000000000)));
-                        kilobitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000000));
+                        bitPerSecond.setText(String.valueOf((Double.parseDouble(s.toString()) * 1000000000)));
+                        kiloBitPerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000000));
 //                        kibibitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 258.998811));
-                        kilobytepersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.000008));
-                        megabitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000));
+                        kiloBytePerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.000008));
+                        megaBitPerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000));
 //                        mebibitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.000000064516));
-                        megabytepersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.008));
-                        gigabytepersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 8));
+                        megaBytePerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.008));
+                        gigaBytePerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 8));
 //                        gibibitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.404685642));
-                        terabitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 1000));
-                        terabytepersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 8000));
+                        teraBitPerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 1000));
+                        teraBytePerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 8000));
 //                        tebibitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.404685642));
                     } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
-                        bitpersecond.getText().clear();
-                        kilobitpersecond.getText().clear();
+                        bitPerSecond.getText().clear();
+                        kiloBitPerSecond.getText().clear();
 //                        kibibitpersecond.getText().clear();
-                        kilobytepersecond.getText().clear();
-                        megabitpersecond.getText().clear();
+                        kiloBytePerSecond.getText().clear();
+                        megaBitPerSecond.getText().clear();
 //                        mebibitpersecond.getText().clear();
-                        megabytepersecond.getText().clear();
-                        gigabytepersecond.getText().clear();
+                        megaBytePerSecond.getText().clear();
+                        gigaBytePerSecond.getText().clear();
 //                        gibibitpersecond.getText().clear();
-                        terabitpersecond.getText().clear();
-                        terabytepersecond.getText().clear();
+                        teraBitPerSecond.getText().clear();
+                        teraBytePerSecond.getText().clear();
 //                        tebibitpersecond.getText().clear();
                     }
                 }
             }
         });
 
-        gigabytepersecond.addTextChangedListener(new TextWatcher() {
+        gigaBytePerSecond.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
 
             @Override
@@ -339,39 +339,39 @@ public class DataTransferRateFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (gigabytepersecond.isFocused()) {
+                if (gigaBytePerSecond.isFocused()) {
                     if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
-                        bitpersecond.setText(String.valueOf((Double.parseDouble(s.toString()) * 8000000000L)));
-                        kilobitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 8000000));
+                        bitPerSecond.setText(String.valueOf((Double.parseDouble(s.toString()) * 8000000000L)));
+                        kiloBitPerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 8000000));
 //                        kibibitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 258.998811));
-                        kilobytepersecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000000));
-                        megabitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 8000));
+                        kiloBytePerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000000));
+                        megaBitPerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 8000));
 //                        mebibitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.000000064516));
-                        megabytepersecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000));
-                        gigabitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 8));
+                        megaBytePerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000));
+                        gigaBitPerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 8));
 //                        gibibitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.404685642));
-                        terabitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.008));
-                        terabytepersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 1000));
+                        teraBitPerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 0.008));
+                        teraBytePerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 1000));
 //                        tebibitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.404685642));
                     } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
-                        bitpersecond.getText().clear();
-                        kilobitpersecond.getText().clear();
+                        bitPerSecond.getText().clear();
+                        kiloBitPerSecond.getText().clear();
 //                        kibibitpersecond.getText().clear();
-                        kilobytepersecond.getText().clear();
-                        megabitpersecond.getText().clear();
+                        kiloBytePerSecond.getText().clear();
+                        megaBitPerSecond.getText().clear();
 //                        mebibitpersecond.getText().clear();
-                        megabytepersecond.getText().clear();
-                        gigabitpersecond.getText().clear();
+                        megaBytePerSecond.getText().clear();
+                        gigaBitPerSecond.getText().clear();
 //                        gibibitpersecond.getText().clear();
-                        terabitpersecond.getText().clear();
-                        terabytepersecond.getText().clear();
+                        teraBitPerSecond.getText().clear();
+                        teraBytePerSecond.getText().clear();
 //                        tebibitpersecond.getText().clear();
                     }
                 }
             }
         });
 
-        terabitpersecond.addTextChangedListener(new TextWatcher() {
+        teraBitPerSecond.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
 
             @Override
@@ -386,39 +386,39 @@ public class DataTransferRateFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (terabitpersecond.isFocused()) {
+                if (teraBitPerSecond.isFocused()) {
                     if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
-                        bitpersecond.setText(String.valueOf((Double.parseDouble(s.toString()) * 1000000000000L)));
-                        kilobitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000000000));
+                        bitPerSecond.setText(String.valueOf((Double.parseDouble(s.toString()) * 1000000000000L)));
+                        kiloBitPerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000000000));
 //                        kibibitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 258.998811));
-                        kilobytepersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.000000008));
-                        megabitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000000));
+                        kiloBytePerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.000000008));
+                        megaBitPerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000000));
 //                        mebibitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.000000064516));
-                        megabytepersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.000008));
-                        gigabitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000));
+                        megaBytePerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.000008));
+                        gigaBitPerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000));
 //                        gibibitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.404685642));
-                        gigabytepersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.008));
-                        terabytepersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 8));
+                        gigaBytePerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.008));
+                        teraBytePerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 8));
 //                        tebibitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.404685642));
                     } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
-                        bitpersecond.getText().clear();
-                        kilobitpersecond.getText().clear();
+                        bitPerSecond.getText().clear();
+                        kiloBitPerSecond.getText().clear();
 //                        kibibitpersecond.getText().clear();
-                        kilobytepersecond.getText().clear();
-                        megabitpersecond.getText().clear();
+                        kiloBytePerSecond.getText().clear();
+                        megaBitPerSecond.getText().clear();
 //                        mebibitpersecond.getText().clear();
-                        megabytepersecond.getText().clear();
-                        gigabitpersecond.getText().clear();
+                        megaBytePerSecond.getText().clear();
+                        gigaBitPerSecond.getText().clear();
 //                        gibibitpersecond.getText().clear();
-                        gigabytepersecond.getText().clear();
-                        terabytepersecond.getText().clear();
+                        gigaBytePerSecond.getText().clear();
+                        teraBytePerSecond.getText().clear();
 //                        tebibitpersecond.getText().clear();
                     }
                 }
             }
         });
 
-        terabytepersecond.addTextChangedListener(new TextWatcher() {
+        teraBytePerSecond.addTextChangedListener(new TextWatcher() {
             int charCount = 0;
 
             @Override
@@ -433,32 +433,32 @@ public class DataTransferRateFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (terabytepersecond.isFocused()) {
+                if (teraBytePerSecond.isFocused()) {
                     if (!s.toString().trim().isEmpty() && charCount > -1 && s.toString().trim().charAt(s.length() - 1) != '.' && tryParseDouble(s.toString().trim())) {
-                        bitpersecond.setText(String.valueOf((Double.parseDouble(s.toString()) * 8000000000000L)));
-                        kilobitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 8000000000L));
+                        bitPerSecond.setText(String.valueOf((Double.parseDouble(s.toString()) * 8000000000000L)));
+                        kiloBitPerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 8000000000L));
 //                        kibibitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 258.998811));
-                        kilobytepersecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000000000));
-                        megabitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 8000000));
+                        kiloBytePerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000000000));
+                        megaBitPerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 8000000));
 //                        mebibitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.000000064516));
-                        megabytepersecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000000));
-                        gigabitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 8000));
+                        megaBytePerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000000));
+                        gigaBitPerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 8000));
 //                        gibibitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.404685642));
-                        gigabytepersecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000));
-                        terabitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 8));
+                        gigaBytePerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 1000));
+                        teraBitPerSecond.setText(String.valueOf(Double.parseDouble(s.toString()) * 8));
 //                        tebibitpersecond.setText(String.valueOf(Double.parseDouble(s.toString()) / 0.404685642));
                     } else if (s.toString().trim().isEmpty() || s.toString().trim().charAt(s.length() - 1) != '.') {
-                        bitpersecond.getText().clear();
-                        kilobitpersecond.getText().clear();
+                        bitPerSecond.getText().clear();
+                        kiloBitPerSecond.getText().clear();
 //                        kibibitpersecond.getText().clear();
-                        kilobytepersecond.getText().clear();
-                        megabitpersecond.getText().clear();
+                        kiloBytePerSecond.getText().clear();
+                        megaBitPerSecond.getText().clear();
 //                        mebibitpersecond.getText().clear();
-                        megabytepersecond.getText().clear();
-                        gigabitpersecond.getText().clear();
+                        megaBytePerSecond.getText().clear();
+                        gigaBitPerSecond.getText().clear();
 //                        gibibitpersecond.getText().clear();
-                        gigabytepersecond.getText().clear();
-                        terabitpersecond.getText().clear();
+                        gigaBytePerSecond.getText().clear();
+                        teraBitPerSecond.getText().clear();
 //                        tebibitpersecond.getText().clear();
                     }
                 }
