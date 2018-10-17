@@ -26,8 +26,8 @@
             android:layout_centerHorizontal="true"
             android:visibility="gone"
             ads:adSize="BANNER"
-            ads:adUnitId="ca-app-pub-4955764862648857/5720994531" />
-        <!--ads:adUnitId="ca-app-pub-3940256099942544/6300978111" /> //Test AD-->
+            ads:adUnitId="ca-app-pub-6404517846683850/3898564090" />
+        <!--ads:adUnitId="ca-app-pub-3940256099942544/6300978111" />//Test AD-->
 
     </RelativeLayout>
 

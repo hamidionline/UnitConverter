@@ -49,8 +49,8 @@ import java.util.List;
 public class ScrollableTabsActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, RewardedVideoAdListener {
 
     private InterstitialAd mInterstitialAd;
-    private RewardedVideoAd mAd;
-    private AdView mAdView;
+    private RewardedVideoAd mRewardedVideoAd;
+    private AdView mBannerAdView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,40 +79,33 @@ public class ScrollableTabsActivity extends AppCompatActivity implements Navigat
         TabLayout tabLayout = findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
 
-        mAdView = findViewById(R.id.adView);
+        mBannerAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
-        mAdView.setAdListener(new AdListener() {
+        mBannerAdView.loadAd(adRequest);
+        mBannerAdView.setAdListener(new AdListener() {
             @Override
             public void onAdLoaded() {
-                // Code to be executed when an ad finishes loading.
-                mAdView.setVisibility(View.VISIBLE);
+                mBannerAdView.setVisibility(View.VISIBLE);
                 Crashlytics.logException(new Throwable("Banner onAdOpened()"));
             }
 
             @Override
             public void onAdFailedToLoad(int errorCode) {
-                // Code to be executed when an ad request fails.
                 Crashlytics.logException(new Throwable("Banner onAdFailedToLoad() errorCode : " + errorCode));
             }
 
             @Override
             public void onAdOpened() {
-                // Code to be executed when an ad opens an overlay that
-                // covers the screen.
                 Crashlytics.logException(new Throwable("Banner onAdOpened()"));
             }
 
             @Override
             public void onAdLeftApplication() {
-                // Code to be executed when the user has left the app.
                 Crashlytics.logException(new Throwable("Banner onAdLeftApplication()"));
             }
 
             @Override
             public void onAdClosed() {
-                // Code to be executed when when the user is about to return
-                // to the app after tapping on an ad.
                 Crashlytics.logException(new Throwable("Banner onAdClosed()"));
             }
         });
@@ -121,12 +114,24 @@ public class ScrollableTabsActivity extends AppCompatActivity implements Navigat
         // Use an activity context to get the Interstitial Ad instance.
         mInterstitialAd = new InterstitialAd(this);
 //            mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712"); //Test AD
-        mInterstitialAd.setAdUnitId("ca-app-pub-4955764862648857/9987542608");
+        mInterstitialAd.setAdUnitId("ca-app-pub-6404517846683850/8739827235");
         // Use an activity context to get the rewarded video instance.
-        mAd = MobileAds.getRewardedVideoAdInstance(this);
-        mAd.setRewardedVideoAdListener(this);
+        mRewardedVideoAd = MobileAds.getRewardedVideoAdInstance(this);
+        mRewardedVideoAd.setRewardedVideoAdListener(this);
         loadRewardedVideoAd();
         loadInterstitialAd();
+        if (mInterstitialAd.isLoaded()) {
+            mInterstitialAd.show();
+            Crashlytics.logException(new Throwable("InterstitialAd loaded"));
+        }
+        mInterstitialAd.setAdListener(new AdListener() {
+            @Override
+            public void onAdLoaded() {
+                super.onAdLoaded();
+                mInterstitialAd.show();
+                Crashlytics.logException(new Throwable("InterstitialAd loaded"));
+            }
+        });
     }
 
     private void setupViewPager(ViewPager viewPager) {
@@ -156,14 +161,14 @@ public class ScrollableTabsActivity extends AppCompatActivity implements Navigat
         } else {
             super.onBackPressed();
 
-            if (mAd.isLoaded()) {
-                mAd.show();
+            if (mRewardedVideoAd.isLoaded()) {
+                mRewardedVideoAd.show();
             } else {
                 loadRewardedVideoAd();
-                if (mAd.isLoaded()) {
-                    mAd.show();
+                if (mRewardedVideoAd.isLoaded()) {
+                    mRewardedVideoAd.show();
                 }
-                mAd.show();
+                mRewardedVideoAd.show();
             }
             loadInterstitialAd();
             if (mInterstitialAd.isLoaded()) {
@@ -212,14 +217,14 @@ public class ScrollableTabsActivity extends AppCompatActivity implements Navigat
             return true;
         }
         if (id == R.id.action_exit) {
-            if (mAd.isLoaded()) {
-                mAd.show();
+            if (mRewardedVideoAd.isLoaded()) {
+                mRewardedVideoAd.show();
             } else {
                 loadRewardedVideoAd();
-                if (mAd.isLoaded()) {
-                    mAd.show();
+                if (mRewardedVideoAd.isLoaded()) {
+                    mRewardedVideoAd.show();
                 }
-                mAd.show();
+                mRewardedVideoAd.show();
             }
         }
 
@@ -231,34 +236,34 @@ public class ScrollableTabsActivity extends AppCompatActivity implements Navigat
     }
 
     private void loadRewardedVideoAd() {
-//            mAd.loadAd("ca-app-pub-3940256099942544/5224354917", new AdRequest.Builder().build()); //Test AD
-        mAd.loadAd("ca-app-pub-4955764862648857/8070991558", new AdRequest.Builder().build());
+//        mRewardedVideoAd.loadAd("ca-app-pub-3940256099942544/5224354917", new AdRequest.Builder().build()); //Test AD
+        mRewardedVideoAd.loadAd("ca-app-pub-6404517846683850/6660458801", new AdRequest.Builder().build());
     }
 
     @Override
     protected void onResume() {
-        mAd.resume(this);
+        mRewardedVideoAd.resume(this);
         super.onResume();
     }
 
     @Override
     protected void onPause() {
-        mAd.pause(this);
+        mRewardedVideoAd.pause(this);
         super.onPause();
     }
 
     @Override
     protected void onDestroy() {
-        if (mAd.isLoaded()) {
-            mAd.show();
+        if (mRewardedVideoAd.isLoaded()) {
+            mRewardedVideoAd.show();
         } else {
             loadRewardedVideoAd();
-            if (mAd.isLoaded()) {
-                mAd.show();
+            if (mRewardedVideoAd.isLoaded()) {
+                mRewardedVideoAd.show();
             }
-            mAd.show();
+            mRewardedVideoAd.show();
         }
-        mAd.destroy(this);
+        mRewardedVideoAd.destroy(this);
         super.onDestroy();
     }
 
