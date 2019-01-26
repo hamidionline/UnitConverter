@@ -17,17 +17,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import com.crashlytics.android.Crashlytics;
-import com.google.android.gms.ads.AdListener;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.InterstitialAd;
-import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.reward.RewardItem;
-import com.google.android.gms.ads.reward.RewardedVideoAd;
-import com.google.android.gms.ads.reward.RewardedVideoAdListener;
 import com.jay.unitconverter.Fragments.AreaFragment;
 import com.jay.unitconverter.Fragments.DataTransferRateFragment;
 import com.jay.unitconverter.Fragments.DigitalStorageFragment;
@@ -42,15 +33,30 @@ import com.jay.unitconverter.Fragments.SpeedFragment;
 import com.jay.unitconverter.Fragments.TemperatureFragment;
 import com.jay.unitconverter.Fragments.TimeFragment;
 import com.jay.unitconverter.Fragments.VolumeFragment;
+import com.mopub.common.MoPub;
+import com.mopub.common.SdkConfiguration;
+import com.mopub.common.SdkInitializationListener;
+import com.mopub.mobileads.MoPubErrorCode;
+import com.mopub.mobileads.MoPubView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ScrollableTabsActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, RewardedVideoAdListener {
+//import com.google.android.gms.ads.AdListener;
+//import com.google.android.gms.ads.AdRequest;
+//import com.google.android.gms.ads.AdView;
+//import com.google.android.gms.ads.InterstitialAd;
+//import com.google.android.gms.ads.MobileAds;
+//import com.google.android.gms.ads.reward.RewardItem;
+//import com.google.android.gms.ads.reward.RewardedVideoAd;
+//import com.google.android.gms.ads.reward.RewardedVideoAdListener;
 
-    private InterstitialAd mInterstitialAd;
-    private RewardedVideoAd mRewardedVideoAd;
-    private AdView mBannerAdView;
+public class ScrollableTabsActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, MoPubView.BannerAdListener/*, RewardedVideoAdListener*/ {
+
+    //    private InterstitialAd mInterstitialAd;
+//    private RewardedVideoAd mRewardedVideoAd;
+//    private AdView mBannerAdView;
+    private MoPubView moPubView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,59 +85,90 @@ public class ScrollableTabsActivity extends AppCompatActivity implements Navigat
         TabLayout tabLayout = findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
 
-        mBannerAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mBannerAdView.loadAd(adRequest);
-        mBannerAdView.setAdListener(new AdListener() {
-            @Override
-            public void onAdLoaded() {
-                mBannerAdView.setVisibility(View.VISIBLE);
-                Crashlytics.logException(new Throwable("Banner onAdOpened()"));
-            }
+        List<String> networksToInit = new ArrayList<String>();
+        networksToInit.add("com.mopub.mobileads.VungleRewardedVideo");
 
-            @Override
-            public void onAdFailedToLoad(int errorCode) {
-                Crashlytics.logException(new Throwable("Banner onAdFailedToLoad() errorCode : " + errorCode));
-            }
+//        SdkConfiguration sdkConfiguration = new SdkConfiguration.Builder("920b6145fb1546cf8b5cf2ac34638bb7") //Test adUnitId
+        SdkConfiguration sdkConfiguration = new SdkConfiguration.Builder("9bbc4f9fa8a046159007a6eed86a964e") // Production adUnitId
+//                .withMediationSettings("MEDIATION_SETTINGS")
+                .withNetworksToInit(networksToInit)
+                .build();
 
-            @Override
-            public void onAdOpened() {
-                Crashlytics.logException(new Throwable("Banner onAdOpened()"));
-            }
+        MoPub.initializeSdk(this, sdkConfiguration, initSdkListener());
 
-            @Override
-            public void onAdLeftApplication() {
-                Crashlytics.logException(new Throwable("Banner onAdLeftApplication()"));
-            }
+        moPubView = findViewById(R.id.adView);
+//        moPubView.setAdUnitId("xxxxxxxxxxx"); // Enter your Ad Unit ID from www.mopub.com
+//        moPubView.setBannerAdListener(ScrollableTabsActivity.this);
+//        moPubView.loadAd();
 
-            @Override
-            public void onAdClosed() {
-                Crashlytics.logException(new Throwable("Banner onAdClosed()"));
-            }
-        });
+//        mBannerAdView = findViewById(R.id.adView);
+//        AdRequest adRequest = new AdRequest.Builder().build();
+//        mBannerAdView.loadAd(adRequest);
+//        mBannerAdView.setAdListener(new AdListener() {
+//            @Override
+//            public void onAdLoaded() {
+//                mBannerAdView.setVisibility(View.VISIBLE);
+//                Crashlytics.logException(new Throwable("Banner onAdOpened()"));
+//            }
+//
+//            @Override
+//            public void onAdFailedToLoad(int errorCode) {
+//                Crashlytics.logException(new Throwable("Banner onAdFailedToLoad() errorCode : " + errorCode));
+//            }
+//
+//            @Override
+//            public void onAdOpened() {
+//                Crashlytics.logException(new Throwable("Banner onAdOpened()"));
+//            }
+//
+//            @Override
+//            public void onAdLeftApplication() {
+//                Crashlytics.logException(new Throwable("Banner onAdLeftApplication()"));
+//            }
+//
+//            @Override
+//            public void onAdClosed() {
+//                Crashlytics.logException(new Throwable("Banner onAdClosed()"));
+//            }
+//        });
 
 
         // Use an activity context to get the Interstitial Ad instance.
-        mInterstitialAd = new InterstitialAd(this);
+//        mInterstitialAd = new InterstitialAd(this);
 //            mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712"); //Test AD
-        mInterstitialAd.setAdUnitId("ca-app-pub-6404517846683850/8739827235");
+//        mInterstitialAd.setAdUnitId("ca-app-pub-6404517846683850/8739827235");
         // Use an activity context to get the rewarded video instance.
-        mRewardedVideoAd = MobileAds.getRewardedVideoAdInstance(this);
-        mRewardedVideoAd.setRewardedVideoAdListener(this);
-        loadRewardedVideoAd();
-        loadInterstitialAd();
-        if (mInterstitialAd.isLoaded()) {
-            mInterstitialAd.show();
-            Crashlytics.logException(new Throwable("InterstitialAd loaded"));
-        }
-        mInterstitialAd.setAdListener(new AdListener() {
+//        mRewardedVideoAd = MobileAds.getRewardedVideoAdInstance(this);
+//        mRewardedVideoAd.setRewardedVideoAdListener(this);
+//        loadRewardedVideoAd();
+//        loadInterstitialAd();
+//        if (mInterstitialAd.isLoaded()) {
+//            mInterstitialAd.show();
+//            Crashlytics.logException(new Throwable("InterstitialAd loaded"));
+//        }
+//        mInterstitialAd.setAdListener(new AdListener() {
+//            @Override
+//            public void onAdLoaded() {
+//                super.onAdLoaded();
+//                mInterstitialAd.show();
+//                Crashlytics.logException(new Throwable("InterstitialAd loaded"));
+//            }
+//        });
+        MoPub.onCreate(this);
+    }
+
+    private SdkInitializationListener initSdkListener() {
+        return new SdkInitializationListener() {
             @Override
-            public void onAdLoaded() {
-                super.onAdLoaded();
-                mInterstitialAd.show();
-                Crashlytics.logException(new Throwable("InterstitialAd loaded"));
+            public void onInitializationFinished() {
+           /* MoPub SDK initialized.
+           Check if you should show the consent dialog here, and make your ad requests. */
+//                moPubView.setAdUnitId("b195f8dd8ded45fe847ad89ed1d016da"); // Test adUnitId
+                moPubView.setAdUnitId("9bbc4f9fa8a046159007a6eed86a964e"); // Production adUnitId
+                moPubView.setBannerAdListener(ScrollableTabsActivity.this);
+                moPubView.loadAd();
             }
-        });
+        };
     }
 
     private void setupViewPager(ViewPager viewPager) {
@@ -150,6 +187,7 @@ public class ScrollableTabsActivity extends AppCompatActivity implements Navigat
         adapter.addFrag(new TemperatureFragment(), getString(R.string.temperature));
         adapter.addFrag(new TimeFragment(), getString(R.string.time));
         adapter.addFrag(new VolumeFragment(), getString(R.string.volume));
+//        adapter.addFrag(new CurrencyExchangeFragment(), getString(R.string.currency_exchange));
         viewPager.setAdapter(adapter);
     }
 
@@ -161,29 +199,30 @@ public class ScrollableTabsActivity extends AppCompatActivity implements Navigat
         } else {
             super.onBackPressed();
 
-            if (mRewardedVideoAd.isLoaded()) {
-                mRewardedVideoAd.show();
-            } else {
-                loadRewardedVideoAd();
-                if (mRewardedVideoAd.isLoaded()) {
-                    mRewardedVideoAd.show();
-                }
-                mRewardedVideoAd.show();
-            }
-            loadInterstitialAd();
-            if (mInterstitialAd.isLoaded()) {
-                mInterstitialAd.show();
-                Crashlytics.logException(new Throwable("InterstitialAd loaded"));
-            }
-            mInterstitialAd.setAdListener(new AdListener() {
-                @Override
-                public void onAdLoaded() {
-                    super.onAdLoaded();
-                    mInterstitialAd.show();
-                    Crashlytics.logException(new Throwable("InterstitialAd loaded"));
-                }
-            });
+//            if (mRewardedVideoAd.isLoaded()) {
+//                mRewardedVideoAd.show();
+//            } else {
+//                loadRewardedVideoAd();
+//                if (mRewardedVideoAd.isLoaded()) {
+//                    mRewardedVideoAd.show();
+//                }
+//                mRewardedVideoAd.show();
+//            }
+//            loadInterstitialAd();
+//            if (mInterstitialAd.isLoaded()) {
+//                mInterstitialAd.show();
+//                Crashlytics.logException(new Throwable("InterstitialAd loaded"));
+//            }
+//            mInterstitialAd.setAdListener(new AdListener() {
+//                @Override
+//                public void onAdLoaded() {
+//                    super.onAdLoaded();
+//                    mInterstitialAd.show();
+//                    Crashlytics.logException(new Throwable("InterstitialAd loaded"));
+//                }
+//            });
         }
+        MoPub.onBackPressed(this);
     }
 
     @Override
@@ -216,55 +255,84 @@ public class ScrollableTabsActivity extends AppCompatActivity implements Navigat
             }
             return true;
         }
-        if (id == R.id.action_exit) {
-            if (mRewardedVideoAd.isLoaded()) {
-                mRewardedVideoAd.show();
-            } else {
-                loadRewardedVideoAd();
-                if (mRewardedVideoAd.isLoaded()) {
-                    mRewardedVideoAd.show();
-                }
-                mRewardedVideoAd.show();
-            }
+        if (id == R.id.action_video_ad) {
+//            MoPubRewardedVideos.loadRewardedVideo("15173ac6d3e54c9389b9a5ddca69b34b");
+//            MoPubRewardedVideos.loadRewardedVideo("15173ac6d3e54c9389b9a5ddca69b34b");
+//            if (MoPubRewardedVideos.hasRewardedVideo("15173ac6d3e54c9389b9a5ddca69b34b")) {
+//                MoPubRewardedVideos.showRewardedVideo("15173ac6d3e54c9389b9a5ddca69b34b");
+//            }
+
+
+//            if (mRewardedVideoAd.isLoaded()) {
+//                mRewardedVideoAd.show();
+//            } else {
+//                loadRewardedVideoAd();
+//                if (mRewardedVideoAd.isLoaded()) {
+//                    mRewardedVideoAd.show();
+//                }
+//                mRewardedVideoAd.show();
+//            }
         }
 
         return super.onOptionsItemSelected(item);
     }
 
-    private void loadInterstitialAd() {
-        mInterstitialAd.loadAd(new AdRequest.Builder().build());
-    }
+//    private void loadInterstitialAd() {
+//        mInterstitialAd.loadAd(new AdRequest.Builder().build());
+//    }
 
-    private void loadRewardedVideoAd() {
+//    private void loadRewardedVideoAd() {
 //        mRewardedVideoAd.loadAd("ca-app-pub-3940256099942544/5224354917", new AdRequest.Builder().build()); //Test AD
-        mRewardedVideoAd.loadAd("ca-app-pub-6404517846683850/6660458801", new AdRequest.Builder().build());
-    }
+//        mRewardedVideoAd.loadAd("ca-app-pub-6404517846683850/6660458801", new AdRequest.Builder().build());
+//    }
 
     @Override
     protected void onResume() {
-        mRewardedVideoAd.resume(this);
+//        mRewardedVideoAd.resume(this);
         super.onResume();
+        MoPub.onResume(this);
     }
 
     @Override
     protected void onPause() {
-        mRewardedVideoAd.pause(this);
+//        mRewardedVideoAd.pause(this);
         super.onPause();
+        MoPub.onPause(this);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        MoPub.onStop(this);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        MoPub.onStart(this);
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        MoPub.onRestart(this);
     }
 
     @Override
     protected void onDestroy() {
-        if (mRewardedVideoAd.isLoaded()) {
-            mRewardedVideoAd.show();
-        } else {
-            loadRewardedVideoAd();
-            if (mRewardedVideoAd.isLoaded()) {
-                mRewardedVideoAd.show();
-            }
-            mRewardedVideoAd.show();
-        }
-        mRewardedVideoAd.destroy(this);
+//        if (mRewardedVideoAd.isLoaded()) {
+//            mRewardedVideoAd.show();
+//        } else {
+//            loadRewardedVideoAd();
+//            if (mRewardedVideoAd.isLoaded()) {
+//                mRewardedVideoAd.show();
+//            }
+//            mRewardedVideoAd.show();
+//        }
+//        mRewardedVideoAd.destroy(this);
         super.onDestroy();
+        moPubView.destroy();
+        MoPub.onDestroy(this);
     }
 
     @Override
@@ -298,6 +366,8 @@ public class ScrollableTabsActivity extends AppCompatActivity implements Navigat
             ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(12);
         } else if (id == R.id.nav_volume) {
             ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(13);
+        } else if (id == R.id.nav_currency_exchange) {
+            ((ViewPager) findViewById(R.id.viewpager)).setCurrentItem(14);
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -306,45 +376,71 @@ public class ScrollableTabsActivity extends AppCompatActivity implements Navigat
     }
 
     @Override
-    public void onRewardedVideoAdLoaded() {
-        Crashlytics.logException(new Throwable("Reward ad onRewardedVideoAdLoaded()"));
+    public void onBannerLoaded(MoPubView banner) {
+        moPubView.setVisibility(View.VISIBLE);
+        Crashlytics.log("onBannerLoaded()" + banner.getAdUnitId());
     }
 
     @Override
-    public void onRewardedVideoAdOpened() {
-        Crashlytics.logException(new Throwable("Reward ad onRewardedVideoAdOpened()"));
+    public void onBannerFailed(MoPubView banner, MoPubErrorCode errorCode) {
+        Crashlytics.log("onBannerFailed() errorCode : " + errorCode);
     }
 
     @Override
-    public void onRewardedVideoStarted() {
-        Crashlytics.logException(new Throwable("Reward ad onRewardedVideoStarted()"));
+    public void onBannerClicked(MoPubView banner) {
+        Crashlytics.log("onBannerClicked()" + banner.getAdUnitId());
     }
 
     @Override
-    public void onRewardedVideoAdClosed() {
-        Crashlytics.logException(new Throwable("Reward ad onRewardedVideoAdClosed()"));
+    public void onBannerExpanded(MoPubView banner) {
+        Crashlytics.log("onBannerExpanded()" + banner.getAdUnitId());
     }
 
     @Override
-    public void onRewarded(RewardItem rewardItem) {
-        Crashlytics.logException(new Throwable("Reward ad onRewarded() rewardItem.getAmount() : " + rewardItem.getAmount()));
+    public void onBannerCollapsed(MoPubView banner) {
+        Crashlytics.log("onBannerCollapsed()" + banner.getAdUnitId());
     }
 
-    @Override
-    public void onRewardedVideoAdLeftApplication() {
-        Crashlytics.logException(new Throwable("Reward ad onRewardedVideoAdLeftApplication()"));
-    }
-
-    @Override
-    public void onRewardedVideoAdFailedToLoad(int i) {
-        Crashlytics.logException(new Throwable("Reward ad onRewardedVideoAdFailedToLoad() errorCode : " + i));
-    }
-
-    @Override
-    public void onRewardedVideoCompleted() {
-        Toast.makeText(this, "Thanks for watching ad:)", Toast.LENGTH_LONG).show();
-        Crashlytics.logException(new Throwable("Reward ad onRewardedVideoCompleted()"));
-    }
+//    @Override
+//    public void onRewardedVideoAdLoaded() {
+//        Crashlytics.logException(new Throwable("Reward ad onRewardedVideoAdLoaded()"));
+//    }
+//
+//    @Override
+//    public void onRewardedVideoAdOpened() {
+//        Crashlytics.logException(new Throwable("Reward ad onRewardedVideoAdOpened()"));
+//    }
+//
+//    @Override
+//    public void onRewardedVideoStarted() {
+//        Crashlytics.logException(new Throwable("Reward ad onRewardedVideoStarted()"));
+//    }
+//
+//    @Override
+//    public void onRewardedVideoAdClosed() {
+//        Crashlytics.logException(new Throwable("Reward ad onRewardedVideoAdClosed()"));
+//    }
+//
+//    @Override
+//    public void onRewarded(RewardItem rewardItem) {
+//        Crashlytics.logException(new Throwable("Reward ad onRewarded() rewardItem.getAmount() : " + rewardItem.getAmount()));
+//    }
+//
+//    @Override
+//    public void onRewardedVideoAdLeftApplication() {
+//        Crashlytics.logException(new Throwable("Reward ad onRewardedVideoAdLeftApplication()"));
+//    }
+//
+//    @Override
+//    public void onRewardedVideoAdFailedToLoad(int i) {
+//        Crashlytics.logException(new Throwable("Reward ad onRewardedVideoAdFailedToLoad() errorCode : " + i));
+//    }
+//
+//    @Override
+//    public void onRewardedVideoCompleted() {
+//        Toast.makeText(this, "Thanks for watching ad:)", Toast.LENGTH_LONG).show();
+//        Crashlytics.logException(new Throwable("Reward ad onRewardedVideoCompleted()"));
+//    }
 
     private class ViewPagerAdapter extends FragmentPagerAdapter {
         private final List<Fragment> mFragmentList = new ArrayList<>();

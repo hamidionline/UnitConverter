@@ -41,6 +41,7 @@
     <string name="temperature">Temperature</string>
     <string name="time">Time</string>
     <string name="volume">Volume</string>
+    <string name="currency_exchange">Currency Exchange</string>
     <string name="square_kilometre">Square kilometre</string>
     <string name="square_metre">Square metre</string>
     <string name="square_mile">Square mile</string>
