@@ -9,8 +9,8 @@ android {
         applicationId "com.jay.unitconverter"
         minSdkVersion 16
         targetSdkVersion 28
-        versionCode 27
-        versionName "2.7"
+        versionCode 29
+        versionName "2.9"
         vectorDrawables.useSupportLibrary = true
     }
     buildTypes {
@@ -22,14 +22,9 @@ android {
     }
 }
 
-repositories {
-    // ... other project repositories
-    jcenter() // includes the MoPub SDK and AVID library
-    maven { url "https://s3.amazonaws.com/moat-sdk-builds" }
-}
-
 dependencies {
     implementation 'com.android.support:support-vector-drawable:28.0.0'
+    implementation 'com.android.support:customtabs:28.0.0'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     testImplementation 'junit:junit:4.12'
     implementation 'com.android.support:appcompat-v7:28.0.0'
@@ -38,11 +33,8 @@ dependencies {
     implementation 'com.mikepenz:materialdrawer:5.3.6'
     implementation 'com.android.support:support-v4:28.0.0'
     implementation 'com.android.support:design:28.0.0'
-//    implementation 'com.google.android.gms:play-services-ads:17.1.2'
+    implementation 'com.google.android.gms:play-services-ads:17.1.2'
     implementation 'com.google.firebase:firebase-core:16.0.6'
     implementation 'com.crashlytics.sdk.android:crashlytics:2.9.8'
-    implementation('com.mopub:mopub-sdk:5.4.1@aar') {
-        transitive = true
-    }
 }
 apply plugin: 'com.google.gms.google-services'
